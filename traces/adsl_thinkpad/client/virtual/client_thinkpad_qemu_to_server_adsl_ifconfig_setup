@@ -1,0 +1,22 @@
+eth0      Link encap:Ethernet  HWaddr 00:00:00:00:00:01  
+          inet addr:192.168.122.3  Bcast:192.168.122.255  Mask:255.255.255.0
+          inet6 addr: fe80::200:ff:fe00:1/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1158 errors:0 dropped:26 overruns:0 frame:0
+          TX packets:1025 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:642664 (642.6 KB)  TX bytes:177394 (177.3 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:112 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:112 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:10254 (10.2 KB)  TX bytes:10254 (10.2 KB)
+
+NOTE: eth0 is bound to wlan0, connected through the campus wireless from my office (wireless address on thinkpad is 128.105.34.230, wireless MAC for wlan0 is 00:18:de:66:27:b7)
+
+started qemu with:
+qemu-system-i386 -netdev tap, id=net0 -device virtio-net-pci,id=hostnet0,netdev=net0,mac=00:00:00:00:00:01 vm1.qcow2
