@@ -1,0 +1,7 @@
+The traces of VMware VMs were done on Adam's desktop to macbook. The desktop was running VMware player with an ubunut VM. There are files for both NAT and bridge.
+
+The NAT shows that the VM's packets are rewritten to have the same IP and MAC addresses as the host system.
+
+The bridge traces show that the server sees packets that have the IP address associated with the bridged VM and more importantly, it has a generic VMware MAC address.
+
+So, hopefully in a bridged setting we can always filter VM communications on the MAC address.
