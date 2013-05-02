@@ -1,0 +1,57 @@
+\documentclass[11pt,pdftex,twocolumn]{article}
+\usepackage{alltt}
+\usepackage[dvips]{graphicx}
+\usepackage{verbatim}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{url}
+
+\title{Server Side NFS Identification and Client-Side Packet Tracing in a Virtualized Environment}
+\author{Rob Jellinek and Adam Vail}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Need to do the abstract
+\end{abstract}
+\input{intro}
+We start with NFS: asking the question, how can an NFS server differentiate requests coming from physical machines vs. virtual machines--and in particular, from multiple virtual machines on the same physical machine. Knowing this could allow the server to coalesce packets it's sending if those packets are all going to the same physical machine. 
+
+From what we were able to determine, the NFS protocol, being an application-layer protocol, is indistinguishable in the virtual and native settings. Without explicit signals built into the NFS protocol, nothing from the application layer NFS protocol signals the origin and platform of the client. 
+
+We learned that the physical server can determine whether requests are coming from bridged VMs by detecting a set of standard MAC addresses assigned by the various virtual machine platforms. The caveat is that the user can always set/spoof their own MAC address. In this case, if you're bridged and have spoofed a legitimate MAC address, the VM's traffic is indistinguishable from traffic coming from a physical device, both in terms of the MAC address, and in terms of timing.
+
+If the client is NATed, then all packet header information in the first three layers of all client-VM outgoing packets get remapped to the physical machine's headers. In this case, there is a dramatic slowdown due to the time it takes the NAT code to map packets from the guest network stack to the host network stack. The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking, and in particular, what code path in the NATed environment causes this slowdown.
+
+
+%\input{motivation}
+
+\input{design}
+Talk about our system setup here. 
+
+\section{NFS}
+Looking at NFS
+
+\section{Bridged vs. NAT}
+Bridged vs. NAT
+
+graph with iperf results: show it's a big difference
+
+RTL8139 (KVM's default)
+
+Answer: why is Virtio faster than the fully emulated RTL8139
+
+\section{Following the Code Path}
+Valgrind/callgrind
+
+%\input{implementation}
+%\input{evaluation}
+%\input{future}
+%\input{related}
+%\input{conclusion}
+
+{\footnotesize \bibliographystyle{acm}
+\bibliography{references}}
+
+
+
+\end{document}
