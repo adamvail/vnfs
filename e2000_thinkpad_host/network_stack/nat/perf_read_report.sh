@@ -1,1 +1,1 @@
-perf kvm --host --guest --guestmodules=`pwd`/guest.modules --guestkallsyms=`pwd`/guest.kallsyms report -i perf.data.guest --force
+perf kvm --host --guest --guestmodules=guest.modules report -i perf.data.nfs_cattodevnull_test2gb_NATed_guest.data.kvm --force -v

@@ -1,2 +1,1 @@
-#!/bin/bash
-perf kvm report -i $1
+perf kvm --host --guest --guestmodules=guest.modules report -i perf.bridged_guest_cptodevnull_test2gb.data.kvm --force
