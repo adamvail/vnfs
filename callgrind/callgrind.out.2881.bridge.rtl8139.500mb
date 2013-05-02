@@ -1,0 +1,13323 @@
+version: 1
+creator: callgrind-3.7.0
+pid: 2881
+cmd:  /usr/local/kvm/bin/qemu-system-x86_64 -hda disk.img -net tap,ifname=dev,script=no,downscript=no -net nic,model=rtl8139 -boot c -m 3072
+part: 1
+
+
+desc: I1 cache: 
+desc: D1 cache: 
+desc: LL cache: 
+
+desc: Timerange: Basic block 0 - 2382158003
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 0
+
+
+ob=(6) /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.3
+fl=(30) ???
+fn=(312) g_main_context_default
+0 458088
+cfn=(314) g_mutex_lock
+calls=152696 0 
+0 7634800
+0 610784
+cfn=(322) g_mutex_unlock
+calls=152696 0 
+0 6565928
+0 458088
+
+fn=(322)
+0 763480
+cfn=(316) 0x0000000000083320
+calls=381740 0 
+0 5344360
+0 763480
+cob=(10) /lib/x86_64-linux-gnu/libpthread-2.15.so
+cfi=(9) /build/buildd/eglibc-2.15/nptl/pthread_mutex_unlock.c
+cfn=(106) pthread_mutex_unlock
+calls=381740 289 
+0 8016540
+0 1526960
+
+fn=(328) g_main_context_prepare
+0 992524
+cfn=(314)
+calls=76348 0 
+0 3817400
+0 1145220
+cfn=(330) g_ptr_array_set_size
+calls=76348 0 
+0 1221568
+0 534436
+cfn=(322)
+calls=76348 0 
+0 3282964
+0 916176
+
+fn=(330)
+0 1221568
+
+fn=(458) g_malloc
+0 168889
+cob=(4) /usr/local/kvm/bin/qemu-system-x86_64
+cfi=(14) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/vl.c
+cfn=(460) malloc_and_trace
+calls=24127 2321 
+0 8903749
+0 120635
+
+fn=(356) g_main_context_check
+0 763480
+cfn=(314)
+calls=76348 0 
+0 3817400
+0 1985048
+cfn=(322)
+calls=76348 0 
+0 3282964
+0 687132
+cfn=(358) 0x00000000000828a0
+calls=76348 0 
+0 4809924
+0 229044
+
+fn=(358)
+0 839828
+cob=(10)
+cfi=(33) /build/buildd/eglibc-2.15/nptl/../sysdeps/unix/syscall-template.S
+cfn=(362) read
+calls=76348 82 
+0 3359312
+0 610784
+
+fn=(314)
+0 763480
+cfn=(316)
+calls=381740 0 
+0 5344360
+0 763480
+cob=(10)
+cfi=(5) /build/buildd/eglibc-2.15/nptl/pthread_mutex_lock.c
+cfn=(48) pthread_mutex_lock
+calls=381740 47 
+0 10688720
+0 1526960
+
+fn=(316)
+0 10688720
+
+fn=(1272) g_str_equal
+0 4338248
+cob=(2) /lib/x86_64-linux-gnu/libc-2.15.so
+cfi=(68) /build/buildd/eglibc-2.15/string/../sysdeps/x86_64/multiarch/strcmp-sse42.S
+cfn=(1276) __strcmp_sse42
+calls=2169124 129 
+0 47720728
+0 10845620
+
+fn=(1740) g_malloc0
+0 15390
+cfn=(1742) 0x000000000004d6e0
+calls=1710 0 
+0 305420
+0 8550
+
+fn=(1742)
+0 11970
+cob=(4)
+cfi=(14)
+cfn=(460)
+calls=1710 2321 
+0 238681
+0 11970
+cob=(2)
+cfi=(44) /build/buildd/eglibc-2.15/string/../sysdeps/x86_64/multiarch/../memset.S
+cfn=(472) __GI_memset
+calls=1710 44 
+0 34249
+0 8550
+
+fn=(334) g_main_context_query
+0 1068872
+cfn=(314)
+calls=76348 0 
+0 3817400
+0 2137744
+cfn=(322)
+calls=76348 0 
+0 3282964
+0 687132
+
+fn=(1268) g_hash_table_lookup
+0 28198612
+cfn=(1270) g_str_hash
+calls=2169124 0 
+0 227758020
+0 130147440
+cfn=(1272)
+calls=2169124 0 
+0 62904596
+0 41213356
+
+fn=(498) g_free
+0 103336
+cob=(4)
+cfi=(14)
+cfn=(500) free_and_trace
+calls=25834 2335 
+0 4041113
+
+fn=(1270)
+0 227758020
+
+ob=(1) /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+fl=(3) ???
+fn=(932) XQueryPointer
+0 100
+cfn=(574) _XGetRequest
+calls=5 0 
+0 130
+0 30
+cfn=(934) _XReply
+calls=5 0 
+0 14031
+0 180
+
+fn=(1944) XUngrabPointer
+0 48
+cfn=(574)
+calls=4 0 
+0 104
+0 48
+
+fn=(2178) _XUnregisterFilter
+0 66
+cob=(2)
+cfi=(42) /build/buildd/eglibc-2.15/malloc/malloc.c
+cfn=(506) free
+calls=3 2959 
+0 237
+0 21
+
+fn=(14) _XFlush
+0 236691
+cfn=(16) _XSend
+calls=26299 0 
+0 3814282
+0 105196
+cfn=(18) _XEventsQueued
+calls=26299 0 
+0 11153835
+
+fn=(18)
+0 315621
+cfn=(20) 0x000000000003d7a0
+calls=26299 0 
+0 499681
+0 184466
+cfn=(804) 0x000000000003d330
+calls=88 0 
+0 18970
+0 52780
+cfn=(26) 0x000000000003d690
+calls=26390 0 
+0 9847578
+0 131686
+cob=(12) /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+cfi=(4) ???
+cfn=(148) xcb_connection_has_error
+calls=26302 0 
+0 52604
+0 52613
+cfn=(16)
+calls=3 0 
+0 84
+0 3
+
+fn=(844) _XStoreEventCookie
+0 528
+cfn=(842) _XIsEventCookie
+calls=88 0 
+0 352
+0 528
+
+fn=(26)
+0 158340
+cfn=(28) 0x000000000003d4f0
+calls=26390 0 
+0 6269362
+0 394794
+cob=(12)
+cfi=(4)
+cfn=(126) xcb_poll_for_reply
+calls=26302 0 
+0 2814314
+0 210768
+
+fn=(28)
+0 609672
+cob=(12)
+cfi=(4)
+cfn=(40) xcb_poll_for_event
+calls=26408 0 
+0 5505578
+0 158360
+
+fn=(12) XFlush
+0 184093
+cfn=(14)
+calls=26299 0 
+0 15310004
+0 157794
+
+fn=(836) XNextEvent
+0 880
+cfn=(838) _XFreeEventCookies
+calls=88 0 
+0 968
+0 2992
+cfn=(840) _XDeq
+calls=88 0 
+0 2078
+0 264
+cfn=(844)
+calls=88 0 
+0 1408
+0 704
+
+fn=(154) XEventsQueued
+0 421701
+
+fn=(812) _XEnq
+0 1848
+cfn=(814) _XWireToEvent
+calls=88 0 
+0 6391
+0 1435
+
+fn=(814)
+0 1056
+cfn=(816) _XSetLastRequestRead
+calls=88 0 
+0 1896
+0 3439
+
+fn=(838)
+0 968
+
+fn=(1038) 0x000000000003cfa0
+0 153
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=9 2959 
+0 731
+
+fn=(1106) XKeycodeToKeysym
+0 576
+cfn=(1120) XkbKeycodeToKeysym
+calls=6 0 
+0 414
+
+fn=(1120)
+0 414
+
+fn=(1152) XPending
+0 81
+cfn=(18)
+calls=3 0 
+0 2251
+0 6
+
+fn=(1958) XSync
+0 48
+cfn=(574)
+calls=4 0 
+0 104
+0 20
+cfn=(934)
+calls=4 0 
+0 11376
+0 40
+
+fn=(20)
+0 618165
+
+fn=(574)
+0 162110
+
+fn=(840)
+0 1056
+cfn=(842)
+calls=88 0 
+0 352
+0 670
+
+fn=(842)
+0 708
+
+fn=(1162) _XCopyEventCookie
+0 8
+cfn=(842)
+calls=1 0 
+0 4
+0 9
+
+fn=(934)
+0 207
+cfn=(16)
+calls=9 0 
+0 4707
+0 81
+cfn=(936) 0x000000000003d150
+calls=9 0 
+0 1190
+0 279
+cob=(12)
+cfi=(4)
+cfn=(950) xcb_wait_for_reply
+calls=18 0 
+0 11640
+0 495
+cfn=(28)
+calls=18 0 
+0 4248
+0 99
+cfn=(1038)
+calls=9 0 
+0 884
+0 36
+cfn=(20)
+calls=9 0 
+0 171
+0 243
+cob=(2)
+cfi=(57) /build/buildd/eglibc-2.15/string/../sysdeps/x86_64/multiarch/memcpy-ssse3-back.S
+cfn=(750) __memcpy_ssse3_back
+calls=9 60 
+0 134
+0 27
+cfn=(1066) 0x000000000003cf60
+calls=9 0 
+0 840
+0 126
+
+fn=(1160) XPeekEvent
+0 47
+cfn=(1162)
+calls=1 0 
+0 21
+0 14
+
+fn=(816)
+0 1896
+
+fn=(906) _XRegisterFilterByType
+0 45
+cob=(2)
+cfi=(42)
+cfn=(464) malloc
+calls=3 2910 
+0 309
+0 84
+
+fn=(936)
+0 63
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=9 2910 
+0 947
+0 180
+
+fn=(1066)
+0 63
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=9 2959 
+0 741
+0 36
+
+fn=(1950) XUngrabKeyboard
+0 48
+cfn=(574)
+calls=4 0 
+0 104
+0 48
+
+fn=(2172) XUnsetICFocus
+0 48
+cfn=(2178)
+calls=3 0 
+0 324
+
+fn=(16)
+0 602962
+cob=(12)
+cfi=(4)
+cfn=(584) xcb_writev
+calls=6227 0 
+0 2596659
+0 49816
+cfn=(20)
+calls=6227 0 
+0 118313
+0 12454
+cfn=(676) 0x000000000003f010
+calls=6227 0 
+0 99632
+0 339237
+
+fn=(676)
+0 99632
+
+fn=(804)
+0 1320
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=88 2959 
+0 7272
+0 616
+cfn=(812)
+calls=88 0 
+0 9674
+0 88
+
+fn=(896) XSetICFocus
+0 84
+cfn=(906)
+calls=3 0 
+0 438
+
+ob=(5) /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.3
+fl=(1) ???
+fn=(192) 0x0000000000010a70
+0 119962
+cfn=(912) SDL_GetTicks
+calls=4 0 
+0 84
+0 28
+
+fn=(196) SDL_PollEvent
+0 59976
+cfn=(0) SDL_PumpEvents
+calls=19992 0 
+0 12967528
+cfn=(0)
+calls=1 0 
+0 638
+0 99965
+cfn=(198) SDL_PeepEvents
+calls=19993 0 
+0 2321816
+0 99965
+
+fn=(1934) 0x0000000000044140
+0 72
+cob=(1)
+cfi=(3)
+cfn=(1958)
+calls=4 0 
+0 11588
+0 32
+cob=(1)
+cfi=(3)
+cfn=(1944)
+calls=4 0 
+0 200
+0 16
+cob=(1)
+cfi=(3)
+cfn=(1950)
+calls=4 0 
+0 200
+0 4
+
+fn=(200) SDL_mutexP
+0 80264
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=20066 47 
+0 541782
+0 120396
+
+fn=(920) 0x000000000003b9b0
+0 70
+cfn=(922) SDL_GetKeyState
+calls=5 0 
+0 20
+0 105
+cob=(1)
+cfi=(3)
+cfn=(932)
+calls=5 0 
+0 14471
+0 1444
+cfn=(1102) 0x000000000003b6b0
+calls=13 0 
+0 647
+0 541
+cfn=(1138) SDL_SetModState
+calls=5 0 
+0 10
+0 55
+
+fn=(2148) 0x00000000000109f0
+0 5847
+cfn=(1172) 0x0000000000010630
+calls=3 0 
+0 651
+0 27
+
+fn=(8) 0x000000000003b1e0
+0 80324
+cob=(1)
+cfi=(3)
+cfn=(12)
+calls=20081 0 
+0 9620431
+0 60243
+cob=(1)
+cfi=(3)
+cfn=(154)
+calls=20081 0 
+0 421701
+0 980315
+cob=(2)
+cfi=(10) /build/buildd/eglibc-2.15/misc/../sysdeps/unix/syscall-template.S
+cfn=(166) select
+calls=19994 82 
+0 779766
+0 79978
+cob=(1)
+cfi=(3)
+cfn=(1152)
+calls=1 0 
+0 1408
+0 1
+
+fn=(1138)
+0 10
+
+fn=(2222) 0x000000000002df80
+0 1140
+
+fn=(2) 0x000000000003caa0
+0 200194
+cfn=(828) 0x000000000003bc60
+calls=88 0 
+0 61463
+0 264
+cfn=(8)
+calls=88 0 
+0 47175
+0 39986
+cfn=(8)
+calls=19993 0 
+0 11976992
+0 200323
+cfn=(912)
+calls=249 0 
+0 5229
+0 2776
+cfn=(1934)
+calls=2 0 
+0 5994
+0 213
+cfn=(1934)
+calls=2 0 
+0 6118
+0 18
+cob=(2)
+cfi=(118) /build/buildd/eglibc-2.15/stdlib/getenv.c
+cfn=(1968) getenv
+calls=4 36 
+0 1404
+0 48
+
+fn=(204) SDL_mutexV
+0 80264
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=20066 289 
+0 561848
+0 120396
+
+fn=(544) SDL_UpdateRect
+0 130578
+cfn=(546) SDL_UpdateRects
+calls=6218 0 
+0 7424292
+0 12436
+
+fn=(878) SDL_PushEvent
+0 365
+cfn=(198)
+calls=73 0 
+0 10658
+0 438
+
+fn=(2200) 0x0000000000011a30
+0 3414
+cfn=(2222)
+calls=57 0 
+0 1140
+0 1083
+cfn=(878)
+calls=57 0 
+0 8949
+0 231
+cfn=(2204) 0x0000000000011900
+calls=58 0 
+0 522
+0 174
+
+fn=(922)
+0 20
+
+fn=(1102)
+0 90
+cob=(1)
+cfi=(3)
+cfn=(1106)
+calls=18 0 
+0 990
+0 210
+
+fn=(0)
+0 219923
+cfn=(2)
+calls=19993 0 
+0 12548197
+0 19993
+cfn=(192)
+calls=19993 0 
+0 120074
+0 59979
+
+fn=(198)
+0 341122
+cfn=(200)
+calls=20066 0 
+0 742442
+0 302304
+cfn=(204)
+calls=20066 0 
+0 762508
+0 184098
+
+fn=(696) SDL_EnableUNICODE
+0 99595
+
+fn=(912)
+0 1044
+cob=(20) /usr/lib/valgrind/callgrind-amd64-linux
+cfi=(18) ???
+cfn=(242) 0x0000000038050d53
+calls=261 0 
+0 783
+0 3654
+
+fn=(828)
+0 3784
+cob=(1)
+cfi=(3)
+cfn=(836)
+calls=88 0 
+0 9294
+0 2252
+cob=(1)
+cfi=(3)
+cfn=(1152)
+calls=3 0 
+0 930
+0 9
+cob=(1)
+cfi=(3)
+cfn=(1160)
+calls=1 0 
+0 82
+0 39
+cfn=(1102)
+calls=3 0 
+0 387
+0 18
+cfn=(1172)
+calls=3 0 
+0 641
+0 879
+cfn=(2200)
+calls=58 0 
+0 15513
+0 125
+cfn=(868) 0x000000000000faa0
+calls=3 0 
+0 7149
+0 18
+cob=(1)
+cfi=(3)
+cfn=(2172)
+calls=3 0 
+0 372
+0 9
+cfn=(912)
+calls=3 0 
+0 63
+0 34
+cfn=(920)
+calls=5 0 
+0 17363
+0 31
+cfn=(868)
+calls=2 0 
+0 226
+0 13
+cfn=(868)
+calls=3 0 
+0 612
+0 18
+cob=(1)
+cfi=(3)
+cfn=(896)
+calls=3 0 
+0 522
+0 9
+cfn=(912)
+calls=3 0 
+0 63
+0 28
+cfn=(1102)
+calls=2 0 
+0 256
+0 12
+cfn=(1172)
+calls=2 0 
+0 500
+0 9
+cfn=(868)
+calls=1 0 
+0 202
+0 1
+
+fn=(1448) SDL_GetModState
+0 4
+
+fn=(2204)
+0 522
+
+fn=(546)
+0 441478
+cob=(7) /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+cfi=(51) ???
+cfn=(560) XShmPutImage
+calls=6218 0 
+0 833212
+0 68398
+cob=(1)
+cfi=(3)
+cfn=(12)
+calls=6218 0 
+0 6031460
+0 49744
+
+fn=(868)
+0 293
+cfn=(2148)
+calls=3 0 
+0 6525
+0 107
+cfn=(878)
+calls=8 0 
+0 1256
+0 8
+
+fn=(1172)
+0 372
+cfn=(878)
+calls=8 0 
+0 1256
+0 118
+cfn=(912)
+calls=2 0 
+0 42
+0 4
+
+ob=(10)
+fl=(108) /build/buildd/eglibc-2.15/nptl/../nptl/pthread_mutex_lock.c
+fn=(1686) __pthread_mutex_cond_lock
+47 2325
++3 2325
+-3 2325
++3 4650
++1 4650
++3 2325
++2 4650
++5 11625
++1 6975
++63 2325
++5 2325
++1 4650
+
+fl=(54) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_broadcast.S
+fn=(656) pthread_cond_broadcast@@GLIBC_2.3.2
+39 6227
++1 6227
++1 6227
++6 6227
++2 6227
++1 6227
++1 6227
++1 6227
++68 6227
++2 6227
++2 6227
++1 6227
+
+fl=(92) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/pthread/pt-longjmp.c
+fn=(1572) longjmp
+26 3726
++1 3726
+cob=(2)
+cfi=(93) /build/buildd/eglibc-2.15/setjmp/longjmp.c
+cfn=(1576) longjmp
+calls=3726 +3 
+* 2689138701
+
+fn=(1573) longjmp'2
+26 4355
++1 4355
+cob=(2)
+cfi=(93)
+cfn=(1577) longjmp'2
+calls=4355 +3 
+* 1473717
+
+fl=(7) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/unix/sysv/linux/x86_64/cancellation.S
+fn=(72) __pthread_enable_asynccancel
+58 599315
++1 599315
++1 599315
++1 599315
++1 599315
++2 599315
++2 599315
++2 599315
++1 599315
++1 599315
++2 599315
+
+fn=(74) __pthread_disable_asynccancel
+91 599315
++1 599315
++2 599315
++1 599315
++1 599315
++1 599315
++2 599315
++2 599315
++1 599315
++1 599315
++1 599315
++1 599315
+
+fl=(33)
+fn=(406) write
+82 101516
+cfi=(7)
+cfn=(72)
+calls=25379 -24 
+* 279169
+* 152274
+cfi=(7)
+cfn=(74)
+calls=25379 +9 
+* 304548
+* 101516
++1 25379
+
+fn=(362)
+82 2180096
+cfi=(7)
+cfn=(72)
+calls=545024 -24 
+* 5995264
+* 3270144
+cfi=(7)
+cfn=(74)
+calls=545024 +9 
+* 6540288
+* 2180096
++1 545024
++1 789180
+
+fn=(2042) pread
+82 8
+cfi=(7)
+cfn=(72)
+calls=2 -24 
+* 22
+* 14
+cfi=(7)
+cfn=(74)
+calls=2 +9 
+* 24
+* 8
++1 2
+
+fn=(2016) pwrite
+82 900
+cfi=(7)
+cfn=(72)
+calls=225 -24 
+* 2475
+* 1575
+cfi=(7)
+cfn=(74)
+calls=225 +9 
+* 2700
+* 900
++1 225
+
+fl=(35) /build/buildd/eglibc-2.15/nptl/../sysdeps/unix/sysv/linux/x86_64/sigaction.c
+fn=(398) __libc_sigaction
+50 21339
++4 21339
+-4 21339
++4 21339
++13 298746
++1 85356
++2 42678
++1 682848
++1 42678
++1 42678
++3 42678
+
+fl=(109) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S
+fn=(1792) __lll_lock_wait
+116 12594
++2 12594
++4 12594
++1 12594
++1 12594
++2 12594
++1 12594
++2 13883
++1 13883
++2 26058
++1 26058
++2 26058
++1 26058
++2 12594
++3 12594
++3 12594
+
+fn=(1694) __lll_unlock_wake
+355 28383
++2 28383
++5 28383
++1 28383
++1 28383
++1 28383
++1 28383
++2 28383
++3 28383
++3 28383
+
+fl=(95) /build/buildd/eglibc-2.15/nptl/pt-cleanup.c
+fn=(1580) __pthread_cleanup_upto
+27 8081
++1 8081
+-1 40405
++7 16162
++3 32324
++24 8081
++1 48486
+
+fl=(6) /build/buildd/eglibc-2.15/nptl/../sysdeps/unix/sysv/linux/x86_64/recv.c
+fn=(70) recv
+28 52720
++1 79080
++10 79080
+-7 131800
+cfi=(7)
+cfn=(72)
+calls=26360 +26 
+* 289960
++2 52720
+-2 26360
++2 263600
++2 79080
+cfi=(7)
+cfn=(74)
+calls=26360 +55 
+* 316320
+* 26360
++2 26360
+-4 131600
+
+fl=(88) /build/buildd/eglibc-2.15/nptl/pthread_getspecific.c
+fn=(1554) pthread_getspecific
+32 85532
++1 213830
++24 42766
++1 85532
++4 256596
++5 42766
+
+fl=(34) /build/buildd/eglibc-2.15/nptl/../nptl/sigaction.c
+fn=(396) sigaction
+38 64017
++6 21339
+cfi=(35)
+cfn=(398)
+calls=21339 +6 
+* 1323018
+
+fl=(8) /build/buildd/eglibc-2.15/nptl/../csu/errno-loc.c
+fn=(90) __errno_location
+27 137956
++1 68978
+
+fl=(5)
+fn=(48)
+47 1097872
++3 1097872
+-3 1097872
++3 2195744
++1 2195744
++3 1097872
++2 2195744
++5 3480330
+cfn=(1790) _L_lock_858
+calls=12594 +56 
+* 421660
++1 2050416
++65 1085278
+-2 1085278
++5 1085278
++1 2170556
+-67 2040870
++5 40132
++13 80264
++2 40132
++1 40132
++2 2000738
++2 763480
++3 1908700
++21 763480
++4 1237258
++2 1237258
+
+fn=(1790)
+62 37782
++65 12594
+-2 12594
++5 12594
++1 25188
+-14 37782
+cfi=(109)
+cfn=(1792)
+calls=12594 -1 
+* 257938
+* 25188
+
+fl=(55) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_signal.S
+fn=(666) pthread_cond_signal@@GLIBC_2.3.2
+38 8667
++1 8667
++1 8667
++1 8667
++6 8667
++2 8667
++1 8667
++1 8667
++1 8667
++3 2325
++1 2325
++3 2325
++1 2325
++1 2325
++1 2325
++1 2325
++3 2325
++1 2325
++1 2325
++1 2325
++1 2325
++3 2325
++5 2325
++4 2325
++1 2325
++6 2325
++1 2325
++2 2325
++1 2325
++29 6342
++6 6342
++2 6342
++1 6342
+
+fl=(107) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S
+fn=(1684) pthread_cond_timedwait@@GLIBC_2.3.2
+50 2325
++3 2325
++3 2325
++3 2325
++8 2325
++4 2325
++1 2325
++1 2325
++20 2325
++3 2325
++1 2325
++1 2325
++2 2325
++1 2325
++3 2325
++4 2325
++4 2325
++4 2325
++1 2325
++1 2325
++6 2325
++3 2325
++1 2325
++1 2325
+cfi=(9)
+cfn=(1710) __pthread_mutex_unlock_usercnt
+calls=2325 -93 
+* 44220
++2 2325
++1 2325
++2 2325
++1 2325
++1 2325
++1 2325
++3 2325
++1 2325
++1 2325
++1 2325
++1 2325
++2 2325
++1 2325
++1 2325
++2 2325
++3 2325
++6 2325
++3 2325
+cfi=(7)
+cfn=(72)
+calls=2325 58 
+* 25575
++1 2325
++2 2325
++1 2325
++1 2325
++1 2325
++2 2325
++3 2325
++1 2325
++1 2325
++1 2325
++25 2323
++1 2323
++1 2323
++3 2323
++1 2323
++1 2323
++1 2323
++1 2323
++1 2323
++1 2323
++1 2323
++1 2323
++1 2325
++2 2325
++1 2325
+cfi=(7)
+cfn=(74)
+calls=2325 91 
+* 27900
++4 2325
++1 2325
++1 2325
++1 2325
++6 2325
++2 2325
++2 2325
++2 2325
++2 2325
++1 2325
++2 2325
++1 2325
++2 2325
++1 2325
++13 2325
++1 2325
++2 2325
++3 2325
++1 2325
++22 2325
++6 2325
++4 2325
++1 2325
++1 2325
++2 2325
+cfi=(108)
+cfn=(1686)
+calls=2325 47 
+* 51150
++2 2325
++1 2325
++2 2325
++2 2325
++3 2325
++3 2325
++3 2325
++4 2325
+
+fl=(9)
+fn=(1692) _L_unlock_644
+53 28380
+291 56760
+71 85140
+cfi=(109)
+cfn=(1694)
+calls=28380 355 
+* 283800
+* 56760
+
+fn=(106)
+289 1097872
+37 1097872
+289 1097872
+37 2195744
++1 2195744
++3 2195744
++5 1097872
++3 1097872
++3 3293616
+cfn=(1692)
+calls=28380 +19 
+* 510840
++1 1069492
+291 2138984
+55 2040870
++3 60198
++3 20066
++2 20066
+-2 80264
++5 2000738
++5 1237258
++1 1237258
++2 618629
+-2 618629
++1 1237258
+
+fn=(1710)
+36 4650
++1 6975
++1 4650
++3 4650
++11 2325
+-5 2325
+-1 2325
++1 2325
++5 6975
+cfn=(2138) _L_unlock_544
+calls=3 +19 
+* 54
++1 2322
++24 4644
+
+fn=(2138)
+53 3
++24 6
+-6 9
+cfi=(109)
+cfn=(1694)
+calls=3 355 
+* 30
+* 6
+
+fl=(58) /build/buildd/eglibc-2.15/nptl/pthread_cond_destroy.c
+fn=(1030) pthread_cond_destroy@@GLIBC_2.3.2
+28 126
++2 36
++3 108
+-3 18
++5 54
++48 126
+-34 18
++33 18
+-38 18
++7 36
+
+ob=(4)
+fl=(21) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/cpus.c
+fn=(390) cpu_get_clock
+156 2481408
++2 1654272
++3 413568
+cfi=(15) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/qemu-timer.h
+cfn=(218) get_clock
+calls=413568 -42 
+* 15302016
+* 413568
++1 1240704
++2 2067840
+
+fn=(336) qemu_mutex_unlock_iothread
+921 3711774
++1 1855887
+cfi=(31) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/qemu-thread-posix.c
+cfn=(338) qemu_mutex_unlock
+calls=618629 65 
+* 29466433
++1 3093145
+
+fn=(256) qemu_clock_warp
+285 150444
++8 85968
++1 42984
++44 107460
+
+fn=(344) qemu_mutex_lock_iothread
+906 3711774
++1 618629
+cfi=(32) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/exec.c
+cfn=(346) tcg_enabled
+calls=618629 631 
+* 8660806
+* 1855887
++1 1855887
+cfi=(31)
+cfn=(348) qemu_mutex_lock
+calls=618629 51 
+* 30633729
+* 618629
++10 3093145
+
+fl=(114) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/pci.c
+fn=(1858) pci_irq_state
+116 7572708
++1 7572708
++1 5889884
+
+fn=(1856) pci_set_irq
+1066 7572708
++1 1682824
++3 4207060
+cfn=(1858)
+calls=841412 116 
+* 21035300
+* 4207060
++1 1682824
++3 1750140
+cfn=(1860) pci_set_irq_state
+calls=291690 121 
+* 12834360
++1 875070
+cfn=(1862) pci_update_irq_status
+calls=291690 150 
+* 7438095
++1 875070
+cfn=(1864) pci_irq_disabled
+calls=291690 -66 
+* 16626330
+* 583380
++2 1750140
+cfn=(1870) pci_change_irq_level
+calls=291690 127 
+* 127468530
+* 291690
+-6 1099444
++7 4207060
+
+fn=(1860)
+121 2916900
++1 4083660
++1 3791970
++1 2041830
+
+fn=(1862)
+150 2041830
++1 1166760
++1 1458450
++2 1312605
++2 1458450
+
+fn=(1864)
+1010 2041830
++1 1458450
+cfi=(80) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/pci.h
+cfn=(1866) pci_get_word
+calls=291690 376 
+* 11084220
+* 583380
++1 1458450
+
+fn=(1870)
+127 2625210
++3 875070
++1 2041830
+cfi=(115) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/i386/../piix_pci.c
+cfn=(1872) pci_slot_get_pirq
+calls=291690 -29 
+* 6417180
+* 291690
++1 1166760
++1 291690
++3 4375350
++1 5250420
+cfi=(115)
+cfn=(1874) piix3_set_irq
+calls=291690 388 
+* 102674880
++1 1458450
+
+fl=(69) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/i386/../kvm/apic.c
+fn=(1290) kvm_apic_set_base
+87 4338248
++1 2169124
++1 2711405
+
+fn=(1284) kvm_apic_set_tpr
+92 4880529
++1 2711405
++1 2711405
+
+fl=(71) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/bswap.h
+fn=(1868) le16_to_cpupu
+171 2041830
++1 583380
++1 2625210
++1 1458450
+
+fn=(1308) stb_p
+339 228896
++1 114448
++1 143060
+
+fn=(1352) ldl_le_p
+476 17689
++1 5054
++1 12635
+
+fn=(1372) bswap16
+54 6750
++1 2250
++1 5250
+
+fn=(1370) be16_to_cpu
+128 4125
+cfn=(1372)
+calls=375 -74 
+* 7125
+* 1875
+
+fn=(1362) le32_to_cpu
+133 31865041
+
+fn=(1376) cpu_to_be16
+128 4125
+cfn=(1372)
+calls=375 -74 
+* 7125
+* 1875
+
+fn=(1402) cpu_to_le32
+133 15843789
+
+fn=(1916) lduw_le_p
+466 1332282
++1 570978
++1 951630
+
+fn=(1914) stw_le_p
+486 1384672
++1 692336
++1 865420
+
+fn=(1404) stl_le_p
+491 6000
++1 2250
++1 3750
+
+fn=(1326) ldub_p
+329 844011
++1 361719
++1 602865
+-2 187488
++1 80352
++1 133920
+
+fl=(102) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/./bswap.h
+fn=(1622) be64_to_cpu
+130 113040
+cfn=(1624) bswap64
+calls=11304 -66 
+* 203472
+* 56520
+
+fn=(1624)
+64 90432
++1 33912
++1 79128
+
+fl=(74) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/irq.h
+fn=(1322) qemu_irq_lower
+16 66241
++1 37852
+cfi=(62) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/irq.c
+cfn=(1232) qemu_set_irq
+calls=9463 +17 
+* 2659103
++1 47315
+
+fn=(1384) qemu_irq_raise
+11 5250
++1 3000
+cfi=(62)
+cfn=(1232)
+calls=750 +22 
+* 214500
++1 3750
+-2 11956
++1 6832
+cfi=(62)
+cfn=(1232)
+calls=1708 +22 
+* 488488
++1 8540
+
+fl=(86) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/qemu-coroutine.c
+fn=(1542) qemu_coroutine_create
+21 11956
++1 1708
+cfi=(87) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/coroutine-ucontext.c
+cfn=(1544) qemu_coroutine_new
+calls=1708 189 
+* 40537
+* 1708
++1 5124
++1 1708
++1 8540
+cfi=(77) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/block.c
+cfn=(1540) bdrv_co_aio_rw_vector
+calls=1 3360 
+* 277
+
+fn=(1546) qemu_coroutine_enter
+46 19400
++1 2425
+cfi=(87)
+cfn=(1548) qemu_coroutine_self
+calls=2425 253 
+* 121250
+* 2425
++2 14550
+cfi=(43) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/trace.h
+cfn=(1556) trace_qemu_coroutine_enter
+calls=2425 2205 
+* 33950
++2 9700
++5 7275
++1 7275
++1 12125
+cfn=(1558) coroutine_swap
+calls=2425 -30 
+* 4048603
++1 18625
+cfi=(77)
+cfn=(2064) bdrv_aio_flush
+calls=236 3388 
+* 2238188822
+cfi=(77)
+cfn=(1540)
+calls=1065 3363 
+* 447202428
+
+fn=(1547) qemu_coroutine_enter'2
+46 12920
++1 1615
+cfi=(87)
+cfn=(1548)
+calls=1615 253 
+* 80750
+* 1615
++2 9690
+cfi=(43)
+cfn=(1556)
+calls=1615 2205 
+* 22610
++2 6460
++5 4845
++1 4845
++1 8075
+cfn=(1559) coroutine_swap'2
+calls=1615 -30 
+* 1498287
++1 1575
+
+fn=(1558)
+28 29808
++3 22356
+cfi=(87)
+cfn=(1560) qemu_coroutine_switch
+calls=3726 237 
+* 2689536541
+* 2424
++2 10688
++4 5124
+cfi=(43)
+cfn=(1754) trace_qemu_coroutine_terminate
+calls=1708 2213 
+* 20496
++1 5124
+cfi=(87)
+cfn=(1756) qemu_coroutine_delete
+calls=1708 217 
+* 51240
++1 3416
+-4 716
++8 12120
+
+fn=(1559)
+28 21168
++3 15876
+cfi=(87)
+cfn=(1561) qemu_coroutine_switch'2
+calls=2646 237 
+* 1639549
+* 3948
++2 11844
++2 3948
++8 19740
+cfn=(1546)
+calls=1301 +16 
+* 2685397755
+cfn=(1680) qemu_coroutine_yield
+calls=2332 +32 
+* 3076961
+
+fn=(1680)
+62 8358
++1 1393
+cfi=(87)
+cfn=(1548)
+calls=1393 253 
+* 69650
+* 1393
++1 4179
++2 6965
+cfi=(43)
+cfn=(1682) trace_qemu_coroutine_yield
+calls=1393 2209 
+* 18109
++2 2786
++5 2786
++1 6965
+cfn=(1558)
+calls=1301 -46 
+* 2685651450
+cfn=(1559)
+calls=92 -46 
+* 16192
++1 11660
+cfi=(97) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/qemu-coroutine-lock.c
+cfn=(2130) qemu_co_queue_wait
+calls=7 -14 
+* 18726
+cfi=(77)
+cfn=(2070) bdrv_co_flush
+calls=918 3553 
+* 832016
+cfi=(77)
+cfn=(1656) bdrv_co_io_em
+calls=1407 3495 
+* 2214559
+
+fn=(1681) qemu_coroutine_yield'2
+62 5634
++1 939
+cfi=(87)
+cfn=(1548)
+calls=939 253 
+* 46950
+* 939
++1 2817
++2 4695
+cfi=(43)
+cfn=(1682)
+calls=939 2209 
+* 12207
++2 1878
++5 1878
++1 4695
+cfn=(1559)
+calls=939 -46 
+* 165264
+
+fl=(111) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/oslib-posix.c
+fn=(1732) qemu_vfree
+138 9814
++1 4206
+cfi=(43)
+cfn=(1734) trace_qemu_vfree
+calls=1402 37 
+* 16824
++1 4206
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=1402 2959 
+* 9814
++1 7010
+
+fl=(66) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/target-i386/kvm.c
+fn=(1248) kvm_arch_post_run
+1716 4338248
++1 2169124
++1 1165346
++2 2254818
++2 3006424
+cfi=(65) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/i386/../apic_common.c
+cfn=(1250) cpu_set_apic_tpr
+calls=375803 52 
+* 327324413
+* 1331824
+cfi=(65)
+cfn=(1250)
+calls=166478 52 
+* 145002338
++1 3795967
+cfi=(65)
+cfn=(1286) cpu_set_apic_base
+calls=542281 29 
+* 478291842
++1 2711405
+
+fn=(1310) kvm_arch_pre_run
+1656 4338248
++4 2711405
++10 2711405
++43 2711405
+
+fl=(27) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/net.c
+fn=(1828) qemu_send_packet
+393 4386753
++1 2924502
+cfn=(1831) qemu_send_packet_async'2
+calls=366844 -7 
+* 3752702690
+cfn=(1830) qemu_send_packet_async
+calls=120573 -7 
+* 97784703
++1 2437085
+
+fn=(1829) qemu_send_packet'2
+393 1085157
++1 723438
+cfn=(1831)
+calls=120573 -7 
+* 48470346
++1 602865
+
+fn=(1838) qemu_deliver_packet
+322 5361587
++1 974834
++3 1949668
++4 2437085
++4 1949668
++3 4386753
+cfi=(28) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/net/hub.c
+cfn=(1840) net_hub_port_receive
+calls=487417 110 
+* 3846015400
+* 487417
++3 974834
++4 487417
++1 2437085
+
+fn=(1839) qemu_deliver_packet'2
+322 5361587
++1 974834
++3 1949668
++4 2437085
++4 1949668
++3 4386753
+cfi=(29) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/rtl8139.c
+cfn=(1884) rtl8139_receive
+calls=366844 1191 
+* 3632377858
+cfi=(26) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/net/tap.c
+cfn=(1844) tap_receive
+calls=120573 158 
+* 20738556
+* 487417
++3 974834
++4 487417
++1 2437085
+
+fn=(1830)
+387 4874170
++1 3899336
+cfn=(1832) qemu_send_packet_async_with_flags
+calls=487417 -21 
+* 4025266710
++2 2437085
+
+fn=(1831)
+387 4874170
++1 3899336
+cfn=(1833) qemu_send_packet_async_with_flags'2
+calls=487417 -21 
+* 3789962445
++2 2437085
+
+fn=(2060) compute_mcast_idx
+1035 4613
++5 659
++1 1318
++1 15816
++1 7908
++1 221424
++1 31632
++1 31632
++1 63264
++1 104196
+-5 102804
+-2 13180
++11 1318
++1 3295
+
+fn=(1832)
+367 5361587
++8 3899336
++4 1949668
++2 5361587
+cfi=(113) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/net/queue.c
+cfn=(1834) qemu_net_queue_send
+calls=487417 176 
+* 4006257447
++1 2437085
+
+fn=(1833)
+367 5361587
++8 3899336
++4 1949668
++2 5361587
+cfi=(113)
+cfn=(1835) qemu_net_queue_send'2
+calls=487417 176 
+* 3770953182
++1 2437085
+
+fn=(294) qemu_can_send_packet
+303 9926182
++1 5672104
++4 8508156
++2 8508156
++1 10379624
+cfi=(29)
+cfn=(298) rtl8139_can_receive
+calls=366844 792 
+* 32282272
+cfi=(28)
+cfn=(296) net_hub_port_can_receive
+calls=930609 90 
+* 151040421
+-1 2594906
++4 1418026
++1 7090130
+
+fn=(295) qemu_can_send_packet'2
+303 6514263
++1 3722436
++4 5583654
++2 5583654
++1 6480288
+cfi=(29)
+cfn=(298)
+calls=810036 792 
+* 71283168
+-1 1620072
++4 930609
++1 4653045
+
+fl=(105) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/block/raw-posix.c
+fn=(2086) raw_aio_flush
+366 8262
++1 2754
++2 2754
+cfn=(1662) fd_open
+calls=918 883 
+* 19278
+* 1836
++3 11934
+cfi=(106) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/posix-aio-compat.c
+cfn=(1664) paio_submit
+calls=918 598 
+* 254286
++1 4590
+
+fn=(1658) raw_aio_readv
+351 96
++1 88
+cfn=(1660) raw_aio_submit
+calls=8 -30 
+* 2800
++2 40
+
+fn=(1660)
+322 19698
++1 4221
++2 4221
+cfn=(1662)
+calls=1407 883 
+* 29547
+* 2814
++8 5628
++11 18291
+cfi=(106)
+cfn=(1664)
+calls=1407 598 
+* 400995
++2 7035
+
+fn=(1662)
+883 16275
++1 6975
++3 9300
++1 4650
++38 11625
+
+fn=(2010) raw_aio_writev
+359 16788
++1 15389
+cfn=(1660)
+calls=1399 -38 
+* 489650
++2 6995
+
+fl=(64) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/i386/../kvm/i8259.c
+fn=(1236) kvm_pic_set_irq
+94 2732769
++3 2125487
+cfi=(38) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/kvm-all.c
+cfn=(1238) kvm_set_irq
+calls=303641 861 
+* 29149536
+* 303641
++1 910923
+cfi=(65)
+cfn=(1240) apic_report_irq_delivered
+calls=303641 +12 
+* 9109230
++1 1518205
+
+fl=(100) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/block/qcow2-cache.c
+fn=(1614) qcow2_cache_get
+281 14070
++1 9849
+cfn=(1616) qcow2_cache_do_get
+calls=1407 -62 
+* 401653
++1 7035
+
+fn=(1632) qcow2_cache_put
+292 12663
++3 2814
++1 86746
+-1 38023
++2 1407
++6 12663
++1 2814
++2 12663
++1 1407
++1 7035
+
+fn=(2076) qcow2_cache_flush
+135 2205
++1 735
++1 245
++4 1470
+cfi=(87)
+cfn=(1548)
+calls=245 253 
+* 12250
+* 735
+cfi=(101) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/./trace.h
+cfn=(2078) trace_qcow2_cache_flush
+calls=245 1377 
+* 3185
++2 490
++1 23520
+cfn=(2080) qcow2_cache_entry_flush
+calls=3920 -51 
+* 129360
+* 3920
++1 7840
+-2 20580
++7 490
++1 980
+cfi=(77)
+cfn=(2082) bdrv_flush
+calls=245 3606 
+* 2238393916
+* 612
++1 1224
++5 612
++1 4284
+cfi=(98) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/block/qcow2.c
+cfn=(2074) qcow2_co_flush_to_os
+calls=306 1556 
+* 291582
+cfi=(98)
+cfn=(2074)
+calls=306 1549 
+* 345780
+
+fn=(2077) qcow2_cache_flush'2
+135 3303
++1 1101
++1 367
++4 2202
+cfi=(87)
+cfn=(1548)
+calls=367 253 
+* 18350
+* 1101
+cfi=(101)
+cfn=(2078)
+calls=367 1377 
+* 4771
++2 734
++1 13200
+cfn=(2080)
+calls=2200 -51 
+* 72600
+* 2200
++1 4400
+-2 12468
++7 734
++1 1468
+cfi=(77)
+cfn=(2083) bdrv_flush'2
+calls=367 3606 
+* 298738
+
+fn=(1616)
+220 19698
++1 4221
++4 9849
+cfi=(87)
+cfn=(1548)
+calls=1407 +28 
+* 70350
+* 7035
+cfi=(101)
+cfn=(1618) trace_qcow2_cache_get
+calls=1407 1361 
+* 22512
++4 2814
++1 70974
+-1 38023
++2 1407
++38 12663
++1 12663
++1 12663
++3 2814
+-1 5628
+cfi=(87)
+cfn=(1548)
+calls=1407 -20 
+* 70350
+* 5628
+cfi=(101)
+cfn=(1620) trace_qcow2_cache_get_done
+calls=1407 1373 
+* 19698
++3 1407
++1 11256
+
+fn=(2080)
+93 61200
++1 18360
++1 6120
++2 61200
++1 12240
++34 42840
+
+fl=(39) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/cirrus_vga.c
+fn=(520) cirrus_cursor_invalidate
+2141 139440
++1 79680
++3 119520
++1 39840
++8 79680
++1 99600
+-1 39840
++2 99600
+-1 39840
++12 99600
+
+fn=(512) cirrus_get_bpp
+1097 278880
++1 159360
++1 39840
++2 239040
++2 557760
++8 39840
++1 39840
++19 39840
++1 199200
+
+fn=(438) cirrus_get_offsets
+1052 199200
++1 79680
++3 39840
++1 139440
+-1 19920
++2 19920
++1 59760
++2 99600
++1 79680
++1 119520
++1 119520
++1 119520
+-4 19920
++5 59760
++2 59760
++1 99600
+-1 19920
++2 99600
+-1 19920
+-1 19920
++3 59760
++1 99600
+
+fn=(510) cirrus_get_resolution
+1135 179280
++3 119520
++1 59760
++1 99600
+-1 19920
++2 99600
+-2 39840
++3 19920
++2 119520
++2 59760
++1 59760
++1 99600
+
+fn=(532) cirrus_cursor_draw_line
+2179 1358028
++1 452676
++6 679014
++1 226338
++64 1018521
+
+fl=(37) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/vga.c
+fn=(426) vga_update_display
+1879 139440
++1 39840
++3 19920
+cfi=(32)
+cfn=(428) qemu_flush_coalesced_mmio_buffer
+calls=19920 2333 
+* 1055760
++2 79680
+cfi=(13) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/console.h
+cfn=(432) ds_get_bits_per_pixel
+calls=19920 322 
+* 318720
+* 39840
++3 19920
++1 119520
++3 99600
++2 79680
++5 99600
++5 99600
+cfn=(434) vga_draw_graphic
+calls=19920 1633 
+* 48135183413
++1 19919
++7 99595
+
+fn=(436) update_basic_params
+1155 139440
++4 19920
++2 159360
+cfi=(39)
+cfn=(438)
+calls=19920 1052 
+* 1653360
++2 99600
++1 59760
+-1 39840
++2 59760
+-1 39840
++7 19920
++1 99600
+
+fn=(434)
+1633 179280
++9 59760
+cfn=(436)
+calls=19920 1155 
+* 2390400
+* 19920
++2 39840
++1 59760
+cfn=(440) vga_sync_dirty_bitmap
+calls=19920 -30 
+* 70205057
++2 159360
+cfi=(39)
+cfn=(510)
+calls=19920 1135 
+* 976080
++1 39840
++2 119520
++1 99600
++1 39840
++1 258960
++7 39840
++1 99600
++1 59760
+-1 39840
++7 39840
++4 39840
++6 99600
+cfi=(39)
+cfn=(512)
+calls=19920 1097 
+* 796800
+* 19920
++1 119520
++1 59760
+-1 39840
++2 79680
+-1 39840
++2 59760
+-1 39840
++25 99600
+cfi=(13)
+cfn=(514) is_buffer_shared
+calls=19920 225 
+* 378480
+* 39840
++7 79680
+cfn=(516) get_depth_index
+calls=19920 1177 
+* 1254960
+* 79680
+-1 39840
++3 39840
++8 39840
++9 99600
+cfi=(39)
+cfn=(512)
+calls=19920 1097 
+* 796800
+* 219120
++21 19920
++1 19920
++1 19920
++7 179280
+cfn=(516)
+calls=19920 1177 
+* 1254960
+* 119520
++2 99600
+cfi=(13)
+cfn=(514)
+calls=19920 225 
+* 378480
+* 119520
++1 99600
+cfi=(39)
+cfn=(520)
+calls=19920 2141 
+* 836640
++2 59760
++6 79680
++1 159360
++1 19920
++1 19920
++1 19920
++1 79680
+cfi=(13)
+cfn=(522) ds_get_data
+calls=19920 307 
+* 298800
+* 19920
++1 79680
+cfi=(13)
+cfn=(524) ds_get_linesize
+calls=19920 302 
+* 298800
+* 19920
++1 19920
++1 39840
++1 23863202
++1 71589606
++6 71589606
++3 23863202
++1 23863202
++1 59658005
++1 107384409
+cfi=(40) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/memory.c
+cfn=(526) memory_region_get_dirty
+calls=11931601 1078 
+* 1254889719
+* 23863200
++3 214768800
++1 23863200
++1 226338
++1 12436
++1 339507
++1 12436
++1 339507
++1 226338
++1 565845
+cfi=(13)
+cfn=(514)
+calls=113169 225 
+* 2150211
+* 226338
++1 1358028
+cfi=(47) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/vga_template.h
+cfn=(528) vga_draw_line24_32
+calls=113169 403 
+* 4347613473
++1 452676
++1 905352
+cfi=(39)
+cfn=(532)
+calls=113169 2179 
+* 3734577
+* 113169
++3 23636862
++2 74604
+cfi=(13)
+cfn=(534) dpy_update
+calls=6217 237 
+* 41209595960
++2 6217
++3 23863200
++1 71589600
++1 59658000
++1 23863200
++1 11931600
++1 35794800
++5 59658000
++2 35794800
+-50 47786160
++52 39838
++2 12
+cfi=(13)
+cfn=(534)
+calls=1 237 
+* 185590483
++4 59757
++1 55962
+cfi=(40)
+cfn=(684) memory_region_reset_dirty
+calls=6218 1121 
+* 4005202
++5 199190
+cob=(2)
+cfi=(44)
+cfn=(472)
+calls=19919 44 
+* 517894
++1 139433
+
+fn=(440)
+1615 139440
++1 79680
+cfi=(40)
+cfn=(442) memory_region_sync_dirty_bitmap
+calls=19920 1092 
+* 69886337
++1 99600
+
+fn=(516)
+1177 278880
++1 119520
+cfi=(13)
+cfn=(432)
+calls=39840 322 
+* 637440
+* 159360
++9 159360
+cfi=(13)
+cfn=(518) is_surface_bgr
+calls=39840 217 
+* 836640
+* 79680
++3 39840
++2 199200
+
+fl=(75) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ide/pci.c
+fn=(1786) bmdma_set_inactive
+162 9814
++1 5608
++2 8412
++1 2804
++1 2804
++2 1402
++1 7010
+
+fn=(1350) bmdma_start_transfer
+270 5250
++1 750
++1 3750
+
+fn=(1452) bmdma_cmd_writeb
+291 13239
++6 10297
++1 3616
++13 2022
++6 2268
++1 3402
++1 3402
++2 2268
++1 2835
+cfi=(79) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ide/pci.h
+cfn=(1464) bmdma_active_if
+calls=567 51 
+* 13608
+* 1701
+cfi=(72) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ide/core.c
+cfn=(1466) ide_dma_cb
+calls=567 590 
+* 10912462
++5 11530
++1 16142
+cfi=(78) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ide/piix.c
+cfn=(1394) bmdma_write
+calls=1065 77 
+* 447143853
+
+fn=(1453) bmdma_cmd_writeb'2
+291 24615
++6 19145
++1 7600
++13 6390
++6 3340
++1 5010
++1 5010
++2 3340
++1 4175
+cfi=(79)
+cfn=(1464)
+calls=835 51 
+* 20040
+* 2505
+cfi=(72)
+cfn=(1467) ide_dma_cb'2
+calls=835 590 
+* 27511850
++5 9500
++1 13300
+
+fn=(1324) bmdma_irq
+275 107289
++1 23842
++2 23842
++2 56778
+cfi=(62)
+cfn=(1233) qemu_set_irq'2
+calls=9463 34 
+* 2176490
++1 9463
++3 14748
++3 14748
+cfi=(62)
+cfn=(1233)
+calls=2458 34 
+* 565340
++1 59605
+
+fn=(1460) bmdma_start_dma
+38 14020
++1 5608
++2 5608
++1 4206
++1 2804
++1 2804
++1 2804
++1 4206
+cfi=(72)
+cfn=(1462) ide_get_sector
+calls=1402 422 
+* 72460
+* 2804
++1 5608
++2 8412
++3 9814
+
+fn=(1468) bmdma_prepare_buf
+56 11216
++1 5608
++1 4206
+cfi=(79)
+cfn=(1464)
+calls=1402 -7 
+* 33648
+* 1402
++8 5608
+-1 11216
+cfi=(80)
+cfn=(1470) pci_dma_sglist_init
+calls=1402 653 
+* 468977
++2 4206
++25 9970
+-23 45488
++2 45488
++1 69790
+-1 19940
++2 7010
++21 4206
+-20 89730
+cfi=(80)
+cfn=(1476) pci_dma_read
+calls=9970 604 
+* 5057506
++1 49850
++1 29910
+cfi=(71)
+cfn=(1362)
+calls=9970 +57 
+* 129610
+* 9970
++1 29910
+cfi=(71)
+cfn=(1362)
+calls=9970 +56 
+* 129610
+* 9970
++1 29910
++1 19940
++1 6704
++1 20112
++1 20112
++1 33520
++2 20112
++1 13408
+-5 9798
++1 9798
++1 16330
++2 9798
++1 6532
++1 99700
+cfi=(81) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/dma-helpers.c
+cfn=(1506) qemu_sglist_add
+calls=9970 -33 
+* 488530
++1 59820
++1 59820
++1 59820
++2 9970
++2 2804
+
+fn=(1450) bmdma_addr_write
+346 15422
++1 2804
++1 4206
++1 12618
++5 16824
++1 19628
++1 9814
+
+fl=(97)
+fn=(1646) qemu_co_queue_next
+73 41468
++3 17772
++1 11848
++1 91
++1 77
++1 21
+cfi=(43)
+cfn=(2132) trace_qemu_co_queue_next
+calls=7 2221 
+* 84
++1 21
+cfi=(23) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/async.c
+cfn=(1752) qemu_bh_schedule
+calls=7 +22 
+* 588
++3 11848
++1 29620
+
+fn=(1728) qemu_co_queue_restart_all
+88 19663
++1 11236
+cfn=(1646)
+calls=2809 -16 
+* 53371
+* 5618
++3 14045
+
+fn=(1600) qemu_co_queue_init
+48 39214
++1 28010
++2 16806
++3 28010
+
+fn=(2034) qemu_co_queue_empty
+95 19551
++1 11172
++1 13965
+
+fn=(2130)
+57 49
++1 7
+cfi=(87)
+cfn=(1548)
+calls=7 253 
+* 350
+* 7
++1 98
++1 7
+cfi=(86)
+cfn=(1681)
+calls=6 +2 
+* 1584
+cfi=(86)
+cfn=(1680)
+calls=1 +2 
+* 545274
++1 7
+cfi=(87)
+cfn=(1642) qemu_in_coroutine
+calls=7 260 
+* 287
+* 14
++1 35
+cfn=(1604) qemu_co_mutex_lock
+calls=7 +49 
+* 18383
+
+fn=(2134) qemu_co_queue_next_bh
+37 49
++3 7
+cfi=(43)
+cfn=(2136) trace_qemu_co_queue_next_bh
+calls=7 2217 
+* 77
++1 7
++1 84
++1 28
+cfi=(86)
+cfn=(1546)
+calls=7 +3 
+* 20959
+-2 56
++4 35
+
+fn=(1604)
+106 21805
++1 3115
+cfi=(87)
+cfn=(1548)
+calls=3115 253 
+* 155750
+* 3115
++2 15575
+cfi=(43)
+cfn=(1606) trace_qemu_co_mutex_lock_entry
+calls=3115 2225 
+* 40495
++2 3115
++1 28
+cfn=(2130)
+calls=7 -55 
+* 547376
+-1 12488
++4 6230
++2 15575
+cfi=(43)
+cfn=(1608) trace_qemu_co_mutex_lock_return
+calls=3115 2229 
+* 40495
++1 15575
+cfi=(98)
+cfn=(1990) qcow2_co_writev
+calls=7 783 
+* 18180
+
+fn=(1638) qemu_co_mutex_unlock
+121 21805
++1 3115
+cfi=(87)
+cfn=(1548)
+calls=3115 253 
+* 155750
+* 3115
++2 15575
+cfi=(43)
+cfn=(1640) trace_qemu_co_mutex_unlock_entry
+calls=3115 2233 
+* 40495
++2 12460
++1 3115
+cfi=(87)
+cfn=(1642)
+calls=3115 260 
+* 127715
+* 6230
++2 6230
++1 12460
+cfn=(1646)
+calls=3115 -57 
+* 60067
++2 15575
+cfi=(43)
+cfn=(1648) trace_qemu_co_mutex_unlock_return
+calls=3115 2237 
+* 40495
++1 15575
+
+fl=(67) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/qom/object.c
+fn=(1254) object_dynamic_cast
+419 8676496
++1 3253686
+cfn=(1256) object_get_class
+calls=1084562 +73 
+* 15183868
+* 4338248
+cfn=(1258) object_class_dynamic_cast
+calls=1084562 +24 
+* 390442320
+* 2169124
++1 2169124
++4 5422810
+
+fn=(1256)
+493 15183868
++1 4338248
++1 10845620
+
+fn=(1262) type_table_lookup
+84 15183868
++1 2169124
+cfn=(1264) type_table_get
+calls=2169124 -17 
+* 32536860
+* 8676496
+cob=(6)
+cfi=(30)
+cfn=(1268)
+calls=2169124 -85 
+* 490222024
++1 10845620
+
+fn=(1258)
+444 17352992
++1 6507372
+cfn=(1260) type_get_by_name
+calls=2169124 138 
+* 596509100
+* 2169124
++1 6507372
++1 2169124
++2 8676496
++17 10845620
+cfn=(1278) type_is_ancestor
+calls=2169124 188 
+* 106287076
+* 4338248
++1 6507372
++3 2169124
++1 10845620
+
+fn=(1264)
+68 13014744
++3 6507372
++4 2169124
++1 10845620
+
+fn=(1280) type_get_parent
+147 15183868
++1 8676496
++5 4338248
++1 10845620
+
+fn=(1282) object_class_dynamic_cast_assert
+475 8676496
++1 5422810
+cfn=(1258)
+calls=1084562 -32 
+* 390442320
+* 1084562
++2 2169124
++6 1084562
++1 5422810
+
+fn=(1260)
+138 15183868
++1 4338248
++4 6507372
+cfn=(1262)
+calls=2169124 -59 
+* 559633992
++1 10845620
+
+fn=(1252) object_dynamic_cast_assert
+428 8676496
++3 5422810
+cfn=(1254)
+calls=1084562 -12 
+* 431655676
+* 1084562
++2 2169124
++6 1084562
++1 5422810
+
+fn=(1278)
+188 17352992
++1 4338248
++4 13014744
++1 4338248
++3 6507372
+cfn=(1280)
+calls=2169124 -50 
+* 39044232
+* 2169124
+-5 8676496
++9 10845620
+
+fl=(43)
+fn=(1520) trace_dma_bdrv_cb
+2833 22432
++1 14020
+
+fn=(1608)
+2229 24920
++1 15575
+
+fn=(1666) trace_paio_submit
+189 25575
++1 11625
+
+fn=(468) trace_g_malloc
+17 206696
++1 129185
+
+fn=(1288) trace_cpu_set_apic_base
+221 3795967
++1 2711405
+
+fn=(1242) trace_apic_report_irq_delivered
+237 2125487
++1 1518205
+
+fn=(1722) trace_paio_complete
+193 20925
++1 11625
+
+fn=(2066) trace_bdrv_aio_flush
+113 2448
++1 1530
+
+fn=(502) trace_g_free
+25 180838
++1 129170
+
+fn=(1514) trace_dma_bdrv_io
+2821 15422
++1 7010
+
+fn=(1538) trace_bdrv_aio_readv
+117 80
++1 40
+
+fn=(1682)
+2209 18656
++1 11660
+
+fn=(1734)
+37 9814
++1 7010
+
+fn=(1754)
+2213 11956
++1 8540
+
+fn=(2136)
+2217 42
++1 35
+
+fn=(1556)
+2205 36360
++1 20200
+
+fn=(1606)
+2225 24920
++1 15575
+
+fn=(1640)
+2233 24920
++1 15575
+
+fn=(1648)
+2237 24920
++1 15575
+
+fn=(1330) trace_cpu_out
+205 234488
++1 146555
+
+fn=(1678) trace_bdrv_co_io_em
+145 15477
++1 7035
+
+fn=(1774) trace_dma_complete
+2829 12618
++1 7010
+
+fn=(1652) trace_bdrv_co_readv
+129 72
++1 40
+
+fn=(1986) trace_bdrv_aio_writev
+121 13940
++1 6970
+
+fn=(2006) trace_bdrv_co_writev
+137 12591
++1 6995
+
+fn=(1306) trace_cpu_in
+201 234896
++1 146810
+
+fn=(1504) trace_qemu_put_ram_ptr
+2197 29011136
++1 20722240
+
+fn=(2132)
+2221 49
++1 35
+
+fl=(13)
+fn=(522)
+307 139440
++1 59760
++1 99600
+
+fn=(524)
+302 139440
++1 59760
++1 99600
+
+fn=(432)
+322 418320
++1 239040
++1 298800
+
+fn=(518)
+217 278880
++1 318720
++3 39840
++1 199200
+
+fn=(534)
+237 68398
++1 18654
++1 6218
++1 62180
+cfi=(12) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/ui/sdl.c
+cfn=(536) sdl_update
+calls=6218 64 
+* 41394956377
++1 18654
+-2 24872
++4 31090
+
+fn=(514)
+225 1071063
++1 1071063
++2 765045
+
+fn=(210) dpy_refresh
+264 139440
++1 59760
++1 19920
++1 179280
+cfi=(12)
+cfn=(208) sdl_refresh
+calls=19920 853 
+* 48155252937
+cfi=(12)
+cfn=(208)
+calls=1 900 
+* 771
++1 59760
+-2 79680
++4 99600
+
+fl=(81)
+fn=(1778) qemu_sglist_destroy
+66 9814
++1 5608
+cob=(6)
+cfi=(30)
+cfn=(498)
+calls=1402 -67 
+* 189180
++1 7010
++1 7010
+
+fn=(1522) dma_bdrv_unmap
+106 29442
++3 8412
++3 59820
+-2 9970
++1 9970
+-1 9970
++1 59820
+-1 139580
+cfi=(82) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/dma.h
+cfn=(1762) dma_memory_unmap
+calls=9970 +87 
+* 821250
+-1 66674
++5 16824
+cfi=(85) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/cutils.c
+cfn=(1524) qemu_iovec_reset
+calls=4206 223 
+* 84120
++1 21030
+
+fn=(1518) dma_bdrv_cb
+139 15752
++1 3938
++4 9845
+cfi=(43)
+cfn=(1520)
+calls=1969 2833 
+* 25597
++2 3938
++1 15752
++1 5907
+cfn=(1522)
+calls=1969 -42 
+* 1242928
++2 14917
++1 7010
+cfn=(1772) dma_complete
+calls=1402 -33 
+* 1623968
++1 1402
++4 35802
++1 41310
++1 24786
+cfi=(82)
+cfn=(1526) dma_memory_map
+calls=2754 +19 
+* 6389196
+* 2754
++1 5508
++2 19278
+cfi=(85)
+cfn=(1534) qemu_iovec_add
+calls=2754 +7 
+* 145962
++1 16524
++1 35802
++1 5508
++1 16524
+-10 24381
++14 2268
++6 1134
++1 1701
+-1 8505
+cfi=(77)
+cfn=(1984) bdrv_aio_writev
+calls=559 2863 
+* 1669311
+cfi=(77)
+cfn=(1536) bdrv_aio_readv
+calls=8 2853 
+* 33575
+* 2804
++2 5608
++1 14020
+cfn=(1510) dma_bdrv_io
+calls=1065 +44 
+* 447178998
+
+fn=(1519) dma_bdrv_cb'2
+139 6680
++1 1670
++4 4175
+cfi=(43)
+cfn=(1520)
+calls=835 2833 
+* 10855
++2 1670
++1 6680
++1 2505
+cfn=(1522)
+calls=835 -42 
+* 35070
++2 7515
++6 93808
++1 108240
++1 64944
+cfi=(82)
+cfn=(1526)
+calls=7216 +19 
+* 20368929
+* 7216
++1 14432
++2 50512
+cfi=(85)
+cfn=(1534)
+calls=7216 +7 
+* 382448
++1 43296
++1 93808
++1 14432
++1 43296
+-10 58027
++14 3340
++6 1670
++1 2505
+-1 12525
+cfi=(77)
+cfn=(1985) bdrv_aio_writev'2
+calls=834 2863 
+* 361956
+cfi=(77)
+cfn=(1984)
+calls=1 2863 
+* 434
+
+fn=(1982) dma_bdrv_write
+237 6160
++1 6160
+cfn=(1511) dma_bdrv_io'2
+calls=1 -32 
+* 29037
+cfn=(1510)
+calls=559 -32 
+* 8661372
++2 6970
+cfi=(72)
+cfn=(1466)
+calls=1064 645 
+* 447052792
+
+fn=(1983) dma_bdrv_write'2
+237 9174
++1 9174
+cfn=(1511)
+calls=834 -32 
+* 22156040
+
+fn=(1772)
+118 11216
++1 9814
+cfi=(43)
+cfn=(1774)
+calls=1402 2829 
+* 19628
++2 4206
+cfn=(1522)
+calls=1402 -15 
+* 58884
++1 5608
++1 11216
+cfi=(72)
+cfn=(1466)
+calls=1402 590 
+* 1165270
++2 5608
+cfi=(85)
+cfn=(1730) qemu_iovec_destroy
+calls=1402 +88 
+* 275036
++1 5608
++4 7010
++4 4206
+cfi=(77)
+cfn=(1758) qemu_aio_release
+calls=1402 3449 
+* 33648
++2 7010
+
+fn=(1474) qemu_sglist_init
+45 12618
++1 7010
+cob=(6)
+cfi=(30)
+cfn=(458)
+calls=1402 -46 
+* 372239
+* 4206
++1 2804
++1 4206
++1 2804
++1 4206
++1 7010
+
+fn=(1508) dma_bdrv_read
+229 88
++1 88
+cfn=(1510)
+calls=8 -24 
+* 87961
++2 40
+cfi=(72)
+cfn=(1466)
+calls=1 641 
+* 114491
+
+fn=(1510)
+206 7938
++1 3402
+cfi=(77)
+cfn=(1512) qemu_aio_get
+calls=567 3432 
+* 20979
+* 567
++2 4536
+cfi=(43)
+cfn=(1514)
+calls=567 2821 
+* 9072
++2 1134
++1 1701
++1 1701
++1 1701
++1 1134
++1 1134
++1 1701
++1 1701
++1 1134
++1 3969
+cfi=(85)
+cfn=(1516) qemu_iovec_init
+calls=567 -72 
+* 145839
++1 2268
+cfn=(1518)
+calls=567 -82 
+* 8535700
++1 1402
++1 7010
+cfn=(1508)
+calls=1 +9 
+* 114496
+cfn=(1982)
+calls=1064 +17 
+* 447058112
+
+fn=(1511)
+206 11690
++1 5010
+cfi=(77)
+cfn=(1512)
+calls=835 3432 
+* 30895
+* 835
++2 6680
+cfi=(43)
+cfn=(1514)
+calls=835 2821 
+* 13360
++2 1670
++1 2505
++1 2505
++1 2505
++1 1670
++1 1670
++1 2505
++1 2505
++1 1670
++1 5845
+cfi=(85)
+cfn=(1516)
+calls=835 -72 
+* 285579
++1 3340
+cfn=(1519)
+calls=835 -82 
+* 21802638
+
+fn=(1506)
+54 89730
++1 59820
++4 89730
++1 89730
++1 59820
++1 49850
++1 49850
+
+fl=(32)
+fn=(1768) qemu_ram_addr_from_host
+2804 855
++2 190
++2 95
+cfi=(84) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/xen.h
+cfn=(1498) xen_enabled
+calls=95 26 
+* 1140
+* 190
++5 285
++2 380
++3 1045
++1 1045
++1 190
+-7 190
++12 665
+
+fn=(448) core_log_sync
+3218 159360
++1 99600
+
+fn=(1496) qemu_get_ram_ptr
+2710 33155584
++3 12433344
++1 33155584
++2 12433344
++4 4144448
+cfi=(84)
+cfn=(1498)
+calls=4144448 26 
+* 49733376
+* 8288896
++12 41444480
+-19 8288896
++27 29011136
+
+fn=(346)
+631 3749082
++1 1874541
++1 3124235
+
+fn=(1502) qemu_put_ram_ptr
+2799 29011136
++1 12433344
+cfi=(43)
+cfn=(1504)
+calls=4144448 2197 
+* 49733376
++1 20722240
+
+fn=(1764) cpu_physical_memory_unmap
+3642 99700
++1 29910
++1 19940
++1 285
+cfn=(1766) qemu_ram_addr_from_host_nofail
+calls=95 2830 
+* 8170
+* 95
++1 95
++2 95
++1 285
++2 285
+cfi=(46) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/exec-obsolete.h
+cfn=(1770) cpu_physical_memory_is_dirty
+calls=95 55 
+* 3420
+* 190
++7 190
++1 190
+-13 380
++16 9970
+cfi=(84)
+cfn=(1498)
+calls=9970 26 
+* 119640
+* 19940
++3 9970
++8 49850
+
+fn=(1528) cpu_physical_memory_map
+3590 99700
++1 29910
++1 9970
++4 9970
++4 9970
++1 380373
++1 1014328
++1 507164
++2 507164
+cfn=(1490) phys_page_find
+calls=126791 470 
+* 17370367
+* 126791
++2 507164
+cfi=(40)
+cfn=(1492) memory_region_is_ram
+calls=126791 1054 
+* 1775074
+* 887537
++14 253582
++1 39880
+cfi=(40)
+cfn=(1530) memory_region_get_ram_addr
+calls=9970 1368 
+* 139580
+* 9970
++1 49850
+cfi=(83) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/memory.h
+cfn=(1494) memory_region_section_addr
+calls=9970 694 
+* 199400
+-1 19940
++4 29910
++1 29910
++1 29910
+-28 19940
++26 350463
++1 350463
++1 350463
+-28 253582
++30 19940
++1 49850
+cfn=(1532) qemu_ram_ptr_length
+calls=9970 2776 
+* 687930
+* 9970
++1 29910
++1 9970
++1 69790
+
+fn=(428)
+2333 119520
++1 79680
++1 19920
+cfi=(38)
+cfn=(430) kvm_flush_coalesced_mmio_buffer
+calls=19920 1496 
+* 737040
++1 99600
+
+fn=(1488) cpu_physical_memory_rw
+3411 37649711
++7 3422701
++1 10268103
++1 27381608
++1 10268103
++1 6845402
++1 13690804
+cfn=(1490)
+calls=3422701 470 
+* 482945544
+* 3422701
++2 6845402
++1 7096556
+cfi=(40)
+cfn=(1492)
+calls=1774139 1054 
+* 24837946
+* 5322417
++2 1554495
+cfi=(83)
+cfn=(1494)
+calls=310899 694 
+* 6217980
+* 310899
++3 621798
++5 1383102
++2 570978
+cfi=(71)
+cfn=(1916)
+calls=190326 466 
+* 2854890
+* 190326
++1 1332282
+cfi=(40)
+cfn=(1794) io_mem_write
+calls=190326 1513 
+* 286731438
++1 380652
++3 361719
+cfi=(71)
+cfn=(1326)
+calls=120573 329 
+* 1808595
+* 120573
++1 844011
+cfi=(40)
+cfn=(1794)
+calls=120573 1513 
+* 989400691
++1 241146
++2 7316200
++2 5852960
+cfi=(40)
+cfn=(1530)
+calls=1463240 1368 
+* 20485360
+* 1463240
++1 7316200
+cfi=(83)
+cfn=(1494)
+calls=1463240 694 
+* 29264800
+-1 2926480
++3 4389720
+cfn=(1496)
+calls=1463240 2710 
+* 81941440
+* 1463240
++1 10242680
+cob=(2)
+cfi=(57)
+cfn=(750)
+calls=1463240 60 
+* 146083314
++1 4389720
+cfi=(46)
+cfn=(1770)
+calls=1463240 55 
+* 52676640
+* 2926480
++7 4389720
+cfn=(1502)
+calls=1463240 2799 
+* 39507480
+* 1463240
++3 6594248
+cfi=(40)
+cfn=(1492)
+calls=1648562 1054 
+* 23079868
+* 4945686
++1 692336
+cfi=(83)
+cfn=(1896) memory_region_is_romd
+calls=173084 350 
+* 2942428
+-1 519252
++4 865420
+cfi=(83)
+cfn=(1494)
+calls=173084 694 
+* 3461680
+* 173084
++1 346168
++5 1038504
++2 1211588
+cfi=(40)
+cfn=(1898) io_mem_read
+calls=173084 1507 
+* 131936742
+* 173084
++1 865420
+cfi=(71)
+cfn=(1914)
+calls=173084 486 
+* 2942428
++1 346168
+-13 173084
++22 4426434
++1 7377390
+cfi=(83)
+cfn=(1494)
+calls=1475478 694 
+* 29509560
+-1 4426434
+cfn=(1496)
+calls=1475478 2710 
+* 82626768
+* 1475478
++3 10328346
+cob=(2)
+cfi=(57)
+cfn=(750)
+calls=1475478 60 
+* 20191474
++1 4426434
+cfn=(1502)
+calls=1475478 2799 
+* 39837906
++3 6845402
++1 10268103
++1 10268103
+-78 13690804
++80 23958907
+
+fn=(1489) cpu_physical_memory_rw'2
+3411 13263030
++7 1205730
++1 3617190
++1 9645840
++1 3617190
++1 2411460
++1 4822920
+cfn=(1490)
+calls=1205730 470 
+* 165185010
+* 1205730
++2 2411460
++1 482292
+cfi=(40)
+cfn=(1492)
+calls=120573 1054 
+* 1688022
+* 361719
++21 602865
++2 482292
+cfi=(40)
+cfn=(1530)
+calls=120573 1368 
+* 1688022
+* 120573
++1 602865
+cfi=(83)
+cfn=(1494)
+calls=120573 694 
+* 2411460
+-1 241146
++3 361719
+cfn=(1496)
+calls=120573 2710 
+* 6752088
+* 120573
++1 844011
+cob=(2)
+cfi=(57)
+cfn=(750)
+calls=120573 60 
+* 1461948
++1 361719
+cfi=(46)
+cfn=(1770)
+calls=120573 55 
+* 4340628
+* 241146
++7 361719
+cfn=(1502)
+calls=120573 2799 
+* 3255471
+* 120573
++3 4340628
+cfi=(40)
+cfn=(1492)
+calls=1085157 1054 
+* 15192198
+* 3255471
++23 3255471
++1 5425785
+cfi=(83)
+cfn=(1494)
+calls=1085157 694 
+* 21703140
+-1 3255471
+cfn=(1496)
+calls=1085157 2710 
+* 60768792
+* 1085157
++3 7596099
+cob=(2)
+cfi=(57)
+cfn=(750)
+calls=1085157 60 
+* 16006646
++1 3255471
+cfn=(1502)
+calls=1085157 2799 
+* 29299239
++3 2411460
++1 3617190
++1 3617190
+-78 4822920
++80 8440110
+
+fn=(1804) subpage_write
+3036 3108990
++1 621798
++1 932697
++8 3730788
++1 932697
++1 932697
++1 932697
++1 2176293
+cfi=(40)
+cfn=(1795) io_mem_write'2
+calls=310899 1513 
+* 1180064338
++1 1554495
+
+fn=(1490)
+470 38041776
++1 9510444
++3 9510444
++2 9510444
++1 58998596
++3 103247543
++1 221244735
+-5 129842943
++8 19020888
++2 33286554
++1 33286554
+
+fn=(1532)
+2776 89730
++1 39880
++3 9970
+cfi=(84)
+cfn=(1498)
+calls=9970 26 
+* 119640
+* 19940
++5 29910
++1 79760
++1 109670
++2 99700
+-4 19940
++11 69790
+
+fn=(1904) subpage_read
+3018 1557756
++1 346168
++1 519252
++7 2077008
++1 519252
++1 519252
++1 519252
++1 1211588
+cfi=(40)
+cfn=(1899) io_mem_read'2
+calls=173084 1507 
+* 73953602
++1 865420
+
+fn=(686) cpu_physical_memory_reset_dirty
+1848 55962
++3 6218
++1 24872
++2 37308
++1 12436
++2 37308
+cfi=(46)
+cfn=(688) cpu_physical_memory_mask_dirty_range
+calls=6218 119 
+* 3482890
++2 6218
+cfn=(346)
+calls=6218 631 
+* 87052
+* 12436
++3 31090
+
+fn=(1766)
+2830 665
++3 475
+cfn=(1768)
+calls=95 -29 
+* 6270
+* 190
++4 95
++1 475
+
+fl=(65)
+fn=(1286)
+29 4338248
++1 1626843
+cfi=(43)
+cfn=(1288)
+calls=542281 221 
+* 6507372
++2 1084562
++1 2169124
+cfi=(67)
+cfn=(1252)
+calls=542281 428 
+* 227758020
+* 542281
++1 1626843
+cfi=(67)
+cfn=(1256)
+calls=542281 493 
+* 7591934
+* 1626843
+cfi=(67)
+cfn=(1282)
+calls=542281 475 
+* 207151342
+* 542281
++1 3795967
+cfi=(69)
+cfn=(1290)
+calls=542281 +52 
+* 9218777
++2 2711405
+
+fn=(1240)
+110 2125487
++1 910923
++2 910923
+cfi=(43)
+cfn=(1242)
+calls=303641 237 
+* 3643692
++1 1518205
+
+fn=(1250)
+52 4880529
++4 1084562
++4 2169124
+cfi=(67)
+cfn=(1252)
+calls=542281 428 
+* 227758020
+* 542281
++1 1626843
+cfi=(67)
+cfn=(1256)
+calls=542281 493 
+* 7591934
+* 1626843
+cfi=(67)
+cfn=(1282)
+calls=542281 475 
+* 207151342
+* 542281
++2 3795967
+cfi=(69)
+cfn=(1284)
+calls=542281 +29 
+* 10303339
+* 542281
++1 2711405
+
+fl=(103) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/./block/qcow2.h
+fn=(1626) size_to_clusters
+227 25245
++1 33660
++1 19635
+
+fn=(1628) qcow2_get_cluster_type
+244 9877
++1 5644
++2 5644
++2 5644
++3 1411
++2 7055
+
+fn=(2106) qcow2_need_accurate_refcounts
+258 2142
++1 1530
++1 1530
+
+fl=(60) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ps2.c
+fn=(1314) ps2_read_data
+174 35
++1 10
++4 10
++1 20
++9 35
++1 45
++2 25
++2 35
+cfi=(61) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/pckbd.c
+cfn=(1228) kbd_update_kbd_irq
+calls=5 -18 
+* 2640
++2 60
+cfi=(61)
+cfn=(1228)
+calls=5 -20 
+* 2640
++2 5
++1 25
+
+fn=(1222) ps2_put_keycode
+155 40
++1 10
++2 10
+cfi=(14)
+cfn=(1224) qemu_system_wakeup_request
+calls=5 1525 
+* 185
++2 20
++10 25
+cfn=(1226) ps2_queue
+calls=5 -34 
+* 3040
++1 25
+
+fn=(1226)
+136 40
++1 10
++1 10
++2 20
++2 35
++1 45
++2 25
++1 35
+cfi=(61)
+cfn=(1228)
+calls=5 +30 
+* 2790
+* 5
++1 25
+
+fl=(50) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/ui/sdl_zoom_template.h
+fn=(540) sdl_zoom_rgb32
+56 68398
++4 18654
++1 18654
++2 12436
++4 99488
++1 105706
++6 43526
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=6218 2910 
+* 1862685
+* 18654
++3 43526
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=6218 2910 
+* 1778348
+* 18654
++5 31090
++1 62180
++1 49744
+-1 24872
++3 6218
++1 12436
++1 12436
++1 11957214
++1 3985738
++1 3985738
++1 7971476
+-4 19953562
++6 6218
++1 12436
++1 12436
++1 8972574
++1 2990858
++1 2990858
++1 5981716
+-4 14979162
++7 93270
++2 12436
++1 12436
++1 12436
++1 2380802
++1 21427218
++1 7142406
+-3 14315902
++7 12436
++1 6218
++1 43526
++6 12436
++2 533485
++1 320091
++1 960273
++1 320091
++1 640182
++2 213394
++3 273144320
++1 273144320
++1 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 2458298880
++1 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 2458298880
++1 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 2458298880
++1 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 1980296320
++1 819432960
+-1 68286080
++1 682860800
+-1 68286080
++2 2458298880
++3 68286080
++1 273144320
++1 273144320
++1 273144320
++1 273144320
++1 273144320
++2 68286080
+-34 410249965
++37 106697
++1 1066970
++2 320091
+-48 677490
++97 18654
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=6218 2959 
+* 907828
++1 18654
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=6218 2959 
+* 833212
++1 6218
++1 43526
+
+fl=(106)
+fn=(1688) cond_timedwait
+106 20925
++1 13950
+cob=(10)
+cfi=(107)
+cfn=(1684)
+calls=2325 -57 
+* 381181
+cob=(10)
+cfi=(107)
+cfn=(1684)
+calls=2 304 
+* 140
+* 2325
++1 4650
++1 2325
++1 11625
+
+fn=(1696) handle_aiocb_rw
+244 9849
++4 7035
++5 5628
++1 1589
+cfn=(2012) handle_aiocb_rw_linear
+calls=227 -41 
+* 22698
+* 227
++8 3540
++1 3540
+cfn=(1698) handle_aiocb_rw_vector
+calls=1180 -78 
+* 134514
+* 1180
++1 5900
++1 2360
++46 7035
+
+fn=(1698)
+185 8260
++4 5900
++4 1174
+-3 1174
++2 1174
+-2 1174
++1 2348
+-1 4696
+cfn=(2054) qemu_pwritev
+calls=1174 -26 
+* 93920
+* 2348
++8 6
+-3 6
++2 6
+-2 6
++1 12
+-1 24
+cfn=(1700) qemu_preadv
+calls=6 -37 
+* 480
+* 6
++4 2360
++2 2360
++2 1180
++1 5900
+
+fn=(1706) posix_aio_notify_event
+536 13950
++1 2325
++3 16275
+cob=(10)
+cfi=(33)
+cfn=(406)
+calls=2325 82 
+* 88350
+* 2325
++1 4650
++2 11625
+
+fn=(1716) posix_aio_read
+470 16240
++1 4640
++9 16240
+cob=(10)
+cfi=(33)
+cfn=(362)
+calls=2320 82 
+* 88160
+* 2320
++1 4640
++2 4640
++2 2320
++4 6960
++2 6960
++1 4640
+-3 6975
++2 6975
++1 4650
+-1 1863
++1 1242
++3 8838
+cfn=(1718) qemu_paio_error
+calls=2946 -37 
+* 342357
+* 2946
++1 5892
++4 5892
++2 4650
++1 6975
+cfn=(1720) qemu_paio_return
+calls=2325 -56 
+* 223200
+* 2325
++1 13950
++1 4650
++7 16275
+cfi=(43)
+cfn=(1722)
+calls=2325 193 
+* 32550
++3 9300
++2 18600
+cfi=(77)
+cfn=(1724) bdrv_co_io_em_complete
+calls=2325 3465 
+* 3928833
++1 6975
+cfi=(77)
+cfn=(1758)
+calls=2325 3449 
+* 55800
++1 2325
++5 2325
+-3 1863
++2 621
+-30 2320
++32 11600
+
+fn=(2012)
+213 1816
++1 227
++3 227
++1 1135
++4 450
+-3 450
++2 450
+-2 2700
+cob=(10)
+cfi=(33)
+cfn=(2016)
+calls=225 82 
+* 8775
+* 450
++8 4
+-3 4
++2 4
+-2 24
+cob=(10)
+cfi=(33)
+cfn=(2042)
+calls=2 82 
+* 78
+* 2
++5 454
++2 454
++3 454
++3 681
+-20 2497
++23 227
++1 1135
+
+fn=(1664)
+598 37200
++3 13950
+cfi=(77)
+cfn=(1512)
+calls=2325 3432 
+* 86025
+* 2325
++1 6975
++1 6975
++2 4650
++1 5628
++1 5628
++2 7035
++1 7035
++2 5628
++1 4221
++2 11256
+cfi=(43)
+cfn=(1666)
+calls=1407 189 
+* 22512
+-6 4590
++1 4590
++2 3672
++1 2754
++2 7344
+cfi=(43)
+cfn=(1666)
+calls=918 189 
+* 14688
++1 6975
+cfn=(1668) qemu_paio_submit
+calls=2325 435 
+* 369675
++1 2325
++1 11625
+
+fn=(1690) aio_thread
+324 2325
++4 9300
+cob=(20)
+cfi=(18)
+cfn=(242)
+calls=2325 0 
+* 6975
++1 6975
++1 2325
++2 4650
+cfn=(1670) mutex_lock
+calls=2325 93 
+* 95325
++2 2325
++2 6975
++1 11625
+cfn=(1688)
+calls=2325 106 
+* 436963
+cfn=(1688)
+calls=2 110 
+* 158
+* 4650
++1 6975
+-4 18600
++7 6975
++3 4650
++1 27888
++1 4638
++1 4638
+cfn=(1672) mutex_unlock
+calls=2319 99 
+* 115905
+-2 30
++1 12
++1 12
+cfn=(1672)
+calls=6 99 
+* 300
++2 17165
++2 24
+cfn=(1696)
+calls=8 244 
+* 1144
+* 8
++1 56
++10 4197
+cfn=(1696)
+calls=1399 244 
+* 203951
+* 1399
++1 1399
++2 2754
+cfn=(2088) handle_aiocb_flush
+calls=918 145 
+* 67014
+* 918
++1 918
+-6 8
++16 16
+cfn=(1670)
+calls=8 93 
+* 328
+* 4634
+cfn=(1670)
+calls=2317 93 
+* 94997
++1 6975
++1 4650
+cfn=(1672)
+calls=2325 99 
+* 81375
++2 2325
+cfn=(1706)
+calls=2325 536 
+* 139500
++1 2325
+
+fn=(1720)
+447 36897
++3 10542
+cfn=(1670)
+calls=5271 93 
+* 216111
++1 15813
++1 10542
+cfn=(1672)
+calls=5271 99 
+* 184485
++2 5271
++1 26355
+
+fn=(1670)
+93 85722
++1 36738
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=12246 -47 
+* 281658
+* 12246
++1 24492
++1 61230
+
+fn=(1668)
+435 16275
++1 4650
++1 4650
++1 4650
+cfn=(1670)
+calls=2325 93 
+* 95325
++1 6975
++2 25575
++1 4650
+cfn=(1672)
+calls=2325 99 
+* 81375
++1 4650
+cfn=(1674) cond_signal
+calls=2325 113 
+* 109275
++1 11625
+
+fn=(1674)
+113 16275
++1 6975
+cob=(10)
+cfi=(55)
+cfn=(666)
+calls=2325 -76 
+* 67425
+* 2325
++1 4650
++1 11625
+
+fn=(1700)
+158 60
++1 36
+cob=(2)
+cfi=(110) /build/buildd/eglibc-2.15/misc/../sysdeps/unix/sysv/linux/preadv.c
+cfn=(1704) preadv
+calls=6 56 
+* 354
++1 30
+
+fn=(2054)
+164 11740
++1 7044
+cob=(2)
+cfi=(121) /build/buildd/eglibc-2.15/misc/../sysdeps/unix/sysv/linux/pwritev.c
+cfn=(2058) pwritev
+calls=1174 56 
+* 69266
++1 5870
+
+fn=(2088)
+145 6426
++3 3672
+cfi=(85)
+cfn=(2090) qemu_fdatasync
+calls=918 -11 
+* 48654
+* 918
++1 1836
++2 918
++1 4590
+
+fn=(1672)
+99 85722
++1 36738
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=12246 289 
+* 243012
+* 12246
++1 24492
++1 61230
+
+fn=(1718)
+458 20622
++1 8838
+cfn=(1720)
+calls=2946 -12 
+* 282816
+* 2946
++2 5892
++1 1242
++2 2325
++2 2325
++1 6975
+-1 621
++1 7755
+
+fl=(99) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/block/qcow2-cluster.c
+fn=(2000) get_cluster_table
+505 15389
++1 4197
++3 1399
++5 15389
++1 5596
++7 12591
++4 11192
++2 8394
+cfn=(1612) l2_load
+calls=1399 118 
+* 466729
+* 1399
++1 2798
++18 18187
++2 4197
++1 4197
++2 1399
++1 9793
+
+fn=(2028) qcow2_alloc_cluster_link_l2
+619 12591
++1 4197
++1 1399
++2 4197
++1 1399
++2 4197
+cfi=(87)
+cfn=(1548)
+calls=1399 253 
+* 69950
+* 4197
+cfi=(101)
+cfn=(2030) trace_qcow2_cluster_link_l2
+calls=1399 1337 
+* 18187
++2 5596
++1 2798
++80 9793
+
+fn=(1630) count_contiguous_clusters
+259 15477
++2 4221
++1 5628
+cfi=(102)
+cfn=(1622)
+calls=1407 130 
+* 46431
+* 2814
++2 2814
++3 4221
++1 59374
+cfi=(102)
+cfn=(1622)
+calls=8482 130 
+* 279906
+* 16964
++1 67856
+-2 79076
++3 4
++4 20
++1 12
+-1 7015
++1 7023
+
+fn=(1996) qcow2_alloc_cluster_offset
+851 18187
++1 4197
++6 1399
+cfi=(87)
+cfn=(1548)
+calls=1399 253 
+* 69950
+* 6995
+cfi=(101)
+cfn=(1998) trace_qcow2_alloc_clusters_offset
+calls=1399 1325 
+* 20985
+* 1399
++5 8394
+cfn=(2000)
+calls=1399 505 
+* 582846
+* 1399
++1 2798
++8 9793
+cfi=(103)
+cfn=(1626)
+calls=1399 227 
+* 39172
+* 20978
+cfi=(103)
+cfn=(1626)
+calls=1398 227 
+* 39144
+* 1405
++3 8
+cfi=(102)
+cfn=(1622)
+calls=1 130 
+* 33
+-3 1398
++3 11184
+cfi=(102)
+cfn=(1622)
+calls=1398 130 
+* 46134
+* 1399
++6 4197
+cfi=(103)
+cfn=(1628)
+calls=1399 244 
+* 34975
+* 2798
++1 4197
++4 4197
++1 1399
+-1 12591
+cfn=(1630)
+calls=1399 259 
+* 597552
+-1 1399
++4 4197
++1 5596
++6 4197
++2 36
+cfi=(102)
+cfn=(1622)
+calls=4 130 
+* 132
+* 4
++1 16
++4 8
+-1 28
+cfn=(2110) count_cow_clusters
+calls=4 718 
+* 412
+* 4
++5 8
++9 28
+cfi=(100)
+cfn=(1632)
+calls=4 292 
+* 468
+-9 2790
++9 9765
+cfi=(100)
+cfn=(1632)
+calls=1395 292 
+* 176991
+* 1399
++1 2798
++5 26581
++4 5596
+cfi=(97)
+cfn=(1600)
+calls=1399 48 
+* 27980
++2 4197
++52 15389
++1 4197
++1 1108
++3 4197
++1 6995
++2 2798
++7 9793
+
+fn=(1612)
+118 12663
++1 4221
++3 9849
+cfi=(100)
+cfn=(1614)
+calls=1407 281 
+* 432607
+* 1407
++2 1407
++1 7035
+
+fn=(2110)
+718 40
++3 8
++1 36
+cfi=(102)
+cfn=(1622)
+calls=4 130 
+* 132
+* 4
++1 12
+cfi=(103)
+cfn=(1628)
+calls=4 244 
+* 100
+* 4
++2 12
++2 12
++1 4
+-7 12
++20 12
++1 4
++1 20
+
+fn=(1610) qcow2_get_cluster_offset
+392 88
++1 24
++8 64
++1 40
++2 48
++6 136
++4 48
++2 24
++4 16
++4 56
++1 32
++5 72
++1 16
++7 48
+cfn=(1612)
+calls=8 118 
+* 2460
+* 8
++1 16
++6 104
++1 56
+cfi=(102)
+cfn=(1622)
+calls=8 130 
+* 264
+* 16
++1 56
+cfi=(103)
+cfn=(1626)
+calls=8 227 
+* 224
+* 8
++2 32
+cfi=(103)
+cfn=(1628)
+calls=8 244 
+* 200
+* 8
++1 24
++19 16
++1 8
+-1 64
+cfn=(1630)
+calls=8 259 
+* 1304
+* 8
++3 48
++1 8
++5 56
+cfi=(100)
+cfn=(1632)
+calls=8 292 
+* 776
++2 40
++3 24
++1 14
++2 35
++2 7
++1 21
+-3 5
++2 1
++1 35
+
+fl=(70) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/ioport.c
+fn=(1396) cpu_inl
+325 5250
++2 3000
+cfn=(1296) ioport_read
+calls=750 61 
+* 408750
+* 750
++1 3750
+cfi=(43)
+cfn=(1306)
+calls=750 201 
+* 9750
++2 750
++1 3750
+
+fn=(1294) cpu_inb
+307 200284
++2 114448
+cfn=(1296)
+calls=28612 61 
+* 9912975
+* 28612
++1 143060
+cfi=(43)
+cfn=(1306)
+calls=28612 201 
+* 371956
++2 28612
++1 143060
+
+fn=(1354) cpu_outl
+300 20216
++2 12635
+cfi=(43)
+cfn=(1330)
+calls=2527 -97 
+* 32851
++1 12635
+cfn=(1333) ioport_write'2
+calls=2401 74 
+* 1014634
+cfn=(1332) ioport_write
+calls=126 74 
+* 48524
++1 12635
+
+fn=(1298) ioport_readb_thunk
+182 228896
++1 57224
++3 400568
+cfi=(40)
+cfn=(1300) memory_region_iorange_read
+calls=28612 384 
+* 8110419
++1 28612
++1 143060
+
+fn=(1398) ioport_readl_thunk
+200 6000
++1 1500
++3 10500
+cfi=(40)
+cfn=(1300)
+calls=750 384 
+* 361500
++1 750
++1 3750
+
+fn=(1332)
+74 13662
++6 13662
++1 3036
++2 15180
+cfn=(1356) ioport_writel_thunk
+calls=126 223 
+* 44114
+cfn=(1334) ioport_writeb_thunk
+calls=1392 209 
+* 2462837
++1 14090
+cfn=(1328) cpu_outb
+calls=1301 290 
+* 2685278862
+
+fn=(1333)
+74 250137
++6 250137
++1 55586
++2 277930
+cfn=(1356)
+calls=2401 223 
+* 930599
+cfn=(1335) ioport_writeb_thunk'2
+calls=25392 209 
+* 43044968
++1 132465
+
+fn=(1334)
+209 12528
++1 2784
++2 19488
+cfi=(40)
+cfn=(1336) memory_region_iorange_write
+calls=1392 416 
+* 2421082
++1 13460
+cfn=(1332)
+calls=1301 84 
+* 2685285367
+
+fn=(1335)
+209 228528
++1 50784
++2 355488
+cfi=(40)
+cfn=(1337) memory_region_iorange_write'2
+calls=25392 416 
+* 42289708
++1 120460
+
+fn=(1356)
+223 22743
++1 5054
++2 35378
+cfi=(40)
+cfn=(1337)
+calls=2401 416 
+* 858569
+cfi=(40)
+cfn=(1336)
+calls=126 416 
+* 40334
++1 12635
+
+fn=(1296)
+61 234896
++6 264258
++1 58724
++2 264258
+cfn=(1398)
+calls=750 200 
+* 384000
+cfn=(1298)
+calls=28612 182 
+* 8968779
++1 146810
+
+fn=(1328)
+286 12528
++2 6960
+cfi=(43)
+cfn=(1330)
+calls=1392 -83 
+* 18096
++1 6960
+cfn=(1332)
+calls=1392 74 
+* 2511552
++1 13460
+cfi=(38)
+cfn=(1292) kvm_handle_io
+calls=1301 1454 
+* 2685272357
+
+fn=(1329) cpu_outb'2
+286 228528
++2 126960
+cfi=(43)
+cfn=(1330)
+calls=25392 -83 
+* 330096
++1 126960
+cfn=(1333)
+calls=25392 74 
+* 43927188
++1 120460
+
+fl=(14)
+fn=(274) qemu_shutdown_requested
+1376 458088
++1 152696
++1 76348
++1 76348
++1 381740
+
+fn=(280) qemu_powerdown_requested
+1420 458088
++1 152696
++1 76348
++1 76348
++1 381740
+
+fn=(460)
+2321 180859
++1 77511
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=25837 2910 
+* 8238135
+* 25837
++1 129185
+cfi=(43)
+cfn=(468)
+calls=25837 17 
+* 335881
++1 25837
++1 129185
+
+fn=(268) main_loop_should_exit
+1587 458088
++2 76348
+cfn=(270) qemu_debug_requested
+calls=76348 1427 
+* 1145220
+* 152696
++3 76348
+cfn=(272) qemu_suspend_requested
+calls=76348 1406 
+* 1145220
+* 152696
++3 76348
+cfn=(274)
+calls=76348 1376 
+* 1145220
+* 152696
++9 76348
+cfn=(276) qemu_reset_requested
+calls=76348 1399 
+* 1145220
+* 152696
++10 76348
+cfn=(278) qemu_wakeup_requested
+calls=76348 1413 
+* 1145220
+* 152696
++7 76348
+cfn=(280)
+calls=76348 1420 
+* 1145220
+* 152696
++4 229044
+cfn=(282) qemu_vmstop_requested
+calls=76348 1435 
+* 1221568
+* 152696
++3 76348
++1 381740
+
+fn=(270)
+1427 458088
++1 152696
++1 76348
++1 76348
++1 381740
+
+fn=(276)
+1399 458088
++1 152696
++1 76348
++1 76348
++1 381740
+
+fn=(212) gui_update
+1276 139440
++1 19920
++1 39840
++1 59760
++2 59760
+cfi=(13)
+cfn=(210)
+calls=19920 264 
+* 48155890367
+cfi=(13)
+cfn=(210)
+calls=1 270 
+* 781
++2 19920
++1 79680
++3 59760
+-4 79680
++6 79680
+cfi=(15)
+cfn=(214) qemu_get_clock_ms
+calls=19920 83 
+* 1593600
+* 139440
+cfi=(16) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/qemu-timer.c
+cfn=(226) qemu_mod_timer
+calls=19920 353 
+* 8763096
++1 99600
+
+fn=(266) main_loop
+1639 381740
++4 229044
+cfi=(22) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/main-loop.c
+cfn=(262) main_loop_wait
+calls=76348 474 
+* 52452895733
+cfi=(22)
+cfn=(262)
+calls=1 509 
+* 1932
+* 76348
++4 76348
+cfn=(268)
+calls=76348 -60 
+* 10765068
+* 229044
+
+fn=(282)
+1435 534436
++1 229044
++6 76348
++1 381740
+
+fn=(420) runstate_is_running
+427 119550
++1 39850
+cfn=(422) runstate_check
+calls=19925 -32 
+* 298875
+* 19925
++1 99625
+
+fn=(422)
+396 139510
++1 59790
++1 99650
+
+fn=(1224)
+1525 40
++1 10
+cfn=(422)
+calls=5 396 
+* 75
+* 15
++1 10
++9 35
+
+fn=(272)
+1406 458088
++1 152696
++1 76348
++1 76348
++1 381740
+
+fn=(278)
+1413 458088
++1 152696
++1 76348
++1 76348
++1 381740
+
+fn=(500)
+2335 180838
++1 77502
+cfi=(43)
+cfn=(502)
+calls=25834 25 
+* 310008
++1 77502
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=25834 2959 
+* 3266093
++1 129170
+
+fl=(49) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/ui/sdl_zoom.c
+fn=(538) sdl_zoom_blit
+33 62180
++5 37308
++1 49740
++2 8
++1 18
+-3 6216
++2 24864
++1 55944
++1 49744
++2 24872
++1 55962
++1 8
++3 12
++1 12
++3 10
++1 3
+-1 3
++3 10
++1 2
+-8 74604
++1 74604
++3 62170
++1 18651
+-1 18651
++3 62170
++1 18651
+-1 18651
++7 24868
+-6 1
+-1 3
++7 12
++2 10
+-2 49736
++2 62170
++3 49744
++2 74616
++2 62180
++1 31085
++2 8
++5 31090
++1 37308
+cfi=(50)
+cfn=(540)
+calls=6218 -26 
+* 41385871874
+* 6218
++9 18654
++2 6218
++1 31090
+
+fl=(98)
+fn=(2074)
+1544 1715
++1 735
++3 980
+cfi=(97)
+cfn=(1604)
+calls=245 106 
+* 26215
++1 1470
+cfi=(100)
+cfn=(2076)
+calls=245 135 
+* 2238601921
+* 306
++1 612
++5 918
+cfi=(103)
+cfn=(2106)
+calls=306 258 
+* 5202
+* 612
++1 1836
+cfi=(100)
+cfn=(2077)
+calls=306 135 
+* 336294
+* 306
++1 612
++5 1224
+cfi=(97)
+cfn=(1638)
+calls=306 121 
+* 53820
++2 306
++1 1530
+cfi=(77)
+cfn=(2071) bdrv_co_flush'2
+calls=306 3529 
+* 233784
+
+fn=(2075) qcow2_co_flush_to_os'2
+1544 427
++1 183
++3 244
+cfi=(97)
+cfn=(1604)
+calls=61 106 
+* 6527
++1 366
+cfi=(100)
+cfn=(2077)
+calls=61 135 
+* 101443
+
+fn=(1602) qcow2_co_readv
+600 80
++1 24
++4 8
++1 8
++2 8
++2 48
+cfi=(85)
+cfn=(1516)
+calls=8 148 
+* 1772
++2 32
+cfi=(97)
+cfn=(1604)
+calls=8 106 
+* 856
++2 8
++3 16
++1 32
++5 64
+cfi=(99)
+cfn=(1610)
+calls=8 392 
+* 6658
+* 8
++2 16
++4 48
++2 24
+cfi=(85)
+cfn=(1524)
+calls=8 223 
+* 160
++2 16
+-1 48
+cfi=(85)
+cfn=(1634) qemu_iovec_concat
+calls=8 193 
+* 9376
++3 24
++44 32
++5 32
++17 40
+cfi=(77)
+cfn=(1636) bdrv_debug_event
+calls=8 2609 
+* 184
++1 32
+cfi=(97)
+cfn=(1638)
+calls=8 121 
+* 1384
++1 8
++1 48
+-1 48
+cfi=(77)
+cfn=(1650) bdrv_co_readv
+calls=8 1940 
+* 123132
+* 8
++3 32
+cfi=(97)
+cfn=(1604)
+calls=8 106 
+* 856
++1 16
++3 32
++6 8
++8 16
++1 24
++1 32
+614 32
+728 16
++3 32
+cfi=(97)
+cfn=(1638)
+calls=8 121 
+* 1384
++2 24
+cfi=(85)
+cfn=(1730)
+calls=8 213 
+* 1496
++1 24
+cfi=(111)
+cfn=(1732)
+calls=8 138 
+* 296
++2 8
++1 40
+cfi=(77)
+cfn=(1589) bdrv_co_do_readv'2
+calls=8 1926 
+* 4541
+
+fn=(1990)
+758 15334
++1 4182
++7 1394
++1 1394
++1 20910
++4 1394
+cfi=(87)
+cfn=(1548)
+calls=1394 253 
+* 69700
+* 6970
+cfi=(101)
+cfn=(1992) trace_qcow2_writev_start_req
+calls=1394 1305 
+* 19516
++3 5576
+cfi=(97)
+cfn=(1600)
+calls=1394 48 
+* 27880
++2 8364
+cfi=(85)
+cfn=(1516)
+calls=1394 148 
+* 334270
++2 2788
++2 5576
+cfi=(97)
+cfn=(1604)
+calls=1394 106 
+* 696387
++2 1394
++2 1399
+cfi=(87)
+cfn=(1548)
+calls=1399 253 
+* 69950
+* 2798
+cfi=(101)
+cfn=(1994) trace_qcow2_writev_start_part
+calls=1399 1313 
+* 16788
++1 8394
++1 5596
++1 5596
++5 16788
+cfi=(99)
+cfn=(1996)
+calls=1399 +58 
+* 1870210
+* 1399
++2 2798
++4 4197
++5 2798
++1 5596
++2 4197
+cfi=(85)
+cfn=(1524)
+calls=1399 223 
+* 27980
++2 2798
+-1 8394
+cfi=(85)
+cfn=(1634)
+calls=1399 193 
+* 993668
++3 5596
++18 6995
+cfi=(77)
+cfn=(1636)
+calls=1399 2609 
+* 32177
++1 5596
+cfi=(97)
+cfn=(1638)
+calls=1399 121 
+* 242027
++2 4197
+-1 5596
+cfi=(87)
+cfn=(1548)
+calls=1399 253 
+* 69950
+* 4197
+cfi=(101)
+cfn=(2002) trace_qcow2_writev_data
+calls=1399 1321 
+* 18187
++2 1399
++1 8394
+-1 8394
+cfi=(77)
+cfn=(2005) bdrv_co_writev'2
+calls=5 2043 
+* 5360
+cfi=(77)
+cfn=(2004) bdrv_co_writev
+calls=1394 2043 
+* 448062798
+* 1399
++3 5596
+cfi=(97)
+cfn=(1604)
+calls=1399 106 
+* 149693
++1 2798
++4 6995
+cfi=(99)
+cfn=(2028)
+calls=1399 619 
+* 138501
+* 1399
++1 2798
++4 6995
+cfn=(2032) run_dependent_requests
+calls=1399 740 
+* 55960
++2 2798
++1 4197
++1 5596
++1 2798
+cfi=(87)
+cfn=(1548)
+calls=1399 253 
+* 69950
+* 4197
+cfi=(101)
+cfn=(2036) trace_qcow2_writev_done_part
+calls=1399 1317 
+* 18187
+-68 5586
++70 2788
++3 6970
+cfn=(2032)
+calls=1394 740 
+* 55760
++2 5576
+cfi=(97)
+cfn=(1638)
+calls=1394 121 
+* 241162
++2 4182
+cfi=(85)
+cfn=(1730)
+calls=1394 213 
+* 270911
++1 4182
+cfi=(111)
+cfn=(1732)
+calls=1394 138 
+* 51578
++1 1394
+cfi=(87)
+cfn=(1548)
+calls=1394 253 
+* 69700
+* 5576
+cfi=(101)
+cfn=(2038) trace_qcow2_writev_done_req
+calls=1394 1309 
+* 18122
++2 1394
++1 9758
+cfi=(77)
+cfn=(1989) bdrv_co_do_writev'2
+calls=1394 2021 
+* 808531
+
+fn=(2032)
+740 22344
++2 11172
++5 11172
+cfi=(97)
+cfn=(2034)
+calls=2793 95 
+* 44688
+* 8379
++5 13965
+
+fl=(113)
+fn=(1836) qemu_net_queue_deliver
+145 5361587
++1 487417
++2 1949668
++1 4386753
+cfi=(27)
+cfn=(1838)
+calls=487417 322 
+* 3867461748
+* 487417
++1 1949668
++2 487417
++1 2437085
+
+fn=(1837) qemu_net_queue_deliver'2
+145 5361587
++1 487417
++2 1949668
++1 4386753
+cfi=(27)
+cfn=(1839)
+calls=487417 322 
+* 3674562762
+* 487417
++1 1949668
++2 487417
++1 2437085
+
+fn=(1852) qemu_net_queue_flush
+232 6823838
++1 4874170
++23 4874170
+
+fn=(1834)
+176 5849004
++3 3899336
+cfi=(27)
+cfn=(294)
+calls=487417 303 
+* 92491084
+* 974834
++4 3899336
+cfn=(1836)
+calls=487417 -38 
+* 3885008760
+* 487417
++1 974834
++5 1462251
+cfn=(1852)
+calls=487417 +43 
+* 8286089
++2 487417
++1 2437085
+
+fn=(1835)
+176 5849004
++3 3899336
+cfi=(27)
+cfn=(294)
+calls=487417 303 
+* 50085805
+* 974834
++4 3899336
+cfn=(1837)
+calls=487417 -38 
+* 3692109774
+* 487417
++1 974834
++5 1462251
+cfn=(1852)
+calls=487417 +43 
+* 8286089
++2 487417
++1 2437085
+
+fl=(72)
+fn=(1340) ide_status_read
+1669 70208
++1 17552
++1 26328
+cfi=(73) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ide/internal.h
+cfn=(1320) idebus_active_if
+calls=8776 505 
+* 166744
+* 8776
++3 35104
++1 17552
+-1 17552
++4 35104
++4 8776
++1 43880
+
+fn=(1358) ide_data_writel
+1781 10125
++1 2250
++1 3375
+cfi=(73)
+cfn=(1320)
+calls=1125 505 
+* 21375
+* 1125
++5 10125
+cfn=(1360) ide_is_pio_out
+calls=1125 -64 
+* 27000
+* 2250
++4 3375
++1 3375
+cfi=(71)
+cfn=(1362)
+calls=1125 133 
+* 14625
+* 2250
++1 1125
++1 3375
++1 4500
++1 1875
+cfi=(76) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/ide/atapi.c
+cfn=(1364) ide_atapi_cmd
+calls=375 1089 
+* 308625
+* 375
++1 5625
+
+fn=(1360)
+1724 13125
++1 9375
++1 3750
+-1 5625
++2 2250
++1 3750
++1 1500
+-1 2250
++2 1500
+-1 2250
++3 1500
++4 9375
+
+fn=(1462)
+422 29442
++2 25236
++2 16824
++1 13398
++1 4872
+-1 1218
++1 4872
+-1 3654
++3 14940
++1 11952
+-1 2988
++2 11952
+-1 2988
++2 11952
+-1 2988
++2 11952
+-1 2988
++1 8964
+-4 8964
++10 4206
++1 21030
+
+fn=(2062) ide_flush_cache
+781 1673
++1 956
++5 1912
+cfi=(77)
+cfn=(1458) bdrv_acct_start
+calls=239 3882 
+* 15057
++1 1434
+cfi=(77)
+cfn=(2064)
+calls=239 3378 
+* 110711
++1 1225
+cfn=(1344) ide_exec_cmd
+calls=236 1304 
+* 2238186226
+
+fn=(2063) ide_flush_cache'2
+781 469
++1 268
++5 536
+cfi=(77)
+cfn=(1458)
+calls=67 3882 
+* 4221
++1 402
+cfi=(77)
+cfn=(2065) bdrv_aio_flush'2
+calls=67 3378 
+* 143195
++1 305
+
+fn=(1400) ide_data_readl
+1801 6000
++1 1500
++1 2250
+cfi=(73)
+cfn=(1320)
+calls=750 505 
+* 14250
+* 750
++6 6750
+cfn=(1360)
+calls=750 -85 
+* 29250
+* 2250
++4 2250
++1 3000
+cfi=(71)
+cfn=(1402)
+calls=750 133 
+* 9750
+* 750
++1 750
++1 2250
++1 3000
++1 1875
+cfi=(76)
+cfn=(1380) ide_atapi_cmd_reply_end
+calls=375 167 
+* 145875
++1 750
++1 3750
+
+fn=(1784) ide_set_inactive
+545 9814
++1 5608
++1 14020
+cfi=(75)
+cfn=(1786)
+calls=1402 162 
+* 37854
++1 7010
+
+fn=(1456) ide_sector_start_dma
+664 11216
++1 2804
++1 2804
++1 2804
++1 4206
++2 6994
++2 96
+cfi=(77)
+cfn=(1458)
+calls=8 3882 
+* 504
++2 8
++2 16728
+cfi=(77)
+cfn=(1458)
+calls=1394 3882 
+* 87822
++2 1394
++5 18226
+cfi=(75)
+cfn=(1460)
+calls=1402 38 
+* 141158
++1 7010
+
+fn=(1466)
+590 17721
++1 3938
++4 3938
++13 7876
++1 5907
+cfn=(1462)
+calls=1969 422 
+* 100414
+* 1969
++1 3938
++1 4206
+cfn=(1776) dma_buf_commit
+calls=1402 -71 
+* 241054
++1 4206
++1 7010
+cfn=(1780) ide_set_sector
+calls=1402 444 
+* 72276
++1 8412
++4 7876
++1 2804
++1 5608
+cfi=(73)
+cfn=(1382) ide_set_irq
+calls=1402 510 
+* 454248
++1 1402
++4 1701
++1 1134
++1 2835
++1 9072
+cfi=(75)
+cfn=(1468)
+calls=567 56 
+* 2076806
+* 1134
++11 2284
++2 104
+cfi=(81)
+cfn=(1508)
+calls=8 229 
+* 88172
+* 8
++2 8
++2 7267
+cfi=(81)
+cfn=(1982)
+calls=559 237 
+* 8675320
+* 1394
++2 1394
++7 1402
++3 11184
++1 9814
+cfi=(77)
+cfn=(1782) bdrv_acct_done
+calls=1402 3892 
+* 143004
++2 4206
+cfn=(1784)
+calls=1402 545 
+* 74306
+* 1402
++1 19628
+cfi=(75)
+cfn=(1452)
+calls=1065 327 
+* 447156633
+
+fn=(1467)
+590 7515
++1 1670
++4 1670
++13 3340
++1 2505
+cfn=(1462)
+calls=835 422 
+* 44506
+* 835
++1 1670
++8 3340
++7 2505
++1 1670
++1 4175
++1 13360
+cfi=(75)
+cfn=(1468)
+calls=835 56 
+* 5203777
+* 1670
++11 3340
++6 10855
+cfi=(81)
+cfn=(1983)
+calls=834 237 
+* 22174388
+cfi=(81)
+cfn=(1982)
+calls=1 237 
+* 29059
+
+fn=(2108) ide_flush_cb
+765 2448
++1 612
++2 612
++7 2142
+cfi=(77)
+cfn=(1782)
+calls=306 3892 
+* 31212
++1 612
++1 1224
+cfi=(73)
+cfn=(1382)
+calls=306 510 
+* 99144
+* 306
++1 1530
+
+fn=(1346) ide_cmd_permitted
+1044 18747
++2 35411
++1 14581
+
+fn=(1406) ide_transfer_stop
+414 2625
++1 1125
++1 1500
++1 1500
++1 2250
++1 1875
+
+fn=(1454) ide_cmd_lba48_transform
+879 11216
++1 5608
++6 5608
++1 1624
++1 6
++2 7816
++3 2988
++1 3984
++2 5976
++3 7010
+
+fn=(1344)
+1050 11007
++4 1223
++5 3669
+cfi=(73)
+cfn=(1320)
+calls=1223 505 
+* 23237
+* 1223
++2 4892
++4 7338
++3 6115
+cfn=(1346)
+calls=1223 -24 
+* 40359
+* 3669
++4 14676
+1199 28
++3 35
+cfn=(1454)
+calls=7 879 
+* 178
++1 28
+cfn=(1456)
+calls=7 664 
+* 1463
++1 7
++2 804
++3 3648
++3 4560
+cfn=(1454)
+calls=912 879 
+* 36347
++1 3648
+cfn=(1456)
+calls=912 664 
+* 198864
++1 1824
++1 912
++88 717
+cfn=(2062)
+calls=239 781 
+* 131788
++1 245
++46 390
++2 130
++1 455
++1 130
++1 520
+cfn=(1348) ide_transfer_start
+calls=65 403 
+* 4030
++2 65
+1588 8603
+cfn=(1338) ide_ioport_write
+calls=236 972 
+* 2238184338
+
+fn=(1345) ide_exec_cmd'2
+1050 7740
++4 860
++5 2580
+cfi=(73)
+cfn=(1320)
+calls=860 505 
+* 16340
+* 860
++2 3440
++4 5160
++3 4300
+cfn=(1346)
+calls=860 -24 
+* 28380
+* 2580
++4 10320
+1199 4
++3 5
+cfn=(1454)
+calls=1 879 
+* 25
++1 4
+cfn=(1456)
+calls=1 664 
+* 209
++1 1
++2 192
++3 1928
++3 2410
+cfn=(1454)
+calls=482 879 
+* 15286
++1 1928
+cfn=(1456)
+calls=482 664 
+* 103238
++1 964
++1 482
++88 201
+cfn=(2063)
+calls=67 781 
+* 149396
++1 61
++46 1860
++2 620
++1 2170
++1 620
++1 2480
+cfn=(1348)
+calls=310 403 
+* 19220
++2 310
+1588 5978
+
+fn=(1348)
+403 7500
++1 2250
++1 2250
++1 4500
++1 4500
++1 4500
++2 7500
+cfi=(75)
+cfn=(1350)
+calls=750 270 
+* 9750
++1 3750
+
+fn=(1318) ide_ioport_read
+1591 93704
++1 23426
++1 35139
+cfi=(73)
+cfn=(1320)
+calls=11713 505 
+* 222547
+* 11713
++4 35139
++3 11713
++1 41426
++5 1500
++1 750
+-1 750
++3 750
++1 1500
++3 375
++2 1500
++2 750
++1 1500
++3 375
++2 1500
++2 750
++1 1500
++3 375
++2 1500
++2 750
++1 1500
++3 375
++2 1500
++2 750
++1 1500
++3 375
++2 1500
++3 1500
++1 375
++3 37852
++1 18926
+-1 18926
++4 37852
++1 37852
+cfi=(74)
+cfn=(1322)
+calls=9463 16 
+* 2810511
++1 9463
++5 9463
++1 28389
+-1 2250
++1 30176
+
+fn=(1338)
+909 113481
++1 25218
++6 12609
++3 59376
+cfi=(73)
+cfn=(1320)
+calls=11386 505 
+* 216334
+* 56930
++3 116306
++4 5364
+cfn=(1342) ide_clear_hob
+calls=1788 -24 
+* 42912
++2 7152
++1 7152
++1 7152
++1 7152
++1 1788
++2 5364
+cfn=(1342)
+calls=1788 -32 
+* 42912
++1 8940
++1 8940
++1 5364
++1 5364
++1 1788
++2 5364
+cfn=(1342)
+calls=1788 -39 
+* 42912
++1 7152
++1 7152
++1 7152
++1 7152
++1 1788
++2 5364
+cfn=(1342)
+calls=1788 -46 
+* 42912
++1 7152
++1 7152
++1 7152
++1 7152
++1 1788
++2 5364
+cfn=(1342)
+calls=1788 -53 
+* 42912
++1 7152
++1 7152
++1 7152
++1 7152
++1 1788
++3 14676
++1 12230
++2 14676
++1 2446
++4 6115
+cfn=(1344)
+calls=1223 +79 
+* 514939
++1 2458
++2 63075
+cfi=(40)
+cfn=(1336)
+calls=236 434 
+* 2238182686
+
+fn=(1339) ide_ioport_write'2
+909 67545
++1 15010
++6 7505
++3 34945
+cfi=(73)
+cfn=(1320)
+calls=6645 505 
+* 126255
+* 33225
++3 68170
++4 2955
+cfn=(1342)
+calls=985 -24 
+* 23640
++2 3940
++1 3940
++1 3940
++1 3940
++1 985
++2 2955
+cfn=(1342)
+calls=985 -32 
+* 23640
++1 4925
++1 4925
++1 2955
++1 2955
++1 985
++2 2955
+cfn=(1342)
+calls=985 -39 
+* 23640
++1 3940
++1 3940
++1 3940
++1 3940
++1 985
++2 2955
+cfn=(1342)
+calls=985 -46 
+* 23640
++1 3940
++1 3940
++1 3940
++1 3940
++1 985
++2 2955
+cfn=(1342)
+calls=985 -53 
+* 23640
++1 3940
++1 3940
++1 3940
++1 3940
++1 985
++3 10320
++1 8600
++2 10320
++1 1720
++4 4300
+cfn=(1345)
+calls=860 +79 
+* 392152
++1 1708
++2 37495
+
+fn=(1342)
+902 97055
++2 83190
++1 83190
++1 69325
+
+fn=(1776)
+540 9814
++1 5608
+cfi=(81)
+cfn=(1778)
+calls=1402 66 
+* 218622
++1 7010
+
+fn=(1780)
+444 11216
++2 8412
++1 5608
++1 4060
++1 2030
++1 2030
++1 2030
++2 3984
++1 4980
++1 4980
++1 4980
++1 4980
++1 5976
++10 7010
+
+fl=(82)
+fn=(1486) dma_has_iommu
+95 139580
++1 39880
++1 99700
+-2 69790
++1 19940
++1 49850
+-2 28941346
++1 8268956
++1 20672390
+
+fn=(1482) dma_barrier
+70 79760
++19 39880
++1 9970
++2 49850
+-22 33075824
++19 16537912
++1 4134478
++2 20672390
+
+fn=(1526)
+177 99700
++1 29910
+cfn=(1486)
+calls=9970 -83 
+* 139580
+* 29910
++1 29910
++3 79760
+cfi=(32)
+cfn=(1528)
+calls=9970 3590 
+* 26239685
+* 9970
++2 29910
++1 19940
++4 49850
+
+fn=(1480) dma_memory_rw
+147 109670
++1 49850
+cfn=(1482)
+calls=9970 -78 
+* 179460
++2 79760
+cfn=(1484) dma_memory_rw_relaxed
+calls=9970 -30 
+* 3960806
++1 49850
+-4 45479258
++1 20672390
+cfn=(1482)
+calls=4134478 -78 
+* 74420604
++2 33075824
+cfn=(1484)
+calls=4134478 -30 
+* 1874198453
++1 20672390
+
+fn=(1762)
+197 109670
++1 29910
+cfn=(1486)
+calls=9970 95 
+* 139580
+* 29910
++1 79760
+cfi=(32)
+cfn=(1764)
+calls=9970 3642 
+* 372600
+* 9970
++6 49850
+
+fn=(1484)
+120 109670
++1 29910
+cfn=(1486)
+calls=9970 -26 
+* 139580
+* 29910
++2 89730
+cfi=(32)
+cfn=(1488)
+calls=9970 3411 
+* 3492216
++2 19940
++4 49850
+-9 45479258
++1 12403434
+cfn=(1486)
+calls=4134478 -26 
+* 57882692
+* 12403434
++2 37210302
+cfi=(32)
+cfn=(1488)
+calls=2928748 3411 
+* 1248241138
+cfi=(32)
+cfn=(1489)
+calls=1205730 3411 
+* 431636849
++2 8268956
++4 20672390
+
+fl=(16)
+fn=(228) qemu_mod_timer_ns
+319 171936
++3 64476
+cfn=(230) qemu_del_timer
+calls=21492 -24 
+* 451332
++5 64476
++2 64476
++1 107460
+cfn=(232) qemu_timer_expired_ns
+calls=21492 82 
+* 343872
+* 64476
++1 21492
++4 64476
++1 85968
++1 64476
++3 85968
++1 107460
++1 64476
+cfn=(234) qemu_rearm_alarm_timer
+calls=21492 114 
+* 6469994
++3 85968
+cfi=(21)
+cfn=(256)
+calls=21492 -60 
+* 386856
++1 85968
++4 107460
+
+fn=(232)
+82 2176224
++1 1534328
++1 1360140
+
+fn=(258) qemu_run_timers
+374 1603308
++4 1145220
++3 687132
+cfn=(216) qemu_get_clock_ns
+calls=229044 +17 
+* 14506120
+* 229044
++1 458088
++2 687132
++1 1145220
+cfn=(232)
+calls=229044 82 
+* 4296874
+-1 64476
++1 107460
+cfn=(232)
+calls=21492 82 
+* 429946
+* 751608
++4 85968
++1 42984
++3 128952
+cfi=(56) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/i386/../mc146818rtc.c
+cfn=(706) rtc_update_second2
+calls=786 -2 
+* 774514
+cfi=(56)
+cfn=(700) rtc_update_second
+calls=786 -28 
+* 410707
+cfi=(14)
+cfn=(212)
+calls=19920 1276 
+* 48167122995
+cfi=(14)
+cfn=(212)
+calls=1 1290 
+* 1329
++1 21492
+-8 229044
++9 1145220
+
+fn=(400) host_alarm_handler
+465 149373
++1 42678
++1 42678
++3 42678
++1 42678
++1 21339
+cfi=(22)
+cfn=(402) qemu_notify_event
+calls=21339 37 
+* 1323018
+* 21339
++1 106695
+
+fn=(234)
+114 299747
++1 42821
+cfn=(236) qemu_next_alarm_deadline
+calls=42821 -28 
+* 8258683
+* 42821
++1 128463
++1 299747
+cfn=(246) dynticks_rearm_timer
+calls=42821 525 
+* 3660789
++2 214105
+
+fn=(236)
+87 299747
++1 85642
++3 599494
++4 428210
++1 171284
++1 171284
+cfn=(216)
+calls=42821 398 
+* 2269513
+-1 171284
++2 128463
++1 85642
++3 428210
++1 171284
++1 171284
+cfn=(216)
+calls=42821 398 
+* 2355155
+-1 171284
++2 128463
++1 79872
++4 39936
++1 119808
+-1 2885
++1 179939
+
+fn=(226)
+353 171936
++1 193428
+cfn=(228)
+calls=21492 -35 
+* 8963066
++1 107460
+
+fn=(260) qemu_run_all_timers
+445 458088
++1 152696
++3 305392
+cfn=(258)
+calls=76348 -75 
+* 10154284
++1 305392
+cfn=(258)
+calls=76348 -76 
+* 48176417637
+cfn=(258)
+calls=1 -55 
+* 1367
++1 305392
+cfn=(258)
+calls=76348 -77 
+* 9501545
++3 305392
++1 42658
++1 63987
+cfn=(234)
+calls=21329 114 
+* 6477182
++2 381740
+
+fn=(230)
+298 150444
++5 64476
++2 64476
++1 42984
++1 21492
++7 107460
+
+fn=(246)
+525 385389
++1 128463
++4 85642
++1 538
++3 2690
+cob=(9) /lib/x86_64-linux-gnu/librt-2.15.so
+cfi=(19) /build/buildd/eglibc-2.15/rt/../nptl/sysdeps/unix/sysv/linux/x86_64/../timer_gettime.c
+cfn=(250) timer_gettime@@GLIBC_2.3.3
+calls=538 54 
+* 3228
+* 211415
+cob=(9)
+cfi=(19)
+cfn=(250)
+calls=42283 54 
+* 253698
+* 85642
++5 214105
++1 149968
++3 41801
++1 41801
++1 459811
++1 627015
++1 250806
+cob=(9)
+cfi=(20) /build/buildd/eglibc-2.15/rt/../nptl/sysdeps/unix/sysv/linux/x86_64/../timer_settime.c
+cfn=(254) timer_settime@@GLIBC_2.3.3
+calls=41801 49 
+* 334408
+* 83602
+-6 1020
++11 299747
+
+fn=(216)
+398 4702782
++3 4166346
++2 139089
+cfi=(15)
+cfn=(218)
+calls=139089 119 
+* 5146293
+* 139089
++3 1654272
++3 413568
+cfi=(21)
+cfn=(390)
+calls=413568 156 
+* 23573376
+* 413568
++3 119169
+cfi=(15)
+cfn=(238) get_clock_realtime
+calls=119169 94 
+* 2740887
+* 119169
++1 357507
++1 357507
++1 357507
++3 119169
++2 3359130
+
+fl=(47)
+fn=(528)
+403 1131690
++4 226338
++7 452676
++1 565845
++1 565845
++2 679014
+cfi=(48) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/pixel_ops.h
+cfn=(530) rgb_to_pixel32
+calls=113169 45 
+* 2376549
+-4 361688124
++1 452110155
++1 452110155
++2 542532186
+cfi=(48)
+cfn=(530)
+calls=90422031 45 
+* 1898862651
+* 181070400
++1 90535200
++1 90535200
++1 271605600
++1 565845
+
+fl=(101)
+fn=(1620)
+1373 12663
++1 7035
+
+fn=(1998)
+1325 13990
++1 6995
+
+fn=(2002)
+1321 11192
++1 6995
+
+fn=(2030)
+1337 11192
++1 6995
+
+fn=(2078)
+1377 4896
++1 3060
+
+fn=(1992)
+1305 12546
++1 6970
+
+fn=(2038)
+1309 11152
++1 6970
+
+fn=(1994)
+1313 9793
++1 6995
+
+fn=(1618)
+1361 15477
++1 7035
+
+fn=(2036)
+1317 11192
++1 6995
+
+fl=(77)
+fn=(1536)
+2853 96
++1 48
+cfi=(43)
+cfn=(1538)
+calls=8 117 
+* 120
++2 88
+cfn=(1540)
+calls=8 3350 
+* 33188
++2 40
+cfi=(81)
+cfn=(1518)
+calls=1 175 
+* 114513
+
+fn=(1654) bdrv_co_readv_em
+3501 80
++1 56
+cfn=(1656)
+calls=8 -27 
+* 120548
++1 40
+cfn=(1588) bdrv_co_do_readv
+calls=8 1926 
+* 9557
+
+fn=(2068) bdrv_aio_flush_co_entry
+3367 1715
++1 490
++1 735
++2 735
+cfn=(2070)
+calls=245 3520 
+* 2238651566
+* 612
++1 1224
+cfi=(23)
+cfn=(1736) qemu_bh_new
+calls=306 45 
+* 67664
+* 612
++1 1224
+cfi=(23)
+cfn=(1752)
+calls=306 103 
+* 25704
++1 1530
+cfi=(87)
+cfn=(1584) coroutine_trampoline
+calls=306 139 
+* 51714
+
+fn=(2069) bdrv_aio_flush_co_entry'2
+3367 427
++1 122
++1 183
++2 183
+cfn=(2071)
+calls=61 3520 
+* 113277
+
+fn=(1588)
+1882 88
++1 24
++4 16
++3 48
+cfn=(1590) bdrv_check_request
+calls=8 1555 
+* 1104
+* 16
++5 32
++4 32
++3 32
++4 32
++4 56
+cfn=(1598) tracked_request_begin
+calls=8 1415 
+* 1096
++2 32
++14 64
+cfi=(98)
+cfn=(1602)
+calls=8 600 
+* 144290
+* 16
++3 24
+cfn=(1726) tracked_request_end
+calls=8 1403 
+* 496
++2 32
++4 8
++1 40
+cfn=(1650)
+calls=8 +8 
+* 8941
+fi=(87)
+245 1
++1 2
++3 1
++1 5
+fe=(77)
+
+fn=(1589)
+1882 88
++1 24
++4 16
++3 48
+cfn=(1590)
+calls=8 1555 
+* 584
+* 16
++5 32
++4 32
++3 32
++4 32
++4 56
+cfn=(1598)
+calls=8 1415 
+* 1096
++2 32
++14 64
+cfn=(1654)
+calls=8 3501 
+* 120684
+* 16
++3 24
+cfn=(1726)
+calls=8 1403 
+* 496
++2 32
++4 8
++1 40
+cfn=(1586) bdrv_co_do_rw
+calls=8 3332 
+* 3925
+
+fn=(1512)
+3432 54350
++3 21740
++1 16302
++1 27170
++2 5
+cob=(6)
+cfi=(30)
+cfn=(1740)
+calls=1 0 
+* 774
+* 1
++1 3
++2 3
++1 3
++1 3
++1 1
++1 3
+-4 16302
++1 16302
++1 16302
++1 5434
++1 27172
+
+fn=(1650)
+1940 80
++1 48
+cfi=(43)
+cfn=(1652)
+calls=8 129 
+* 112
++2 56
+cfn=(1589)
+calls=8 -61 
+* 122836
++1 40
+cfi=(98)
+cfn=(1602)
+calls=8 703 
+* 8901
+
+fn=(2004)
+2043 13940
++1 8364
+cfi=(43)
+cfn=(2006)
+calls=1394 137 
+* 19516
++2 9758
+cfn=(1988) bdrv_co_do_writev
+calls=7 -54 
+* 7245
+cfn=(1989)
+calls=1387 -54 
+* 448003975
++1 6995
+cfi=(98)
+cfn=(1990)
+calls=1399 833 
+* 2056620
+
+fn=(2005)
+2043 50
++1 30
+cfi=(43)
+cfn=(2006)
+calls=5 137 
+* 70
++2 35
+cfn=(1989)
+calls=5 -54 
+* 5175
+
+fn=(2064)
+3378 2151
++1 1195
+cfi=(43)
+cfn=(2066)
+calls=239 113 
+* 3107
++5 1434
+cfn=(1512)
+calls=239 +48 
+* 8843
+* 239
++1 478
+cfi=(86)
+cfn=(1542)
+calls=239 21 
+* 9799
+* 239
++1 1195
+cfi=(86)
+cfn=(1547)
+calls=230 46 
+* 62330
+cfi=(86)
+cfn=(1546)
+calls=9 46 
+* 19647
++2 245
++1 1225
+cfi=(72)
+cfn=(2062)
+calls=236 789 
+* 2238187406
+
+fn=(2065)
+3378 603
++1 335
+cfi=(43)
+cfn=(2066)
+calls=67 113 
+* 871
++5 402
+cfn=(1512)
+calls=67 +48 
+* 2479
+* 67
++1 134
+cfi=(86)
+cfn=(1542)
+calls=67 21 
+* 2747
+* 67
++1 335
+cfi=(86)
+cfn=(1547)
+calls=67 46 
+* 134789
++2 61
++1 305
+
+fn=(1636)
+2609 11256
++1 4221
++2 8442
++1 1407
++5 7035
+
+fn=(1984)
+2863 6720
++1 3360
+cfi=(43)
+cfn=(1986)
+calls=560 121 
+* 8400
++2 6160
+cfn=(1541) bdrv_co_aio_rw_vector'2
+calls=1 3350 
+* 390
+cfn=(1540)
+calls=559 3350 
+* 1643065
++2 6970
+cfi=(81)
+cfn=(1518)
+calls=1064 175 
+* 447076200
+
+fn=(1985)
+2863 10008
++1 5004
+cfi=(43)
+cfn=(1986)
+calls=834 121 
+* 12510
++2 9174
+cfn=(1541)
+calls=834 3350 
+* 325260
+
+fn=(2070)
+3520 1715
++3 1225
+cfn=(1366) bdrv_is_inserted
+calls=245 3695 
+* 5635
+* 1225
+cfn=(2072) bdrv_is_read_only
+calls=245 2150 
+* 3430
+* 490
++5 1225
++1 1470
+cfi=(98)
+cfn=(2074)
+calls=245 1544 
+* 2238633036
++24 2754
++16 1836
++8 3672
+cfn=(2071)
+calls=918 -57 
+* 14688
++1 4590
+cfn=(2071)
+calls=306 * 
+* 151814
+cfn=(2084) bdrv_flush_co_entry
+calls=612 -62 
+* 652662
+fi=(87)
+245 235
++1 470
++3 235
++1 1175
+fe=(77)
+
+fn=(2071)
+3520 13279
++3 6731
+cfn=(1366)
+calls=979 3695 
+* 22517
+* 4895
+cfn=(2072)
+calls=979 2150 
+* 13706
+* 1958
++1 1836
++4 4895
++1 366
+cfi=(98)
+cfn=(2075)
+calls=61 1544 
+* 109190
+* 306
++1 612
++6 6120
++4 6120
++2 6120
++2 1836
++1 918
+cfi=(87)
+cfn=(1548)
+calls=918 253 
+* 45900
+-1 918
++4 7344
+cfi=(105)
+cfn=(2086)
+calls=918 366 
+* 305694
+* 918
++1 1836
++3 918
+cfi=(86)
+cfn=(1681)
+calls=673 62 
+* 177672
+cfi=(86)
+cfn=(1680)
+calls=245 62 
+* 2238259166
++15 306
++2 612
++8 1224
+cfn=(2071)
+calls=306 -57 
+* 226134
++1 6120
+cfn=(2068)
+calls=306 3371 
+* 150284
+
+fn=(1540)
+3350 7938
++4 3402
+cfn=(1512)
+calls=567 +78 
+* 21754
+* 567
++1 1701
++1 1701
++1 1701
++1 1701
++2 1134
+cfi=(86)
+cfn=(1542)
+calls=567 21 
+* 24490
+* 567
++1 2835
+cfi=(86)
+cfn=(1547)
+calls=483 46 
+* 1229883
+cfi=(86)
+cfn=(1546)
+calls=84 46 
+* 375134
++2 1402
++1 7010
+cfn=(1536)
+calls=1 2858 
+* 114518
+cfn=(1984)
+calls=1064 2868 
+* 447081520
+
+fn=(1541)
+3350 11690
++4 5010
+cfn=(1512)
+calls=835 +78 
+* 30895
+* 835
++1 2505
++1 2505
++1 2505
++1 2505
++2 1670
+cfi=(86)
+cfn=(1542)
+calls=835 21 
+* 34235
+* 835
++1 4175
+cfi=(86)
+cfn=(1547)
+calls=835 46 
+* 226285
+
+fn=(1598)
+1415 33708
++6 2809
+cfi=(87)
+cfn=(1548)
+calls=2809 253 
+* 140450
+* 2809
+-5 81461
++8 11236
+cfi=(97)
+cfn=(1600)
+calls=2809 48 
+* 56180
++2 42135
++1 14045
+
+fn=(1758)
+3449 38045
++1 10870
++1 16305
++1 21740
++1 16305
++1 27175
+
+fn=(1760) bdrv_co_em_bh
+3317 11956
++1 3416
++2 15372
+cfi=(72)
+cfn=(2108)
+calls=306 765 
+* 139842
+cfi=(81)
+cfn=(1518)
+calls=1402 139 
+* 2925800
++1 6832
+cfi=(23)
+cfn=(1788) qemu_bh_delete
+calls=1708 118 
+* 27328
++1 5124
+cfn=(1758)
+calls=1708 3449 
+* 40992
++1 8540
+
+fn=(1366)
+3695 33481
++1 14349
++2 9566
++1 1500
++1 16132
++1 8066
++2 23915
+
+fn=(1726)
+1403 19663
++1 25281
++1 11236
+cfi=(97)
+cfn=(1728)
+calls=2809 88 
+* 103933
++1 14045
+
+fn=(1988)
+1992 15411
++1 4203
++4 5604
++3 5604
++3 8406
+cfn=(1590)
+calls=1401 1555 
+* 192883
+* 2802
++5 5604
++4 5604
++4 9807
+cfn=(1598)
+calls=1401 1415 
+* 191937
++2 5604
++3 11208
+cfn=(2008) bdrv_co_writev_em
+calls=7 3508 
+* 5376
+cfi=(98)
+cfn=(1990)
+calls=1394 758 
+* 452723463
+* 1399
++3 8394
++4 5596
++4 11192
++4 4197
+cfn=(1726)
+calls=1399 1403 
+* 86738
++2 1399
++1 6995
+cfn=(2004)
+calls=1399 +8 
+* 2063615
+fi=(87)
+245 1064
++1 2128
++3 1064
++1 5320
+fe=(77)
+
+fn=(1989)
+1992 15312
++1 4176
++4 5568
++3 5568
++3 8352
+cfn=(1590)
+calls=1392 1555 
+* 101616
+* 2784
++5 5568
++4 5568
++4 9744
+cfn=(1598)
+calls=1392 1415 
+* 190704
++2 5568
++3 11136
+cfn=(2009) bdrv_co_writev_em'2
+calls=5 3508 
+* 3840
+cfn=(2008)
+calls=1387 3508 
+* 447633646
+* 1394
++3 8364
++4 5576
++4 11152
++4 4182
+cfn=(1726)
+calls=1394 1403 
+* 86428
++2 1394
++1 6970
+cfn=(1586)
+calls=1394 3335 
+* 683071
+
+fn=(2008)
+3508 13940
++1 9758
+cfn=(1656)
+calls=1394 -34 
+* 447615324
++1 6995
+cfn=(1988)
+calls=1399 2021 
+* 2189525
+
+fn=(2009)
+3508 50
++1 35
+cfn=(1657) bdrv_co_io_em'2
+calls=5 -34 
+* 3755
+
+fn=(2084)
+3513 1715
++1 490
++2 980
+cfn=(2071)
+calls=245 +4 
+* 2238375541
+* 1224
++1 3060
+cfn=(2082)
+calls=612 +98 
+* 648378
+
+fn=(2085) bdrv_flush_co_entry'2
+3513 2569
++1 734
++2 1468
+cfn=(2071)
+calls=367 +4 
+* 271213
+
+fn=(1594) bdrv_getlength
+2104 9814
++1 4206
++1 2804
++3 9814
+cfn=(1596) bdrv_dev_has_removable_media
+calls=1402 1211 
+* 29442
+* 2804
++5 4206
++1 7010
+
+fn=(1782)
+3892 17080
++1 6832
++2 25620
++1 18788
++1 15372
+cfi=(15)
+cfn=(218)
+calls=1708 119 
+* 63196
+* 13664
++1 13664
+
+fn=(2082)
+3606 1715
++2 1960
++5 245
+cfi=(87)
+cfn=(1642)
+calls=245 260 
+* 10045
+* 490
++2 735
+cfn=(2084)
+calls=245 3513 
+* 2238378726
+* 612
++9 612
++1 3060
+cfi=(100)
+cfn=(2076)
+calls=612 151 
+* 644094
+
+fn=(2083)
+3606 2569
++2 2936
++5 367
+cfi=(87)
+cfn=(1642)
+calls=367 260 
+* 15047
+* 734
++2 1101
+cfn=(2085)
+calls=367 3513 
+* 275984
+
+fn=(1590)
+1555 25281
++1 5618
++1 5618
+-1 19663
+cfn=(1592) bdrv_check_byte_request
+calls=2809 -23 
+* 225962
++2 14045
+
+fn=(1596)
+1211 9814
++1 12618
++1 7010
+
+fn=(2072)
+2150 8568
++1 2448
++1 6120
+
+fn=(1458)
+3882 17080
++1 3416
++2 5124
++1 1708
+cfi=(15)
+cfn=(218)
+calls=1708 119 
+* 63196
+* 3416
++1 5124
++1 8540
+
+fn=(1586)
+3327 9814
++1 2804
++1 4206
++2 7010
++2 8
+-1 8
++1 8
+-1 56
+cfn=(1588)
+calls=8 1882 
+* 146971
+* 24
++4 1394
+-1 1394
++1 1394
+-1 9758
+cfn=(1988)
+calls=1394 1992 
+* 453195847
+* 2788
++4 5576
+cfi=(23)
+cfn=(1736)
+calls=1394 45 
+* 306691
+* 32
+cfi=(23)
+cfn=(1736)
+calls=8 45 
+* 1757
+* 2804
++1 5608
+cfi=(23)
+cfn=(1752)
+calls=1402 103 
+* 117768
++1 7010
+cfi=(87)
+cfn=(1584)
+calls=1402 139 
+* 236938
+
+fn=(1592)
+1533 25281
++3 8427
+cfn=(1366)
+calls=2809 3695 
+* 64607
+* 5618
++3 11236
++1 2814
++2 4206
+cfn=(1594)
+calls=1402 2104 
+* 70100
+* 1402
++2 2804
++3 14020
++3 1402
++1 14045
+
+fn=(1656)
+3475 16824
++1 2804
++1 1402
+cfi=(87)
+cfn=(1548)
+calls=1402 253 
+* 70100
+-1 1402
++5 2804
++1 4182
++1 1394
+-1 11152
+cfi=(105)
+cfn=(2010)
+calls=1394 359 
+* 526932
+* 2788
++3 24
++1 8
+-1 64
+cfi=(105)
+cfn=(1658)
+calls=8 351 
+* 3024
+* 8
++4 64
+cfi=(43)
+cfn=(1678)
+calls=8 145 
+* 128
+* 11152
+cfi=(43)
+cfn=(1678)
+calls=1394 145 
+* 22304
++1 2804
++3 1402
+cfi=(86)
+cfn=(1681)
+calls=255 62 
+* 67320
+cfi=(86)
+cfn=(1680)
+calls=1147 62 
+* 446985786
++2 1407
++1 7035
+cfn=(2008)
+calls=1399 +14 
+* 2196520
+cfn=(1654)
+calls=8 +7 
+* 9597
+
+fn=(1657)
+3475 60
++1 10
++1 5
+cfi=(87)
+cfn=(1548)
+calls=5 253 
+* 250
+-1 5
++5 10
++1 15
++1 5
+-1 40
+cfi=(105)
+cfn=(2010)
+calls=5 359 
+* 1890
+* 10
++7 40
+cfi=(43)
+cfn=(1678)
+calls=5 145 
+* 80
++1 10
++3 5
+cfi=(86)
+cfn=(1681)
+calls=5 62 
+* 1320
+
+fn=(1724)
+3465 18600
++1 4650
++2 6975
++1 11625
+cfi=(86)
+cfn=(1546)
+calls=2325 46 
+* 3875358
++1 11625
+
+fl=(24) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/slirp/slirp.c
+fn=(388) slirp_select_poll
+421 763480
++5 229044
++1 76348
+608 381740
+
+fn=(286) slirp_update_timeout
+265 534436
++1 229044
++3 381740
+
+fn=(288) slirp_select_fill
+273 839828
++5 229044
++1 76348
+417 534436
+
+fl=(85)
+fn=(1516)
+148 22432
++1 14020
+cob=(6)
+cfi=(30)
+cfn=(458)
+calls=2804 0 
+* 688948
+* 8412
++1 5608
++1 8412
++1 5608
++1 14020
+
+fn=(1524)
+223 58919
++1 33668
++2 16834
++1 16834
++1 42085
+
+fn=(1534)
+168 179505
++1 79780
++2 119670
++4 179505
++1 179505
++1 119670
++1 99725
++1 99725
+
+fn=(1634)
+193 14070
++3 4221
++1 5628
++1 5628
++1 4221
++1 69965
++1 119700
++1 119700
+cfn=(1534)
+calls=9975 -34 
+* 528675
++1 19950
++1 19950
++2 120
+-7 84181
++11 7035
+
+fn=(1730)
+213 19628
++1 11216
++2 8412
+cfn=(1524)
+calls=2804 +7 
+* 56080
++1 11216
+cob=(6)
+cfi=(30)
+cfn=(498)
+calls=2804 0 
+* 415655
++1 5608
++1 5608
++1 14020
+
+fn=(2090)
+137 6426
++2 2754
+cob=(2)
+cfi=(10)
+cfn=(2094) fdatasync
+calls=918 -57 
+* 34884
++4 4590
+
+fl=(12)
+fn=(1206) handle_activation
+826 64
++9 60
+cfi=(36) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/console.c
+cfn=(692) is_graphic_console
+calls=4 1440 
+* 80
+* 8
++1 4
+cfi=(59) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/input.c
+cfn=(1208) kbd_mouse_is_absolute
+calls=4 200 
+* 64
+-1 8
++1 12
++3 48
++11 40
+
+fn=(2186) reset_keys
+332 18
++2 6
++1 4608
+-1 2310
++8 15
+
+fn=(1218) sdl_keyevent_to_keycode
+300 56
++4 24
++3 32
++2 16
++1 6
++1 10
++1 10
++14 8
++1 40
+
+fn=(1216) sdl_process_key
+345 56
++3 32
++11 24
++3 24
+cfn=(1218)
+calls=8 -62 
+* 202
+* 16
++3 93
++3 3
+cfn=(2186)
+calls=3 -36 
+* 6957
++1 3
++25 20
++2 20
++1 12
+cfi=(59)
+cfn=(1220) kbd_put_keycode
+calls=3 132 
+* 2175
+* 3
++2 8
+cfi=(59)
+cfn=(1220)
+calls=2 132 
+* 1450
++1 40
+
+fn=(2240) handle_mousemotion
+766 456
++3 57
+cfi=(36)
+cfn=(692)
+calls=57 1440 
+* 1140
+* 114
++1 57
+cfi=(59)
+cfn=(1208)
+calls=57 200 
+* 912
+-1 114
++1 171
++13 228
+cfi=(59)
+cfn=(1208)
+calls=57 200 
+* 912
+* 285
++4 285
+
+fn=(1214) handle_keyup
+734 48
++3 24
++1 36
++4 30
++18 6
+cfi=(36)
+cfn=(692)
+calls=6 1440 
+* 120
+* 30
++1 18
+cfn=(1216)
+calls=6 345 
+* 9540
++2 30
+
+fn=(208)
+853 139440
++1 39840
++2 19920
+cfi=(14)
+cfn=(420)
+calls=19920 427 
+* 577680
+* 59760
++5 19920
+cfi=(36)
+cfn=(424) vga_hw_update
+calls=19920 168 
+* 48137992122
++1 19919
+cfi=(36)
+cfn=(692)
+calls=19919 1440 
+* 398380
+* 99595
+cob=(5)
+cfi=(1)
+cfn=(696)
+calls=19919 0 
+* 99595
++2 19919
++1 949
++5 10
+cfn=(1444) handle_keydown
+calls=2 589 
+* 1780
++1 2
++2 30
+cfn=(1214)
+calls=6 734 
+* 9882
++1 6
++8 285
+cfn=(2240)
+calls=57 766 
+* 4731
++1 57
++6 40
+cfn=(1206)
+calls=8 -63 
+* 388
++1 8
+-26 59976
+cob=(5)
+cfi=(1)
+cfn=(196)
+calls=19992 0 
+* 15549124
+cob=(5)
+cfi=(1)
+cfn=(196)
+calls=1 0 
+* 764
+* 39986
++36 99600
+
+fn=(536)
+64 68398
++3 12436
++1 12436
++1 12436
++1 12436
++2 18654
++1 18654
++3 43526
+cfi=(49)
+cfn=(538)
+calls=6218 -43 
+* 41387071953
+* 12436
++6 74616
+cob=(5)
+cfi=(1)
+cfn=(544)
+calls=6218 -82 
+* 7567306
++1 31090
+
+fn=(1444)
+589 18
++4 8
++3 8
++3 2
+cob=(5)
+cfi=(1)
+cfn=(1448)
+calls=2 0 
+* 4
+* 14
++2 4
++2 6
++51 2
+cfi=(36)
+cfn=(692)
+calls=2 1440 
+* 40
+* 4
++74 2
+cfi=(36)
+cfn=(692)
+calls=2 1440 
+* 40
+* 10
++1 6
+cfn=(1216)
+calls=2 345 
+* 1598
++2 14
+
+fl=(73)
+fn=(1320)
+505 297346
++1 297346
++1 212390
+
+fn=(1382)
+510 5250
++1 4500
++1 3000
+cfi=(74)
+cfn=(1384)
+calls=750 11 
+* 226500
++2 3750
+-4 11956
++1 10248
++1 6832
+cfi=(74)
+cfn=(1384)
+calls=1708 11 
+* 515816
++2 8540
+
+fl=(15)
+fn=(704) get_ticks_per_sec
+88 9432
++1 1572
++1 7860
+
+fn=(214)
+83 139440
++1 59760
+cfi=(16)
+cfn=(216)
+calls=19920 398 
+* 1095600
+* 199200
++1 99600
+
+fn=(218)
+119 20496
++3 13664
++2 13664
+cob=(9)
+cfi=(17) /build/buildd/eglibc-2.15/rt/../sysdeps/unix/clock_gettime.c
+cfn=(222) clock_gettime
+calls=3416 -30 
+* 44408
++1 17080
++8 17080
+-14 834534
++3 556356
++2 556356
+cob=(9)
+cfi=(17)
+cfn=(222)
+calls=139089 -30 
+* 1808157
++1 695445
++8 695445
+-14 2481408
++3 1654272
++2 1654272
+cob=(9)
+cfi=(17)
+cfn=(222)
+calls=413568 -30 
+* 5376384
++1 2067840
++8 2067840
+
+fn=(238)
+94 715014
++3 476676
+cob=(20)
+cfi=(18)
+cfn=(242)
+calls=119169 -97 
+* 357507
++1 595845
++1 595845
+
+fl=(41) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/int128.h
+fn=(444) int128_get64
+17 1992000
++1 597600
++1 199200
++1 996000
+
+fl=(46)
+fn=(494) cpu_physical_memory_get_dirty_flags
+49 11087356
++1 9503448
++1 7919540
+-2 132205962
++1 132205962
++1 94432830
+
+fn=(1770)
+55 11087356
++1 4751724
+cfn=(494)
+calls=1583908 -7 
+* 28510344
+* 4751724
++1 7919540
+
+fn=(490) cpu_physical_memory_set_dirty_flags
+76 503368
++1 251684
++1 314605
+cfn=(492) cpu_physical_memory_get_dirty
+calls=62921 -16 
+* 3586497
+-1 125842
++5 1069657
++1 314605
+
+fn=(688)
+119 55962
++3 37308
++1 6218
++1 18654
++1 376705
+cfn=(690) cpu_physical_memory_clear_dirty_flags
+calls=75341 -33 
+* 2636935
+-1 320018
++3 31090
+
+fn=(488) cpu_physical_memory_set_dirty_range
+106 566289
++3 377526
++1 62921
++1 188763
++1 314605
+cfn=(490)
+calls=62921 -36 
+* 6166258
+-1 440447
++3 314605
+
+fn=(690)
+92 602728
++1 226023
++2 301364
++5 1130115
++1 376705
+
+fn=(492)
+62 107950698
++1 11994522
++3 71967132
++1 11994522
++1 35983566
++1 56659698
+cfn=(494)
+calls=18886566 -20 
+* 358844754
+* 37773132
+-1 111529830
++3 11994522
++1 59972610
+
+fl=(36)
+fn=(424)
+168 119520
++1 139440
++1 119520
+cfi=(37)
+cfn=(426)
+calls=19920 1879 
+* 48137514047
++1 99595
+
+fn=(692)
+1440 119940
++1 179910
++1 99950
+
+fl=(112) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/bitops.h
+fn=(1806) bitops_ffsl
+32 3387881
++1 483983
++3 1935932
++5 1935932
++4 1935932
++4 1935932
++4 1935932
++4 1935932
++1 363410
++2 726820
++1 1090230
+-1 241146
++1 1329685
+
+fl=(87)
+fn=(1642)
+260 22404
++1 11202
+cob=(10)
+cfi=(88)
+cfn=(1554)
+calls=3734 32 
+* 63478
+* 3734
++2 33606
+0 18670
+
+fn=(1550) coroutine_get_thread_state
+81 234192
++1 117096
+cob=(10)
+cfi=(88)
+cfn=(1554)
+calls=39032 -50 
+* 663544
+* 39032
++2 78064
++5 39032
++1 195160
+
+fn=(1548)
+253 185712
++1 30952
+cfn=(1550)
+calls=30952 81 
+* 1083320
+* 30952
++2 61904
++1 154760
+
+fn=(1560)
+237 33534
++1 14904
++1 14904
++1 3726
+cfn=(1550)
+calls=3726 81 
+* 130410
+* 3726
++3 11178
++2 14904
+cob=(2)
+cfi=(89) /build/buildd/eglibc-2.15/setjmp/../sysdeps/x86_64/bsd-_setjmp.S
+cfn=(1564) _setjmp
+calls=3726 34 
+* 108054
+* 6150
++1 12300
++1 22356
+cob=(10)
+cfi=(92)
+cfn=(1573)
+calls=1 26 
+* 63
+cob=(10)
+cfi=(92)
+cfn=(1572)
+calls=3725 26 
+* 2689145788
++2 2424
++1 12120
+
+fn=(1561)
+237 39186
++1 17416
++1 17416
++1 4354
+cfn=(1550)
+calls=4354 81 
+* 152390
+* 4354
++3 13062
++2 17416
+cob=(2)
+cfi=(89)
+cfn=(1564)
+calls=4354 34 
+* 126266
+* 8709
++1 17418
++1 26124
+cob=(10)
+cfi=(92)
+cfn=(1573)
+calls=4354 26 
+* 1482364
++2 4355
++1 21775
+cfi=(86)
+cfn=(1559)
+calls=3633 31 
+* 2688511046
+cfn=(1584)
+calls=407 140 
+* 1571769
+
+fn=(1756)
+217 11956
++1 6832
++2 5124
++1 8540
++1 3416
++1 5124
++1 1708
++9 8540
+
+fn=(1544)
+189 10248
++3 3416
++1 3416
++1 5121
++1 6828
++2 1
+cfn=(2112) coroutine_new
+calls=1 -53 
+* 1265
+* 1
++2 1
++1 3
+-1 1707
++1 8537
+cfi=(86)
+cfn=(1542)
+calls=1 22 
+* 287
+
+fn=(2112)
+144 6
++1 1
++4 1
++9 3
+cob=(2)
+cfi=(122) /build/buildd/eglibc-2.15/stdlib/../sysdeps/unix/sysv/linux/x86_64/getcontext.S
+cfn=(2116) getcontext
+calls=1 38 
+* 31
+* 2
++4 2
+cob=(6)
+cfi=(30)
+cfn=(1740)
+calls=1 0 
+* 298
+* 1
++1 3
+cob=(6)
+cfi=(30)
+cfn=(458)
+calls=1 0 
+* 733
+* 3
++1 3
++2 2
++1 3
++1 2
++1 1
++7 2
++2 10
+cob=(2)
+cfi=(124) /build/buildd/eglibc-2.15/stdlib/../sysdeps/unix/sysv/linux/x86_64/makecontext.c
+cfn=(2124) makecontext
+calls=1 62 
+* 69
++4 3
+cob=(2)
+cfi=(89)
+cfn=(1564)
+calls=1 34 
+* 29
+* 4
++1 5
+cob=(2)
+cfi=(125) /build/buildd/eglibc-2.15/stdlib/../sysdeps/unix/sysv/linux/x86_64/swapcontext.S
+cfn=(2128) swapcontext
+calls=1 40 
+* 50
++2 1
++1 5
+cfn=(1544)
+calls=1 +11 
+* 294
+
+fn=(1584)
+138 2442
+cfi=(77)
+cfn=(2069)
+calls=61 3367 
+* 114192
+cfi=(77)
+cfn=(2068)
+calls=9 3367 
+* 16848
+cfi=(77)
+cfn=(1586)
+calls=337 3327 
+* 1437880
++1 11956
+cfn=(1561)
+calls=1708 +98 
+* 276696
++1 407
+
+fl=(23)
+fn=(1736)
+45 13664
++2 3416
+cob=(6)
+cfi=(30)
+cfn=(1740)
+calls=1708 -47 
+* 328288
+* 1708
++1 5124
++1 5124
++1 5124
++1 3416
++1 1708
++1 8540
+
+fn=(1752)
+103 12005
++1 6860
++2 3430
++1 3430
++2 1715
+cfi=(22)
+cfn=(402)
+calls=1715 -72 
+* 106330
+* 1715
++1 8575
+
+fn=(284) qemu_bh_update_timeout
+124 534436
++3 229044
++1 2061396
+-1 1297916
++14 381740
+
+fn=(1788)
+118 11956
++1 3416
++1 3416
++1 8540
+
+fn=(264) qemu_bh_poll
+56 458088
++5 229044
++2 76348
++1 229044
++1 692256
++1 2076768
++1 3430
++1 8575
++1 1715
++1 3430
++1 10290
+cfi=(97)
+cfn=(2134)
+calls=7 -34 
+* 21302
+cfi=(77)
+cfn=(1760)
+calls=1708 3317 
+* 3185202
+-7 1075704
++11 229044
++3 229044
++1 152696
++1 76348
++1 692256
++1 923008
++1 6832
++1 5124
+cob=(6)
+cfi=(30)
+cfn=(498)
+calls=1708 -84 
+* 193054
+* 1708
++2 687132
+-6 1228400
++11 76348
++1 381740
+
+fl=(28)
+fn=(1842) net_hub_receive
+46 4874170
++3 1949668
++1 2924502
++4 3411919
+cfi=(27)
+cfn=(1828)
+calls=366844 393 
+* 3760039570
+cfi=(27)
+cfn=(1829)
+calls=120573 393 
+* 50881806
+* 487417
+-3 487417
+-2 5849004
++7 487417
++1 2437085
+
+fn=(296)
+90 6514263
++2 3722436
++1 2791827
++2 3722436
++1 5583654
++4 2791827
+cfi=(27)
+cfn=(295)
+calls=930609 303 
+* 106371189
+* 1861218
+-3 930609
+-2 11167308
++10 930609
++1 4653045
+
+fn=(1840)
+110 4386753
++1 1949668
++2 3411919
+cfn=(1842)
+calls=487417 -67 
+* 3833829975
++1 2437085
+
+fl=(83)
+fn=(1494)
+694 37107208
++1 13915203
++1 13915203
++1 4638401
++1 23192005
+
+fn=(1896)
+350 1211588
++1 865420
++1 865420
+
+fl=(76)
+fn=(1374) event_status_media
+501 3000
++3 375
++1 1500
++2 1500
+cfi=(77)
+cfn=(1366)
+calls=375 3695 
+* 7125
+* 750
++5 375
++1 750
++1 1500
++3 1500
++6 1500
++1 1500
++3 1125
++1 1125
++2 375
++1 1875
+
+fn=(1368) cmd_get_event_status_notification
+535 3000
++1 750
++19 750
++1 750
++2 1875
+cfi=(71)
+cfn=(1370)
+calls=375 128 
+* 13125
+* 750
++3 2250
++17 750
++7 750
++7 2250
++1 2250
++1 1875
+cfn=(1374)
+calls=375 -93 
+* 25875
+* 750
++5 1875
+cfi=(71)
+cfn=(1376)
+calls=375 128 
+* 13125
+* 750
++2 2250
+cfn=(1378) ide_atapi_cmd_reply
+calls=375 246 
+* 198375
++1 1875
+
+fn=(1380)
+167 6000
++8 3000
++2 1125
+cfi=(72)
+cfn=(1406)
+calls=375 414 
+* 10875
++1 750
++1 2625
++1 1500
+cfi=(73)
+cfn=(1382)
+calls=375 510 
+* 121500
+* 375
++6 1500
++10 1500
++13 2625
++1 3375
++4 750
++2 1125
++1 1125
++6 1500
++1 1875
++1 1125
++2 1500
++4 2250
++1 2250
++1 2250
++1 6000
+cfi=(72)
+cfn=(1348)
+calls=375 403 
+* 23250
++2 1500
+cfi=(73)
+cfn=(1382)
+calls=375 510 
+* 121500
++6 5250
+
+fn=(1364)
+1089 2625
++3 1125
++17 1500
++12 3375
+cfi=(77)
+cfn=(1366)
+calls=375 3695 
+* 7125
+* 750
++10 4500
++8 4125
++1 5250
+cfn=(1368)
+calls=375 535 
+* 276000
++1 375
++4 1875
+
+fn=(1378)
+246 3375
++1 1125
++2 750
++1 1125
++1 1125
++1 750
++1 750
++2 1500
++6 750
++1 1125
+cfn=(1380)
+calls=375 -95 
+* 184125
++2 1875
+
+fl=(29)
+fn=(1814) rtl8139_cplus_transmit
+2403 844011
++1 120573
++2 120573
++2 120573
+-2 361719
+cfn=(1816) rtl8139_cplus_transmit_one
+calls=120573 1939 
+* 278207124
+* 361719
+cfn=(1816)
+calls=120573 1939 
+* 545762963
+* 482292
++6 241146
++8 723438
++1 361719
+cfn=(1854) rtl8139_update_irq
+calls=120573 703 
+* 87178727
++2 602865
+
+fn=(1906) rtl8139_mmio_readw
+3246 1384672
++1 1038504
+cfn=(1908) rtl8139_io_readw
+calls=173084 3044 
+* 33798114
+* 173084
++1 173084
++1 865420
+
+fn=(1918) rtl8139_mmio_writew
+3231 1712934
++1 1332282
+cfn=(1920) rtl8139_io_writew
+calls=190326 2804 
+* 187571592
++1 951630
+
+fn=(304) rtl8139_cp_rx_valid
+787 10802799
++1 9259542
++1 7716285
+
+fn=(1808) rtl8139_mmio_writeb
+3226 1085157
++1 844011
+cfn=(1810) rtl8139_io_writeb
+calls=120573 2719 
+* 926702731
++1 602865
+
+fn=(1926) rtl8139_IntrMask_read
+2638 183330
++1 104760
++2 130950
+cfn=(1812) DPRINTF
+calls=26190 90 
+* 523800
++2 26190
++1 130950
+
+fn=(298)
+792 8238160
++1 5884400
++4 4707520
++2 3530640
+cfn=(300) rtl8139_receiver_enabled
+calls=1176880 -79 
+* 18830080
+* 2353760
++3 3530640
+cfn=(302) rtl8139_cp_receiver_enabled
+calls=1176880 -72 
+* 18830080
+* 5884400
+cfn=(304)
+calls=1176880 -15 
+* 21183840
+* 2353760
++3 2353760
++6 5884400
+
+fn=(1818) rtl8139_transmitter_enabled
+725 1688022
++1 964584
++1 1205730
+
+fn=(1822) rtl8139_addr64
+776 8751248
++2 4375624
++4 5469530
+
+fn=(1884)
+1191 3301596
++1 2201064
+cfn=(1886) rtl8139_do_receive
+calls=366844 814 
+* 3625040978
++1 1834220
+
+fn=(1820) rtl8139_cp_transmitter_enabled
+735 1688022
++1 964584
++1 1205730
+
+fn=(1854)
+703 5889884
++2 5889884
++3 1682824
+-1 9255532
+cfn=(1812)
+calls=841412 90 
+* 16828240
++3 7572708
+cfi=(62)
+cfn=(1232)
+calls=841412 34 
+* 238063797
++1 4207060
+
+fn=(1886)
+814 4035284
++1 1834220
++2 733688
++1 366844
++2 366844
++6 1834220
+cfn=(1812)
+calls=366844 90 
+* 7336880
++3 1467376
++8 1100532
+cfn=(300)
+calls=366844 720 
+* 5869504
+* 733688
++7 1834220
++5 1834220
+cob=(2)
+cfi=(116) /build/buildd/eglibc-2.15/string/../sysdeps/x86_64/multiarch/memcmp-sse4.S
+cfn=(1890) __memcmp_sse4_1
+calls=366844 52 
+* 8437412
+* 733688
++2 7225
++10 1445
++2 4335
+cfn=(1812)
+calls=1445 90 
+* 28900
++3 8670
++2 2192394
++2 3295
++10 1977
+cfi=(27)
+cfn=(2060)
+calls=659 1035 
+* 603059
+* 659
++2 9885
++2 1398
+cfn=(1812)
+calls=466 90 
+* 9320
++3 2330
++2 1398
++3 193
++2 579
+cfn=(1812)
+calls=193 90 
+* 3860
++3 1158
++2 2188440
++1 1823695
+-1 729478
++2 1823695
+-1 729478
++2 1823695
+-1 729478
++2 1823695
+-1 729478
++2 1823695
+-1 729478
++3 1823695
++10 364739
++2 1094217
+cfn=(1812)
+calls=364739 90 
+* 7294780
++3 2188434
++4 3
+cfn=(1812)
+calls=1 90 
+* 20
++3 5
++2 3
++6 732754
++1 7749
+cob=(2)
+cfi=(57)
+cfn=(750)
+calls=1107 60 
+* 22124
++1 11070
+cob=(2)
+cfi=(44)
+cfn=(472)
+calls=1107 44 
+* 18837
++1 2214
++1 2214
++1 8
++4 24
+cfn=(302)
+calls=8 730 
+* 128
+* 1099107
+cfn=(302)
+calls=366369 730 
+* 5861904
+* 732754
++2 1099131
+cfn=(304)
+calls=366377 787 
+* 6594786
+* 1099131
++4 1099131
+cfn=(1812)
+calls=366377 90 
+* 7327540
++17 1099131
++3 2564639
+cfn=(1822)
+calls=366377 776 
+* 6228409
+* 366377
++1 1465508
++4 366377
+-2 366377
++1 366377
+-1 2931016
+cfn=(1812)
+calls=366377 90 
+* 7327540
++6 2198262
+cfi=(80)
+cfn=(1476)
+calls=366377 604 
+* 185982128
++1 1099131
+cfi=(71)
+cfn=(1362)
+calls=366377 133 
+* 4762901
+* 366377
++1 2564639
+cfi=(80)
+cfn=(1476)
+calls=366377 604 
+* 185982128
++1 1099131
+cfi=(71)
+cfn=(1362)
+calls=366377 133 
+* 4762901
+* 366377
++1 2564639
+cfi=(80)
+cfn=(1476)
+calls=366377 604 
+* 186027922
++1 1099131
+cfi=(71)
+cfn=(1362)
+calls=366377 133 
+* 4762901
+* 366377
++1 2564639
+cfi=(80)
+cfn=(1476)
+calls=366377 604 
+* 186027922
++1 1099131
+cfi=(71)
+cfn=(1362)
+calls=366377 133 
+* 4762901
+* 366377
++2 4030147
+cfn=(1812)
+calls=366377 90 
+* 7327540
++3 1099131
++2 2835
+cfn=(1812)
+calls=567 90 
+* 11340
++3 3402
++1 2835
++3 2835
++1 2835
++2 1701
+cfn=(1854)
+calls=567 703 
+* 80514
++1 1134
++3 1097430
++3 2194860
++18 365810
++5 1463240
++16 1829050
+cfn=(1822)
+calls=365810 776 
+* 6218770
+* 365810
++3 731620
++6 2560670
+cfi=(80)
+cfn=(1824) pci_dma_write
+calls=365810 610 
+* 337168186
++9 2194860
+cob=(16) /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+cfi=(117) ???
+cfn=(1894) crc32
+calls=365810 0 
+* 1619160656
+* 731620
+cfi=(71)
+cfn=(1402)
+calls=365810 133 
+* 4755530
+* 365810
++1 3292290
+cfi=(80)
+cfn=(1824)
+calls=365810 610 
+* 208882634
++24 365810
++3 365810
++3 365810
++3 1463240
++1 1336
++1 1463240
++1 193
++1 1463240
++1 364281
++3 364281
++1 1092843
++3 1092843
+cfi=(71)
+cfn=(1402)
+calls=364281 133 
+* 4735653
+-4 1529
++1 4587
++3 4587
+cfi=(71)
+cfn=(1402)
+calls=1529 133 
+* 19877
+* 365810
++1 2194860
+cfi=(80)
+cfn=(1824)
+calls=365810 610 
+* 209014690
++1 1097430
+cfi=(71)
+cfn=(1402)
+calls=365810 133 
+* 4755530
+* 365810
++1 2560670
+cfi=(80)
+cfn=(1824)
+calls=365810 610 
+* 208968964
++3 1829050
++3 1463240
++2 17148
++4 1800470
++3 1080282
+cfn=(1812)
+calls=360094 90 
+* 7201880
+* 17148
+cfn=(1812)
+calls=5716 90 
+* 114320
+* 365810
++48 2194860
++2 731620
++2 1097430
+cfn=(1854)
+calls=365810 703 
+* 59016810
++3 365810
++1 2567908
+
+fn=(1920)
+2804 1903260
++1 380652
++2 1489422
++3 130950
+cfn=(1924) rtl8139_IntrMask_write
+calls=26190 2624 
+* 16584325
++1 26190
++3 820680
+cfn=(1922) rtl8139_IntrStatus_write
+calls=164136 2647 
+* 165120347
++1 164136
++44 951630
+
+fn=(1922)
+2647 1313088
++1 820680
+cfn=(1812)
+calls=164136 90 
+* 3282720
++9 984816
++3 1313088
++3 328272
++1 492408
+cfn=(1854)
+calls=164136 703 
+* 100567812
++2 492408
++7 656544
+cfi=(16)
+cfn=(216)
+calls=164136 398 
+* 13459152
+* 820680
+cfn=(1912) rtl8139_set_next_tctr_time
+calls=164136 2862 
+* 8206800
++1 492408
+cfn=(1854)
+calls=164136 703 
+* 31068791
++3 820680
+
+fn=(1810)
+2719 1205730
++1 241146
++2 1808595
++59 602865
+cfn=(1812)
+calls=120573 90 
+* 2411460
++1 482292
++6 482292
++2 361719
+cfn=(1812)
+calls=120573 90 
+* 2411460
++1 361719
+cfn=(1814)
+calls=120573 2403 
+* 915489442
++3 241146
++7 602865
+
+fn=(1908)
+3044 1557756
++1 346168
++3 2008684
++6 78570
+cfn=(1926)
+calls=26190 2638 
+* 1099980
+* 26190
++1 26190
++3 440682
+cfn=(1910) rtl8139_IntrStatus_read
+calls=146894 2680 
+* 26881602
+* 146894
++1 146894
++59 173084
++1 865420
+
+fn=(1912)
+2862 3034980
++4 1011660
+cfn=(1812)
+calls=337220 90 
+* 6744400
++2 1348880
++12 674440
++1 1348880
++1 337220
++17 2360540
+
+fn=(300)
+720 10806068
++1 6174896
++1 7718620
+
+fn=(302)
+730 10802799
++1 6173028
++1 7716285
+
+fn=(1816)
+1939 1929168
++1 723438
+cfn=(1818)
+calls=241146 725 
+* 3858336
+* 482292
++6 723438
+cfn=(1820)
+calls=241146 735 
+* 3858336
+* 482292
++6 723438
++2 1688022
+cfn=(1822)
+calls=241146 776 
+* 4099482
+* 241146
++3 964584
++4 241146
+-2 241146
++1 241146
+-1 1929168
+cfn=(1812)
+calls=241146 90 
+* 4822920
++6 1446876
+cfi=(80)
+cfn=(1476)
+calls=241146 604 
+* 122441880
++1 723438
+cfi=(71)
+cfn=(1362)
+calls=241146 133 
+* 3134898
+* 241146
++1 1688022
+cfi=(80)
+cfn=(1476)
+calls=241146 604 
+* 122472024
++1 723438
+cfi=(71)
+cfn=(1362)
+calls=241146 133 
+* 3134898
+* 241146
++1 1688022
+cfi=(80)
+cfn=(1476)
+calls=241146 604 
+* 122472024
++1 723438
+cfi=(71)
+cfn=(1362)
+calls=241146 133 
+* 3134898
+* 241146
++1 1688022
+cfi=(80)
+cfn=(1476)
+calls=241146 604 
+* 122472024
++1 723438
+cfi=(71)
+cfn=(1362)
+calls=241146 133 
+* 3134898
+* 241146
++2 2652606
+cfn=(1812)
+calls=241146 90 
+* 4822920
++45 723438
++2 602865
+cfn=(1812)
+calls=120573 90 
+* 2411460
++1 241146
++3 602865
+cfn=(1812)
+calls=120573 90 
+* 2411460
++2 482292
++2 602865
+cfn=(1812)
+calls=120573 90 
+* 2411460
++4 241146
++3 361719
++1 602865
+cfn=(1822)
+calls=120573 776 
+* 2049741
+* 120573
++3 482292
++10 964584
++8 482292
++18 120573
+-2 844011
+cfn=(1812)
+calls=120573 90 
+* 2411460
++4 241146
++1 602865
+-1 844011
+cfi=(80)
+cfn=(1476)
+calls=120573 604 
+* 62216252
++2 723438
++3 482292
++2 5652
++4 593445
++1 474756
++5 120573
++3 120573
++1 120573
++1 120573
++1 120573
++1 120573
++3 361719
+cfi=(71)
+cfn=(1402)
+calls=120573 133 
+* 1567449
+* 120573
++1 723438
+cfi=(80)
+cfn=(1824)
+calls=120573 610 
+* 68862255
++3 482292
++5 602865
+cfn=(1812)
+calls=120573 90 
+* 2411460
++5 361719
++1 361719
++1 361719
++3 482292
++11 120573
++4 241146
++1 241146
++1 241146
++2 482292
+2375 602865
++2 602865
+cfn=(1812)
+calls=120573 90 
+* 2411460
++2 964584
+cfn=(1826) rtl8139_transfer_frame
+calls=120573 1762 
+* 104416218
++4 482292
++2 361719
++1 361719
++1 361719
++12 120573
++1 1688022
+
+fn=(1826)
+1762 1326303
++1 120573
++2 241146
++6 241146
++9 602865
++21 241146
++3 844011
+cfi=(27)
+cfn=(1828)
+calls=120573 393 
+* 100196163
++3 602865
+
+fn=(1812)
+90 72633596
++1 5188114
++1 25940570
+
+fn=(1910)
+2680 1028258
++1 587576
+cfi=(16)
+cfn=(216)
+calls=146894 398 
+* 12045308
+* 734470
+cfn=(1912)
+calls=146894 2862 
+* 7344700
++2 587576
++2 734470
+cfn=(1812)
+calls=146894 90 
+* 2937880
++11 146894
++1 734470
+
+fn=(1924)
+2624 209520
++1 130950
+cfn=(1812)
+calls=26190 90 
+* 523800
++3 235710
++2 104760
++2 104760
+cfi=(16)
+cfn=(216)
+calls=26190 398 
+* 2147580
+* 130950
+cfn=(1912)
+calls=26190 2862 
+* 1309500
++1 78570
+cfn=(1854)
+calls=26190 703 
+* 11477275
++2 130950
+
+fl=(79)
+fn=(1464)
+51 19628
++1 11216
++1 22432
++1 14020
+
+fl=(25) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/iohandler.c
+fn=(382) qemu_iohandler_poll
+116 763480
++1 152696
++3 229044
++1 8856368
++1 482958
+cfi=(26)
+cfn=(1880) tap_send
+calls=33853 +71 
+* 4060365392
+cfi=(106)
+cfn=(1716)
+calls=2320 470 
+* 4890527
+cfi=(22)
+cfn=(392) sigfd_handler
+calls=21329 -19 
+* 6486206
+cfi=(22)
+cfn=(384) qemu_event_read
+calls=22991 -64 
+* 1448433
++2 2748528
++5 1221568
+-9 2290440
++1 1526960
++14 381740
+
+fn=(290) qemu_iohandler_fill
+94 839828
++3 229044
++1 1221568
++2 1221568
++1 610784
+-1 610784
++2 458088
+cfi=(26)
+cfn=(292) tap_can_send
+calls=76348 +71 
+* 17636388
+-1 152696
++2 8245584
++1 1832352
++1 305392
++2 1221568
+-10 1679656
++16 534436
+
+fl=(38)
+fn=(454) kvm_lookup_overlapping_slot
+153 179280
++1 19920
++3 39840
++1 3824640
++2 2908320
++1 597600
++4 717120
++1 796800
+-1 318720
++2 59760
+-5 458160
+-5 2609520
++14 19920
++1 99600
+
+fn=(1244) kvm_vcpu_ioctl
+1684 7591934
++5 3253686
++1 7049653
++3 4880529
+cob=(2)
+cfi=(10)
+cfn=(478) ioctl
+calls=542281 82 
+* 2711400
+cob=(2)
+cfi=(10)
+cfn=(478)
+calls=1 83 
+* 3
+* 542281
++1 1084562
++3 542281
++1 2711405
+
+fn=(1292)
+1433 35880
++2 5980
++2 5980
++1 6008
++1 10346
++2 4374
+cfi=(70)
+cfn=(1294)
+calls=1458 307 
+* 557084
+* 7290
+cfi=(71)
+cfn=(1308)
+calls=1458 339 
+* 24786
++1 1458
++5 84
+cfi=(70)
+cfn=(1396)
+calls=28 325 
+* 16268
+* 140
+cfi=(71)
+cfn=(1404)
+calls=28 491 
+* 448
++1 28
++3 10374
++2 4176
+cfi=(71)
+cfn=(1326)
+calls=1392 329 
+* 20880
+* 6960
+cfi=(70)
+cfn=(1328)
+calls=1392 286 
+* 2563051
++1 2692
++5 378
+cfi=(71)
+cfn=(1352)
+calls=126 476 
+* 1764
+* 630
+cfi=(70)
+cfn=(1354)
+calls=126 300 
+* 53060
++1 126
++4 378
+-27 504
++27 12534
+-27 25682
++29 21450
+cfn=(1247) kvm_cpu_exec'2
+calls=1301 1606 
+* 2685255444
+
+fn=(1293) kvm_handle_io'2
+1433 663696
++2 110616
++2 110616
++1 111338
++1 193688
++2 81462
+cfi=(70)
+cfn=(1294)
+calls=27154 307 
+* 10385923
+* 135770
+cfi=(71)
+cfn=(1308)
+calls=27154 339 
+* 461618
++1 27154
++5 2166
+cfi=(70)
+cfn=(1396)
+calls=722 325 
+* 419482
+* 3610
+cfi=(71)
+cfn=(1404)
+calls=722 491 
+* 11552
++1 722
++3 189749
++2 76176
+cfi=(71)
+cfn=(1326)
+calls=25392 329 
+* 380880
+* 126960
+cfi=(70)
+cfn=(1329)
+calls=25392 286 
+* 44860192
++1 24092
++5 7203
+cfi=(71)
+cfn=(1352)
+calls=2401 476 
+* 33614
+* 12005
+cfi=(70)
+cfn=(1354)
+calls=2401 300 
+* 1101070
++1 2401
++4 7203
+-27 9604
++27 155904
+-27 373796
++29 270040
+
+fn=(450) kvm_log_sync
+729 159360
++3 59760
+cfn=(452) kvm_physical_sync_dirty_bitmap
+calls=19920 399 
+* 54846737
+* 19920
++1 39840
++3 99600
+
+fn=(480) kvm_get_dirty_pages_log_range
+359 179280
++4 119520
++1 19920
+cob=(2)
+cfi=(45) /build/buildd/eglibc-2.15/misc/../sysdeps/unix/sysv/linux/getpagesize.c
+cfn=(484) getpagesize
+calls=19920 30 
+* 139440
+* 119520
++6 39840
++1 7649280
++1 31305
++2 43827
++1 50088
++1 37566
++1 18783
++1 25044
++1 56349
+cfi=(40)
+cfn=(486) memory_region_set_dirty
+calls=6261 1086 
+* 1001760
+-5 396620
++1 453280
++1 339960
++1 169980
++1 226640
++1 509940
+cfi=(40)
+cfn=(486)
+calls=56660 1086 
+* 9065600
++2 125842
+-11 5159280
++14 19920
++1 139440
+
+fn=(1246) kvm_cpu_exec
+fi=(87)
+122 8
++5 2
++1 2
++1 2
++1 2
++3 4
+cob=(2)
+cfi=(89)
+cfn=(1564)
+calls=1 -99 
+* 29
+* 4
++1 5
+cob=(10)
+cfi=(92)
+cfn=(1572)
+calls=1 26 
+* 365
++4 7806
+cfi=(77)
+cfn=(2068)
+calls=236 3367 
+* 2238638393
+cfi=(77)
+cfn=(1586)
+calls=1065 3327 
+* 451942792
++2 1300
+fe=(38)
+1563 68448
++5 85560
+cfi=(66)
+cfn=(1310)
+calls=17112 +88 
+* 393576
++1 68448
++9 17112
+cfi=(21)
+cfn=(336)
+calls=17112 921 
+* 1050312
++2 102672
+cfn=(1244)
+calls=17112 1684 
+* 958272
+cfn=(1244)
+calls=1 1698 
+* 12
+* 17113
++2 17113
+cfi=(21)
+cfn=(344)
+calls=17113 906 
+* 1413611
++1 85565
+cfi=(66)
+cfn=(1248)
+calls=17113 1716 
+* 30654332
++2 17113
+cfn=(430)
+calls=17113 -89 
+* 633181
++2 34226
++11 205356
++7 2990
+-4 2990
++3 5980
+-3 2990
++2 5980
+-2 2990
++1 5980
+-1 23920
+cfn=(1292)
+calls=2990 1433 
+* 3383880
++5 2989
++1 2989
++6 28246
+-3 14123
++2 28246
+-2 14123
++1 28246
+-1 56492
+cfi=(32)
+cfn=(1488)
+calls=14123 3411 
+* 42363507
++4 14123
++1 14123
++23 34224
+
+fn=(1247)
+1563 2100676
++5 2625845
+cfi=(66)
+cfn=(1310)
+calls=525169 +88 
+* 12078887
++1 2100676
++9 525169
+cfi=(21)
+cfn=(336)
+calls=525169 921 
+* 32217259
++2 3151014
+cfn=(1244)
+calls=525169 1684 
+* 29409450
+* 525168
++2 525168
+cfi=(21)
+cfn=(344)
+calls=525168 906 
+* 43349940
++1 2625840
+cfi=(66)
+cfn=(1248)
+calls=525168 1716 
+* 940737417
++2 525168
+cfn=(430)
+calls=525168 -89 
+* 19431216
++2 1050336
++11 6302016
++7 55308
+-4 55308
++3 110616
+-3 55308
++2 110616
+-2 55308
++1 110616
+-1 442464
+cfn=(1293)
+calls=55308 1433 
+* 60350302
++5 55309
++1 55309
++6 939720
+-3 469860
++2 939720
+-2 469860
++1 939720
+-1 1879440
+cfi=(32)
+cfn=(1488)
+calls=469860 3411 
+* 1516889357
++4 469860
++1 469860
++23 1050338
+
+fn=(1238)
+861 2732769
++4 1214564
++2 607282
++1 607282
++1 2732769
+cfn=(474) kvm_vm_ioctl
+calls=303641 1667 
+* 17003896
+* 303641
++1 607282
++5 1821846
++1 1518205
+
+fn=(430)
+1496 3373206
++1 1686603
++2 2248804
++4 1124402
++2 2248804
++1 1686603
++1 3935407
++11 1686603
++1 2811005
+
+fn=(452)
+399 139440
++1 59760
++1 19920
++3 19920
++1 59760
++1 79680
++2 19920
++1 19920
++1 119520
+cfn=(454)
+calls=19920 153 
+* 12649200
+* 19920
++1 39840
++16 139440
++2 59760
++1 59760
+cob=(6)
+cfi=(30)
+cfn=(458)
+calls=19920 0 
+* 8131353
+* 39840
++4 39840
++1 99600
+cob=(2)
+cfi=(44)
+cfn=(472)
+calls=19920 44 
+* 1673280
++2 59760
++2 119520
+cfn=(474)
+calls=19920 1667 
+* 1115520
+* 39840
++6 99600
+cfn=(480)
+calls=19920 -86 
+* 26138024
++1 119520
+-37 139440
++39 59760
+cob=(6)
+cfi=(30)
+cfn=(498)
+calls=19920 0 
+* 3346560
++2 19920
++1 99600
+
+fn=(474)
+1667 4529854
++5 1941366
++1 4206293
++3 2912049
+cob=(2)
+cfi=(10)
+cfn=(478)
+calls=323561 82 
+* 1617805
+* 323561
++1 647122
++3 323561
++1 1617805
+
+fl=(59)
+fn=(1208)
+200 708
++1 354
++4 236
++1 590
+
+fn=(1220)
+132 35
++1 5
+cfi=(14)
+cfn=(420)
+calls=5 427 
+* 145
+* 10
++3 15
++1 30
+cfi=(60)
+cfn=(1222)
+calls=5 +18 
+* 3355
+* 5
++2 25
+
+fl=(63) /home/ubuntu/Desktop/kvm-source/qemu-kvm-1.2.0/hw/i386/../pc_piix.c
+fn=(1234) kvm_piix3_gsi_handler
+88 2732769
++1 607282
++2 607282
++2 2429128
+cfi=(62)
+cfn=(1233)
+calls=303641 -59 
+* 53744457
+* 303641
++4 1518205
+
+fl=(115)
+fn=(1876) piix3_set_irq_level
+371 2916900
++4 2625210
++1 583380
++4 3208590
++1 2041830
++1 2625210
++2 1458450
+cfn=(1878) piix3_set_irq_pic
+calls=291690 -21 
+* 78464610
+* 291690
++1 2041830
+
+fn=(1878)
+363 2625210
++2 583380
++1 2041830
+-1 291690
+-1 3791970
+cfi=(62)
+cfn=(1233)
+calls=291690 34 
+* 67088700
++4 2041830
+
+fn=(1872)
+102 2333520
++2 1458450
++1 1166760
++1 1458450
+
+fn=(1874)
+388 2625210
++1 583380
++1 1750140
+cfn=(1876)
+calls=291690 -19 
+* 96257700
++1 1458450
+
+fl=(26)
+fn=(1882) tap_read_packet
+181 3606273
++1 2804879
+cob=(10)
+cfi=(33)
+cfn=(362)
+calls=400697 82 
+* 15429604
++1 2003485
+
+fn=(1848) tap_write_packet
+103 1085157
++4 844011
+cob=(2)
+cfi=(53) /build/buildd/eglibc-2.15/misc/../sysdeps/unix/sysv/linux/writev.c
+cfn=(626) writev
+calls=120573 -60 
+* 5787504
+* 120573
++1 241146
++2 241146
++5 120573
++1 602865
+
+fn=(1844)
+158 1085157
++1 482292
++3 1085157
++1 723438
+cfn=(1846) tap_receive_raw
+calls=120573 -25 
+* 16639074
+* 120573
++7 602865
+
+fn=(1846)
+138 1085157
++1 482292
++2 120573
++1 241146
++2 482292
++1 844011
++1 1085157
++1 120573
++3 844011
++1 844011
++1 120573
++2 723438
+cfn=(1848)
+calls=120573 -51 
+* 9042975
++1 602865
+
+fn=(292)
+173 534436
++1 152696
++2 229044
+cfi=(27)
+cfn=(294)
+calls=76348 303 
+* 16338472
++1 381740
+
+fn=(1880)
+193 236971
++1 67706
++4 101559
++2 270824
+cfn=(1882)
+calls=33853 -19 
+* 1997327
+-2 1100532
++2 2934752
+cfn=(1882)
+calls=366844 -19 
+* 21846914
+* 400697
++1 801394
++4 3301596
++1 1467376
++1 2567908
++3 2201064
+cfi=(27)
+cfn=(1830)
+calls=366844 387 
+* 3938692598
+* 366844
++1 733688
++3 1834220
+cfi=(27)
+cfn=(294)
+calls=366844 +89 
+* 78504616
+* 733688
+-12 33853
++13 169265
+
+fl=(40)
+fn=(442)
+1092 159360
++3 59760
++1 1274880
++1 896400
+cfi=(41)
+cfn=(444)
+calls=59760 17 
+* 1135440
+* 418320
+cfi=(41)
+cfn=(444)
+calls=59760 17 
+* 1135440
+* 537840
+cfn=(446) memory_listener_match
+calls=59760 89 
+* 1354560
+* 756960
+cfi=(41)
+cfn=(444)
+calls=39840 17 
+* 756960
+* 278880
+cfi=(41)
+cfn=(444)
+calls=39840 17 
+* 756960
+* 358560
+cfi=(38)
+cfn=(450)
+calls=19920 729 
+* 55225217
+cfi=(32)
+cfn=(448)
+calls=19920 3218 
+* 258960
+* 338640
+-2 4043760
++6 139440
+
+fn=(526)
+1078 119316010
++1 47726404
++1 131247611
+cfi=(46)
+cfn=(492)
+calls=11931601 62 
+* 873078489
+* 23863202
++2 59658003
+
+fn=(1794)
+1513 3108990
++1 1865394
+cfn=(1796) memory_region_dispatch_write
+calls=310899 913 
+* 1269603250
++1 1554495
+
+fn=(1795)
+1513 3108990
++1 1865394
+cfn=(1797) memory_region_dispatch_write'2
+calls=310899 913 
+* 1173535459
++1 1554495
+
+fn=(1898)
+1507 1557756
++1 1038504
+cfn=(1900) memory_region_dispatch_read
+calls=173084 901 
+* 128475062
++1 865420
+
+fn=(1899)
+1507 1557756
++1 1038504
+cfn=(1901) memory_region_dispatch_read'2
+calls=173084 901 
+* 70491922
++1 865420
+
+fn=(1530)
+1368 11156481
++1 3187566
++1 7968915
+
+fn=(1300)
+384 322982
++2 88086
+-1 29362
++2 88086
++2 88086
++1 146810
++1 212490
+cfn=(1302) find_portio
+calls=21249 -24 
+* 1137948
+* 21249
++3 212490
++1 42498
++1 191241
+cfi=(72)
+cfn=(1400)
+calls=750 1801 
+* 237000
+cfi=(72)
+cfn=(1340)
+calls=8776 1669 
+* 447576
+cfi=(72)
+cfn=(1318)
+calls=11713 1591 
+* 3541967
+cfi=(61)
+cfn=(1312) kbd_read_data
+calls=5 -84 
+* 5710
+cfi=(61)
+cfn=(1304) kbd_read_status
+calls=5 198 
+* 100
+* 63747
++7 21249
++2 16226
++3 16226
+-2 8113
++1 16226
+-1 73017
+cfn=(1387) access_with_adjusted_size'2
+calls=4986 -62 
+* 742430
+cfn=(1386) access_with_adjusted_size
+calls=3127 -62 
+* 466108
+* 8113
+-3 21249
++7 205534
+
+fn=(1492)
+1054 33286554
++1 9510444
++1 23776110
+
+fn=(1800) adjust_endianness
+881 8711694
++1 2903898
+cfn=(1802) memory_region_wrong_endianness
+calls=967966 -90 
+* 16455422
+* 1935932
++14 4839830
+
+fn=(486)
+1086 566289
++1 251684
++1 503368
+cfi=(46)
+cfn=(488)
+calls=62921 106 
+* 8431414
++1 314605
+
+fn=(1386)
+344 6394710
++5 852628
++1 426314
++2 852628
++1 426314
++2 3410512
++1 4689454
++1 852628
++2 5542082
+cfn=(1392) memory_region_write_accessor
+calls=273067 -35 
+* 1059318512
+cfn=(1388) memory_region_read_accessor
+calls=153247 -49 
+* 78507701
+-2 3414687
++4 2990043
+cfn=(1336)
+calls=1065 +75 
+* 447117228
+
+fn=(1387)
+344 1107810
++5 147708
++1 73854
++2 147708
++1 73854
++2 590832
++1 812394
++1 147708
++2 960102
+cfn=(1388)
+calls=27950 -49 
+* 12356425
+cfn=(1393) memory_region_write_accessor'2
+calls=45904 -35 
+* 187668224
+-2 586657
++4 511133
+
+fn=(1900)
+901 1557756
++3 1038504
+cfn=(1902) memory_region_dispatch_read1
+calls=173084 -44 
+* 117397686
+* 173084
++1 1038504
+cfn=(1800)
+calls=173084 -24 
+* 6231024
++1 173084
++1 865420
+
+fn=(1901)
+901 1557756
++3 1038504
+cfn=(1903) memory_region_dispatch_read1'2
+calls=173084 -44 
+* 59414546
+* 173084
++1 1038504
+cfn=(1800)
+calls=173084 -24 
+* 6231024
++1 173084
++1 865420
+
+fn=(1392)
+324 3549871
++1 546134
++3 2457603
++1 2730670
+cfi=(32)
+cfn=(1804)
+calls=269732 3036 
+* 1037006956
+cfi=(75)
+cfn=(1450)
+calls=567 +17 
+* 32886
+cfi=(78)
+cfn=(1394)
+calls=2768 64 
+* 11084533
++1 1917314
+cfn=(1386)
+calls=1065 +27 
+* 447130008
+
+fn=(1393)
+324 596752
++1 91808
++3 413136
++1 459040
+cfi=(75)
+cfn=(1450)
+calls=835 +17 
+* 48430
+cfi=(78)
+cfn=(1395) bmdma_write'2
+calls=3902 64 
+* 27763041
+cfi=(32)
+cfn=(1804)
+calls=41167 3036 
+* 157980534
++1 315483
+
+fn=(1798) memory_region_access_valid
+835 10647626
++1 4839830
++5 11615592
++5 4839830
++1 1935932
++8 4839830
+
+fn=(1802)
+792 6775762
++4 4839830
++2 4839830
+
+fn=(446)
+89 478080
++1 119520
++1 458160
++1 298800
+
+fn=(1902)
+860 1730840
++1 173084
++2 1038504
+cfn=(1798)
+calls=173084 -28 
+* 6923360
+* 519252
++4 865420
++7 346168
+-2 173084
++1 346168
+-1 1557756
+cfn=(1387)
+calls=22964 344 
+* 13570495
+cfn=(1386)
+calls=150120 344 
+* 88768883
++5 173084
++1 1211588
+
+fn=(1903)
+860 1730840
++1 173084
++2 1038504
+cfn=(1798)
+calls=173084 -28 
+* 6923360
+* 519252
++4 865420
++1 865420
+cfi=(112)
+cfn=(1806)
+calls=173084 32 
+* 6923360
+* 1384672
+cfi=(29)
+cfn=(1906)
+calls=173084 3246 
+* 37432878
+* 346168
++10 1211588
+
+fn=(684)
+1121 62180
++1 24872
++1 24872
++1 18654
+-1 49744
+cfi=(32)
+cfn=(686)
+calls=6218 1848 
+* 3793790
++3 31090
+
+fn=(1796)
+913 3419889
++1 1865394
+cfn=(1798)
+calls=310899 -79 
+* 12435960
+* 932697
++4 1865394
+cfn=(1800)
+calls=310899 -37 
+* 11192364
++2 1554495
++8 621798
+-2 310899
++1 621798
+-1 2798091
+cfn=(1387)
+calls=41167 344 
+* 162550071
+cfn=(1386)
+calls=269732 344 
+* 1066947208
+* 310899
++4 2176293
+
+fn=(1797)
+913 3419889
++1 1865394
+cfn=(1798)
+calls=310899 -79 
+* 12435960
+* 932697
++4 1865394
+cfn=(1800)
+calls=310899 -37 
+* 11192364
++2 1554495
++1 1554495
+cfi=(112)
+cfn=(1806)
+calls=310899 32 
+* 12315387
+* 3108990
+cfi=(29)
+cfn=(1918)
+calls=190326 3231 
+* 191568438
+cfi=(29)
+cfn=(1808)
+calls=120573 3226 
+* 929234764
++1 310899
++8 2176293
+
+fn=(1302)
+367 467368
++3 212440
++1 601094
++1 184952
++1 361143
++1 84976
+-4 188702
++8 212440
+
+fn=(1336)
+416 15180
++2 4554
+-1 1518
++2 4554
++2 4554
++1 7590
++1 10630
+cfn=(1302)
+calls=1063 -56 
+* 58187
+* 1063
++3 2126
++1 11693
+cfi=(72)
+cfn=(1358)
+calls=42 1781 
+* 15932
+cfi=(72)
+cfn=(1338)
+calls=1021 909 
+* 144946
++7 1299
++4 910
+-2 455
++1 910
+-1 4095
+cfn=(1386)
+calls=455 -92 
+* 2162354
+* 1519
+-2 1299
++6 14090
+cfi=(70)
+cfn=(1334)
+calls=1301 213 
+* 2685291872
+
+fn=(1337)
+416 277930
++2 83379
+-1 27793
++2 83379
++2 83379
++1 138965
++1 201760
+cfn=(1302)
+calls=20176 -56 
+* 1116980
+* 20176
++3 40352
++1 221936
+cfi=(72)
+cfn=(1358)
+calls=1083 1781 
+* 410818
+cfi=(72)
+cfn=(1339)
+calls=7505 909 
+* 1035970
+cfi=(72)
+cfn=(1338)
+calls=11588 909 
+* 1477631
++7 19940
++4 15234
+-2 7617
++1 15234
+-1 68553
+cfn=(1386)
+calls=2880 -92 
+* 9320880
+cfn=(1387)
+calls=4737 -92 
+* 28321413
+* 6553
+-2 19940
++6 132465
+
+fn=(1388)
+310 2355561
++1 362394
++3 1811970
+cfi=(32)
+cfn=(1904)
+calls=173084 3018 
+* 82088550
+cfi=(78)
+cfn=(1390) bmdma_read
+calls=8113 37 
+* 259317
+* 181197
++1 2536758
++1 1268379
+
+fl=(22)
+fn=(308) glib_select_fill
+230 916176
++1 76348
+cob=(6)
+cfi=(30)
+cfn=(312)
+calls=76348 0 
+* 7863844
+* 76348
++2 76348
++2 305392
+cob=(6)
+cfi=(30)
+cfn=(328)
+calls=76348 0 
+* 11910288
++2 534436
+cob=(6)
+cfi=(30)
+cfn=(334)
+calls=76348 0 
+* 10994112
+* 76348
++2 229044
++2 152696
++1 458088
++2 458088
++1 2061396
++1 610784
++2 458088
++4 458088
+-11 534436
++17 229044
++3 534436
+
+fn=(384)
+58 160937
++1 45982
++6 137946
+cob=(10)
+cfi=(33)
+cfn=(362)
+calls=22991 +17 
+* 873658
+* 22991
++1 91964
++1 114955
+
+fn=(392)
+103 149303
++1 63987
++26 21339
+-19 128034
+cob=(10)
+cfi=(33)
+cfn=(362)
+calls=21339 -29 
+* 938856
+* 127974
+cob=(10)
+cfi=(33)
+cfn=(362)
+calls=21329 -29 
+* 810502
+* 42668
++1 106665
+cob=(10)
+cfi=(8)
+cfn=(90)
+calls=21329 -85 
+* 63987
+* 63987
++2 106665
+cob=(10)
+cfi=(8)
+cfn=(90)
+calls=21329 -87 
+* 63987
+* 63987
++4 42678
++5 106695
+cob=(10)
+cfi=(34)
+cfn=(396)
+calls=21339 -85 
+* 1408374
++1 85356
++3 64017
++1 85356
+cfi=(16)
+cfn=(400)
+calls=21339 465 
+* 1792476
++2 21339
+-15 21329
++16 106645
+
+fn=(306) os_host_main_loop_wait
+292 534436
++1 76348
++3 534436
+cfn=(308)
+calls=76348 -66 
+* 39013828
++2 229044
++6 229044
++1 76348
+cfi=(21)
+cfn=(336)
+calls=76348 921 
+* 4859668
++3 687132
+cob=(2)
+cfi=(10)
+cfn=(166)
+calls=76348 82 
+* 2977572
+* 76348
++2 229044
++1 76348
+cfi=(21)
+cfn=(344)
+calls=76348 906 
+* 6284935
++3 534436
+cfn=(352) glib_select_poll
+calls=76348 -49 
+* 30233808
++1 76348
++1 381740
+
+fn=(352)
+265 839828
++1 76348
+cob=(6)
+cfi=(30)
+cfn=(312)
+calls=76348 0 
+* 7863844
+* 76348
++2 305392
++3 152696
++1 458088
++2 2366788
++3 458088
++3 458088
+-9 534436
++15 534436
+cob=(6)
+cfi=(30)
+cfn=(356)
+calls=76348 0 
+* 15574992
+* 152696
++3 381740
+
+fn=(262)
+474 687132
++2 76348
++2 152696
++3 229044
+cfi=(23)
+cfn=(284)
+calls=76348 124 
+* 4504532
++5 76348
++1 2061396
++1 2061396
++1 2061396
++3 229044
+cfi=(24)
+cfn=(286)
+calls=76348 265 
+* 1145220
++1 381740
+cfi=(24)
+cfn=(288)
+calls=76348 273 
+* 1679656
++2 381740
+cfi=(25)
+cfn=(290)
+calls=76348 94 
+* 36799736
++1 229044
+cfn=(306)
+calls=76348 292 
+* 87110863
+* 76348
++1 458088
+cfi=(25)
+cfn=(382)
+calls=76348 116 
+* 4091844340
++2 534436
+cfi=(24)
+cfn=(388)
+calls=76348 -78 
+* 1450612
++3 76348
+cfi=(16)
+cfn=(260)
+calls=76348 -57 
+* 48204870954
+cfi=(16)
+cfn=(260)
+calls=1 -44 
+* 1798
++4 76348
+cfi=(23)
+cfn=(264)
+calls=76348 56 
+* 12953930
++2 76348
++1 610784
+
+fn=(402)
+37 138324
++5 69162
++4 115270
+cob=(10)
+cfi=(33)
+cfn=(406)
+calls=23054 +36 
+* 876052
+* 23054
++1 46108
++3 46108
++5 115270
+
+fl=(48)
+fn=(530)
+45 814816800
++1 633746400
++1 452676000
+
+fl=(61)
+fn=(1304)
+198 40
++1 10
++2 20
++2 5
++1 25
+
+fn=(1228)
+176 120
++1 30
++2 30
++1 35
++2 60
++1 30
+cfn=(1230) kbd_update_irq
+calls=10 -34 
+* 5020
+* 15
+cfn=(1230)
+calls=5 -34 
+* 2655
++1 75
+
+fn=(1312)
+312 40
++1 10
++3 20
++3 20
+cfi=(60)
+cfn=(1314)
+calls=5 174 
+* 5585
+* 5
++3 5
++1 25
+
+fn=(1230)
+149 105
++3 15
++1 15
++1 90
++1 90
++1 60
++1 30
++1 30
++2 20
++6 30
++1 20
+-1 10
++2 5
++3 30
+cfi=(62)
+cfn=(1232)
+calls=5 34 
+* 1150
+* 60
+cfi=(62)
+cfn=(1232)
+calls=10 34 
+* 2300
++1 90
+cfi=(62)
+cfn=(1232)
+calls=15 34 
+* 3450
++1 75
+
+fl=(31)
+fn=(348)
+51 4330403
++3 1855887
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=618629 -7 
+* 19498407
+* 618629
++1 1237258
++2 3093145
+
+fn=(338)
+65 4330403
++3 1855887
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=618629 289 
+* 18331111
+* 618629
++1 1237258
++2 3093145
+
+fl=(84)
+fn=(1498)
+26 24986898
++4 4164483
++2 20822415
+
+fl=(56)
+fn=(702) rtc_next_second
+329 5502
++3 3930
++1 3144
++1 26
++1 65
++1 52
++25 3930
+
+fn=(712) rtc_from_bcd
+255 6392
++1 4794
++3 7990
++2 3995
+
+fn=(700)
+365 6288
++1 1572
++4 4716
++4 3144
+cfn=(702)
+calls=786 -45 
+* 16649
++2 3144
++2 4716
++4 786
+cfi=(15)
+cfn=(704)
+calls=786 88 
+* 9432
+* 10218
++1 1572
++3 1572
+-1 5502
+cfi=(16)
+cfn=(226)
+calls=786 -32 
+* 335894
++3 5502
+
+fn=(706)
+391 6288
++1 1572
++2 3144
++1 2358
+cfn=(708) rtc_copy_date
+calls=786 285 
+* 348198
++4 4716
++1 5502
+cfn=(712)
+calls=786 255 
+* 22794
+* 1572
+-1 1572
++2 52
+-1 26
++2 91
+cfn=(712)
+calls=13 255 
+* 377
+* 26
+-1 26
++14 4716
++1 4716
++6 4716
++2 2358
+cfi=(15)
+cfn=(704)
+calls=786 88 
+* 9432
+* 2358
++1 5502
+cfi=(16)
+cfn=(226)
+calls=786 -72 
+* 336900
++1 5502
+
+fn=(708)
+285 6288
++1 2358
++3 4716
+cfn=(710) rtc_to_bcd
+calls=786 -43 
+* 36942
+* 2358
++1 4716
+cfn=(710)
+calls=786 -44 
+* 36942
+* 2358
++1 4716
++2 4716
+cfn=(710)
+calls=786 -47 
+* 36942
+* 3144
++8 5502
+cfn=(710)
+calls=786 -55 
+* 36942
+* 2358
++1 4716
+cfn=(710)
+calls=786 -56 
+* 36942
+* 2358
++1 5502
+cfn=(710)
+calls=786 -57 
+* 36942
+* 2358
++1 17292
++1 1572
++1 786
++1 3930
+cfn=(710)
+calls=786 -61 
+* 36942
+* 2358
++1 5502
+
+fn=(710)
+246 44016
++1 33012
++3 154056
++2 27510
+
+fl=(80)
+fn=(1866)
+376 2041830
++1 875070
+cfi=(71)
+cfn=(1868)
+calls=291690 171 
+* 6708870
++1 1458450
+
+fn=(1476)
+604 99700
++1 69790
+cfn=(1478) pci_dma_rw
+calls=9970 -8 
+* 4838166
++1 49850
+-2 25506650
++1 17854655
+cfn=(1478)
+calls=2550665 -8 
+* 1239979674
++1 12753325
+
+fn=(1478)
+597 109670
++1 29910
+cfn=(1472) pci_dma_context
+calls=9970 -7 
+* 139580
+* 69790
+cfi=(82)
+cfn=(1480)
+calls=9970 147 
+* 4429396
++1 9970
++1 49850
+-3 45479258
++1 12403434
+cfn=(1472)
+calls=4134478 -7 
+* 57882692
+* 28941346
+cfi=(82)
+cfn=(1480)
+calls=4134478 147 
+* 2068518919
++1 4134478
++1 20672390
+
+fn=(1470)
+653 12618
++1 4206
+cfn=(1472)
+calls=1402 -63 
+* 19628
+* 8412
+cfi=(81)
+cfn=(1474)
+calls=1402 45 
+* 417103
++1 7010
+
+fn=(1472)
+591 79604
++1 22744
++1 56860
+-2 28941346
++1 8268956
++1 20672390
+
+fn=(1824)
+610 15838130
++1 11086691
+cfn=(1478)
+calls=1583813 -14 
+* 998052843
++1 7919065
+
+fl=(78)
+fn=(1394)
+64 27680
++1 5536
++2 5536
++7 13666
++2 8826
+cfi=(75)
+cfn=(1452)
+calls=1471 291 
+* 10986012
++1 2306
++2 20752
++1 2594
++2 18015
+cfi=(40)
+cfn=(1392)
+calls=1065 330 
+* 447137463
+
+fn=(1395)
+64 39020
++1 7804
++2 7804
++7 17942
++2 16410
+cfi=(75)
+cfn=(1453)
+calls=2735 291 
+* 27635820
++1 1900
++2 18672
++1 2334
++2 15335
+
+fn=(1390)
+37 81130
++1 16226
++3 16226
++4 40266
++2 16824
++1 4206
++2 15628
++1 3907
++8 8113
++1 56791
+
+fl=(62)
+fn=(1232)
+34 6826904
++1 1706726
++3 8533630
+cfi=(114)
+cfn=(1856)
+calls=841412 1066 
+* 216187085
+cfi=(75)
+cfn=(1324)
+calls=11921 275 
+* 3052145
+cfi=(63)
+cfn=(1234)
+calls=30 +50 
+* 6120
+* 853363
++1 4266815
+
+fn=(1233)
+34 4858016
++1 1214504
++3 6072520
+cfi=(63)
+cfn=(1234)
+calls=303611 +50 
+* 61936644
+cfi=(64)
+cfn=(1236)
+calls=303641 +56 
+* 45849791
+* 607252
++1 3036260
+
+ob=(9)
+fl=(19)
+fn=(250)
+54 214105
++21 42821
+
+fl=(17)
+fn=(222)
+94 556073
++22 2780365
+cob=(2)
+cfi=(10)
+cfn=(224) __syscall_clock_gettime
+calls=556073 -53 
+* 1668219
+* 1112146
++19 1112146
+
+fl=(20)
+fn=(254)
+49 41801
++10 250806
++21 41801
+
+ob=(7)
+fl=(51)
+fn=(566) XextFindDisplay
+0 93270
+
+fn=(560)
+0 87052
+cfn=(562) 0x0000000000008230
+calls=6218 0 
+0 161668
+0 111924
+cob=(1)
+cfi=(3)
+cfn=(574)
+calls=6218 0 
+0 161668
+0 310900
+
+fn=(562)
+0 43526
+cfn=(566)
+calls=6218 0 
+0 93270
+0 24872
+
+ob=(12)
+fl=(4)
+fn=(66) 0x000000000000b2e0
+0 395400
+cob=(10)
+cfi=(6)
+cfn=(70)
+calls=26360 28 
+0 1555040
+0 583276
+cob=(10)
+cfi=(55)
+cfn=(666)
+calls=9 38 
+0 117
+0 1812
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=97 2910 
+0 12954
+0 679
+cfn=(746) 0x000000000000b150
+calls=97 0 
+0 7040
+0 1146
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=9 2910 
+0 1071
+0 469
+cob=(2)
+cfi=(42)
+cfn=(464)
+calls=88 2910 
+0 11918
+0 880
+cob=(10)
+cfi=(55)
+cfn=(666)
+calls=88 38 
+0 1144
+0 105458
+cob=(10)
+cfi=(8)
+cfn=(90)
+calls=26320 27 
+0 78960
+0 78960
+
+fn=(128) 0x000000000000a7a0
+0 658180
+cfn=(1014) 0x000000000000be30
+calls=9 0 
+0 72
+0 216
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=9 2959 
+0 751
+0 79041
+
+fn=(148)
+0 52604
+
+fn=(746)
+0 1843
+cob=(2)
+cfi=(57)
+cfn=(750)
+calls=97 60 
+0 1402
+0 679
+cob=(2)
+cfi=(57)
+cfn=(756) __memmove_ssse3_back
+calls=97 60 
+0 1952
+0 1164
+
+fn=(950)
+0 342
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=18 47 
+0 414
+0 216
+cfn=(952) 0x000000000000acd0
+calls=18 0 
+0 10164
+0 54
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=18 289 
+0 306
+0 144
+
+fn=(586) 0x0000000000009d90
+0 118313
+cfn=(590) 0x00000000000097e0
+calls=6227 0 
+0 1718652
+0 43589
+cob=(10)
+cfi=(54)
+cfn=(656)
+calls=6227 39 
+0 74724
+0 12454
+cfn=(660) 0x000000000000ac70
+calls=6227 0 
+0 149448
+0 37362
+
+fn=(660)
+0 62450
+cob=(10)
+cfi=(55)
+cfn=(666)
+calls=6245 38 
+0 81185
+0 6245
+
+fn=(40)
+0 369712
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=26408 47 
+0 607384
+0 52816
+cfn=(52) 0x000000000000a750
+calls=26408 0 
+0 242790
+0 132040
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=26408 289 
+0 448936
+0 369313
+cfn=(66)
+calls=26351 0 
+0 2831789
+0 105404
+cfn=(52)
+calls=26351 0 
+0 239876
+0 105518
+
+fn=(584)
+0 99632
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=6227 47 
+0 143221
+0 31135
+cfn=(586)
+calls=6227 0 
+0 2154542
+0 18681
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=6227 289 
+0 105859
+0 43589
+
+fn=(590)
+0 180772
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=6227 289 
+0 105859
+0 27
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=9 289 
+0 153
+0 31180
+cob=(2)
+cfi=(52) /build/buildd/eglibc-2.15/io/../sysdeps/unix/sysv/linux/poll.c
+cfn=(602) poll
+calls=6236 69 
+0 293092
+0 62360
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=6236 47 
+0 143428
+0 81086
+cfn=(66)
+calls=9 0 
+0 4535
+0 143383
+cob=(2)
+cfi=(53)
+cfn=(626)
+calls=6227 47 
+0 298896
+0 379883
+
+fn=(52)
+0 211652
+cob=(2)
+cfi=(42)
+cfn=(506)
+calls=88 2959 
+0 7302
+0 263712
+
+fn=(952)
+0 729
+cfn=(590)
+calls=9 0 
+0 6002
+0 153
+cfn=(128)
+calls=27 0 
+0 1804
+0 225
+cob=(10)
+cfi=(58)
+cfn=(1030)
+calls=18 28 
+0 558
+0 36
+cfn=(660)
+calls=18 0 
+0 432
+0 225
+
+fn=(1014)
+0 72
+
+fn=(126)
+0 578644
+cob=(10)
+cfi=(5)
+cfn=(48)
+calls=26302 47 
+0 604946
+0 341926
+cfn=(128)
+calls=26302 0 
+0 736456
+0 78906
+cob=(10)
+cfi=(9)
+cfn=(106)
+calls=26302 289 
+0 447134
+0 26302
+
+ob=(16)
+fl=(117)
+fn=(1894)
+0 1619160656
+
+ob=(2)
+fl=(94) /build/buildd/eglibc-2.15/setjmp/../nptl/sysdeps/unix/sysv/linux/jmp-unwind.c
+fn=(1578) _longjmp_unwind
+32 24243
++1 40405
+cob=(10)
+cfi=(95)
+cfn=(1580)
+calls=8081 -6 
+* 161620
+
+fl=(52)
+fn=(602)
+69 6236
++13 18708
++11 12472
+-8 24944
+cfi=(11) /build/buildd/eglibc-2.15/nptl/../nptl/sysdeps/unix/sysv/linux/x86_64/cancellation.S
+cfn=(170) __libc_enable_asynccancel
+calls=6236 -27 
+* 68596
++2 6236
+-2 6236
++2 43652
++2 18708
+cfi=(11)
+cfn=(176) __libc_disable_asynccancel
+calls=6236 +2 
+* 74832
+* 6236
++2 6236
+
+fl=(118)
+fn=(1968)
+36 32
++1 4
+cfi=(119) /build/buildd/eglibc-2.15/string/../sysdeps/x86_64/multiarch/../strlen.S
+cfn=(1970) __GI_strlen
+calls=4 -11 
+* 108
+* 4
++4 20
++1 4
+-1 8
++3 8
+-2 4
++55 32
+-16 4
+-8 4
++6 4
+-1 4
++3 424
++9 256
+cfi=(120) /build/buildd/eglibc-2.15/string/../sysdeps/x86_64/multiarch/../strcmp.S
+cfn=(1972) __GI_strncmp
+calls=12 +88 
+* 460
+* 24
+
+fl=(11)
+fn=(170)
+58 231476
++1 231476
++1 231476
++1 231476
++1 231476
++2 231476
++2 231476
++2 231476
++1 231476
++1 231476
++2 231476
+
+fn=(176)
+91 231476
++1 231476
++2 231476
++1 231476
++1 231476
++1 231476
++2 231476
++2 231476
++1 231476
++1 231476
++1 231476
++1 231476
+
+fl=(116)
+fn=(1890)
+52 366844
++1 366844
++1 366844
++2 366844
++1 366844
++2 366844
++1 366844
++1 1467376
+948 366844
++1 366844
++1 366844
++1 366844
++2 1445
++1 1445
++1 1445
++1 1445
++1 1445
++1 1445
++1 1445
++1 1445
+1577 365399
++1 365399
++4 365399
++1 365399
++8 365399
++1 365399
++1 365399
++1 365399
+
+fl=(90) /build/buildd/eglibc-2.15/setjmp/../sysdeps/x86_64/setjmp.S
+fn=(1566) __sigsetjmp
+26 8082
++2 8082
++1 16164
++1 8082
++4 8082
++1 8082
++1 8082
++1 8082
++1 8082
++2 16164
++2 8082
++1 8082
++2 16164
++2 8082
++9 8082
+cfi=(91) /build/buildd/eglibc-2.15/setjmp/sigjmp.c
+cfn=(1568) __sigjmp_save
+calls=8082 -26 
+* 72738
+
+fl=(68)
+fn=(1276)
+129 2169124
++1 2169124
++2 2169124
++1 2169124
++26 2169124
++1 2169124
++1 2169124
++1 2169124
++1 2169124
++1 2169124
++35 2169124
++1 2169124
++1 2169124
++1 2169124
++1 2169124
++1 2169124
++1 2169124
+1713 2169124
++6 2169124
++1 2169124
++8 2169124
++1 2169124
+
+fl=(93)
+fn=(1576)
+30 18630
++2 3726
+cfi=(94)
+cfn=(1578)
+calls=3726 * 
+* 104328
++2 11178
++6 22356
+cfi=(96) /build/buildd/eglibc-2.15/setjmp/../sysdeps/x86_64/__longjmp.S
+cfn=(1582) __longjmp
+calls=3726 -11 
+* 2688978483
+
+fn=(1577)
+30 21775
++2 4355
+cfi=(94)
+cfn=(1578)
+calls=4355 * 
+* 121940
++2 13065
++6 26130
+cfi=(96)
+cfn=(1583) __longjmp'2
+calls=4355 -11 
+* 1286452
+
+fl=(110)
+fn=(1704)
+56 36
++4 6
+-4 18
++4 12
++19 12
++6 36
+-20 6
+cfi=(11)
+cfn=(170)
+calls=6 -7 
+* 66
++3 6
+-3 6
++3 48
++2 18
+cfi=(11)
+cfn=(176)
+calls=6 +21 
+* 72
+* 12
+
+fl=(53)
+fn=(626)
+47 126800
++3 380400
++19 253600
+-15 507200
+cfi=(11)
+cfn=(170)
+calls=126800 +4 
+* 1394800
++2 253600
+-2 126800
++2 887600
++2 380400
+cfi=(11)
+cfn=(176)
+calls=126800 +33 
+* 1521600
+* 253600
+
+fl=(120)
+fn=(1972)
+178 12
++1 12
++1 12
++1 12
++1 12
++2 12
++1 12
++2 12
++1 12
++21 12
++1 12
++1 12
++1 12
++1 4
++1 4
++1 4
++1 4
++21 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++15 8
++1 8
++1 8
++1 8
++1 8
++1 8
++1 8
++1 8
++21 8
++1 8
++1 8
++2 8
++6 8
++1 8
++1 8
++1 8
++1 8
++5 8
+2242 8
++1 8
++1 8
++1 8
++6 12
++3 12
++1 12
++2 12
++1 12
++8 12
++1 12
+
+fl=(10)
+fn=(224)
+63 1112146
++1 556073
+
+fn=(166)
+82 385368
+cfi=(11)
+cfn=(170)
+calls=96342 -24 
+* 1059762
+* 674394
+cfi=(11)
+cfn=(176)
+calls=96342 +9 
+* 1156104
+* 385368
++1 96342
+
+fn=(2094)
+82 3672
+cfi=(11)
+cfn=(170)
+calls=918 -24 
+* 10098
+* 5508
+cfi=(11)
+cfn=(176)
+calls=918 +9 
+* 11016
+* 3672
++1 918
+
+fn=(2120) mprotect
+82 8
++1 2
+
+fn=(478)
+82 3463366
++1 865842
+
+fl=(42)
+fn=(466) _int_malloc
+3426 346311
++30 307832
++8 76958
++1 9462
++1 3154
++1 3154
++4 6308
+-5 2316
++8 4632
+-8 2316
++8 6948
++1 2316
+-1 2316
++1 4632
++2 11580
+3883 37445
+-1 37445
++1 74890
++26 346311
+3500 72326
++1 68217
++1 45478
++2 68217
++1 1060
++3 530
++1 1060
++6 530
++1 530
++2 530
+-4 530
++4 1060
+3812 156
+3541 53700
++1 53696
+4226 2868
+cfn=(1316) malloc_consolidate.part.3
+calls=478 -23 
+* 80693
+* 478
+3896 478
+-2 478
+3581 478
+3896 478
+-2 956
++2 478
+-2 478
++2 956
+3581 478
+3896 9082
+3674 478
+3562 956
+3896 35155
+-2 35155
+3581 35155
+3896 35155
+-2 70310
++2 35155
+-2 35155
++2 70310
+3581 35155
+3896 667945
+3674 35155
+3562 70310
++65 3506
++1 5259
++1 1753
++45 10518
++7 1753
+-6 1753
++1 1753
++1 1753
++1 1753
++3 1753
+-7 232134
++7 38689
+-6 38689
++1 38689
++1 38689
++1 38689
++3 38689
+3562 228225
++2 41503
+-1 41503
++1 83006
++1 83006
++3 41503
++10 137932
++35 40471
+-5 40471
++1 40471
++4 40471
++13 80884
++6 259768
++1 26253
++1 26253
++3 52506
++4 24872
+-2 6218
++3 12436
+-10 99488
++1 12436
++1 12436
++3 24872
++34 129884
+-20 18654
++1 12436
++6 6218
++6 6218
+-1 6218
++1 6218
++1 6218
++1 12436
++2 12436
+-88 21214
+-1 42428
++1 2350
++4 1032
++1 2064
++4 1032
+-2 1032
+-1 2064
++2 2064
++1 1032
++2 47
++1 47
++3 47
++3 47
+-3 282
++2 94
+-2 47
++2 47
++5 47
+-1 47
++1 94
+-7 985
++3 985
+-3 5910
++2 1970
+-2 985
++2 985
++5 985
+-1 985
++1 1970
++88 69144
++71 34570
++1 34570
++3 34570
+-2 34570
++2 34570
+-3 34570
++1 34570
++2 34570
+-1 103710
++6 197552
++2 102897
++2 133476
++2 32414
++1 32414
+-1 64828
++5 32414
+-5 32414
++5 64828
++1 32414
++2 64828
+-2 242150
++2 484300
+-3 564544
++7 40122
++3 80244
++1 6482
++1 6482
++1 6482
+-2 19446
++60 6482
++18 930
++1 2790
++2 1860
++17 6
+3615 29
+-1 58
++1 58
+3812 58
+3691 26848
++3 40278
++3 4
++1 10
++6 6
++4 24
+-1 4
++4 4
+3541 26854
+3798 134560
++3 67280
++5 792033
+-3 64922
++6 64922
+-6 2358
++6 2358
++13 33597
++1 67194
+-6 33597
++17 33597
+-6 33597
++1 33597
++2 33597
+-1 33597
++4 33597
++1 21104
++1 67194
++2 32403
++1 32403
++2 226821
++2 64806
+-2 32403
++2 32403
++1 64806
+-3 8358
++2 2388
+-2 1194
++2 1194
++1 2388
+-33 45
+-1 45
++1 102
+3541 7
+3877 2784
+-3 928
++1 928
++2 2784
++2 928
+-2 928
+-1 928
++1 2784
++2 1856
+2370 2
++1 6
+-1 6
++11 2
+-11 2
++11 2
++58 2
++9 4
+-9 2
++9 16
++6 4
++3 6
++8 2
+-2 4
++1 2
++1 6
+fi=(123) /build/buildd/eglibc-2.15/malloc/arena.c
+594 6
++3 6
++1 2
++1 4
++2 8
+fe=(42)
+2467 2
+fi=(123)
+609 2
+fe=(42)
+2469 2
+-2 2
++1 2
++1 2
+-2 4
++2 2
+-2 2
++2 2
+2742 4
++1 2
++5 4
++3 4
++4 2
+-3 2
++1 2
++2 2
+-1 2
++4 2
+-3 4
++1 2
+-1 8
++1 2
+3904 16
+fi=(123)
+602 18
+cfi=(10)
+cfn=(2120)
+calls=2 82 
+* 10
+* 12
++4 6
+fe=(42)
+3708 22
+
+fn=(508) _int_free
+3917 346284
++13 38476
+-13 38476
++13 76952
++6 153904
++1 76952
++10 76952
++13 76952
++11 12612
++1 9459
++24 9459
++3 9459
++1 6306
++1 3153
++3 3153
+-3 3153
++9 6306
+-5 6306
++10 6306
++1 2301
++1 767
++2 2301
+-2 2386
++2 16617
++2 7840
+4187 25224
+4032 70646
++1 70646
+3928 35323
+4033 70646
++18 105969
++6 35323
+-10 35323
++10 35323
++8 105969
++7 70646
+-1 35323
++2 70646
++6 105969
++4 70646
++1 43
++2 43
+-1 43
++2 547
++3 70646
++5 68788
++1 439913
++1 34283
++11 34283
+-1 34283
++2 68566
+-1 111
+-1 111
++2 222
++7 34394
+-2 34394
++1 34394
++1 34394
++2 32464
++1 32464
++3 32464
++2 32464
+-3 32464
++3 32464
++1 32464
+-1 32464
++31 64928
+-33 1930
++2 1930
+-3 1930
++3 1930
++1 1930
+-1 1930
++31 5718
+4042 282584
++2 70646
++55 222
++76 105969
++1 105969
++1 176615
++10 282584
+-51 929
++1 2787
++1 1858
+-79 97068
+-2 64712
++39 74616
+
+fn=(1316)
+4203 3824
++24 1434
++2 478
++10 478
++1 956
++2 956
++1 956
+-1 8604
++1 12746
++22 151
+-1 151
++1 1503
++4 837
++4 837
+-3 837
++1 837
++2 837
++1 59
++1 59
++3 59
++1 59
++1 59
+-2 59
++3 59
+-3 59
++12 118
+-12 778
++1 778
++1 778
+-2 778
++3 778
+-3 778
++12 1755
+-41 199
+-3 199
++3 398
++4 199
+-3 199
++1 199
++2 199
+-4 638
+-3 638
++3 1276
++4 638
+-3 638
++1 638
++2 638
++1 151
++2 151
+-1 151
++2 1531
+-6 837
++9 1674
++3 1674
++4 1372
++26 4780
+-90 4780
++90 9560
++6 3824
+-34 66
+-8 11
+
+fn=(464)
+2910 230874
++5 76958
++1 76958
++3 76958
++2 384790
++3 115437
+cfn=(466)
+calls=38479 3426 
+* 10042539
++1 38479
+-1 38479
++1 38479
++20 192395
++1 307832
++3 269353
+-3 16836
+
+fn=(506)
+2959 79756
++1 79756
++5 79756
++5 38476
+-2 38476
++2 76952
++14 128046
++1 8412
+cfn=(508)
+calls=4206 3917 
+* 386123
+* 68540
+cfn=(508)
+calls=34270 3917 
+* 4048286
+2861 1402
+
+fl=(57)
+fn=(750)
+60 4145661
++14 4145661
++1 4145661
++4 3781399
++1 3781399
++2 2378991
++1 2378991
++1 9515964
++4 5609632
++7 364262
++1 364262
++32 364262
++2 364262
++1 364262
++1 364262
++2 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
++1 364262
+679 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++2 3984135
++1 3984135
++1 3984135
++1 3984135
++1 364261
++1 364261
++1 364261
++1 364261
++1 1457044
+1345 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++2 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 4
+1684 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
+-12 42
++1 42
++2 42
++1 42
++2 42
++1 42
++2 42
++1 42
++2 42
+-6 26
++1 26
++2 26
++1 26
++2 26
++48 16
++1 16
++2 16
++1 16
++2 16
++1 16
++2 16
++1 16
++2 16
++1 16
++2 16
++1 16
++1 16
++1 16
++1 16
+-16 40
++1 40
++2 40
++1 40
++2 40
++1 40
++2 40
++1 40
++2 40
++1 40
++1 40
++1 40
++1 40
+-13 8137
++1 8137
++2 8137
++1 8137
++2 8137
++1 8137
++2 8137
++1 8137
++1 8137
++1 8137
++1 8137
+-7 6
++1 6
++2 6
++1 6
++1 6
++1 6
++1 6
++24 3
++1 3
++2 3
++1 3
++2 3
++1 3
++2 3
++1 3
++1 3
++1 3
++1 3
++18 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++1 9
++1 9
++1 9
+-16 152
++1 152
++2 152
++1 152
++2 152
++1 152
++2 152
++1 152
++2 152
++1 152
++1 152
++1 152
++1 152
+-13 18
++1 18
++2 18
++1 18
++2 18
++1 18
++2 18
++1 18
++1 18
++1 18
++1 18
+-10 1608
++1 1608
++2 1608
++1 1608
++2 1608
++1 1608
++1 1608
++1 1608
++1 1608
++61 2
++1 2
++2 2
++1 2
++2 2
++1 2
++2 2
++1 2
++1 2
++1 2
++1 2
+-7 39
++1 39
++2 39
++1 39
++1 39
++1 39
++1 39
++78 6343
++1 6343
++1 6343
++16 5
++1 5
++2 5
++1 5
++2 5
++1 5
++2 5
++1 5
++1 5
++1 5
++1 5
++21 303
++1 303
++2 303
++1 303
++2 303
++1 303
++2 303
++1 303
++2 303
++1 303
++1 303
++1 303
++1 303
++58 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++1 4
++1 4
++1 4
++4 2250165
++1 2250165
++1 2250165
++16 17
++1 17
++2 17
++1 17
++2 17
++1 17
++2 17
++1 17
++1 17
++1 17
++1 17
++21 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++1 1
++1 1
++1 1
+-13 112054
++1 112054
++2 112054
++1 112054
++2 112054
++1 112054
++2 112054
++1 112054
++1 112054
++1 112054
++1 112054
++45 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
+-21 138
++1 138
++2 138
++1 138
++2 138
++1 138
++2 138
++1 138
++2 138
++1 138
++2 138
++1 138
++2 138
++1 138
++2 138
+-18 359353
++1 359353
++2 359353
++1 359353
++2 359353
++1 359353
++2 359353
++1 359353
++2 359353
++1 359353
++2 359353
++1 359353
++2 359353
+-15 4575
++1 4575
++2 4575
++1 4575
++2 4575
++1 4575
++2 4575
++1 4575
++2 4575
++1 4575
++2 4575
+-12 51
++1 51
++2 51
++1 51
++2 51
++1 51
++2 51
++1 51
++2 51
+-9 14
++1 14
++2 14
++1 14
++2 14
++1 14
++2 14
+-6 84
++1 84
++2 84
++1 84
++2 84
+-3 1
++1 1
++2 165
++48 20
++1 20
++2 20
++1 20
++2 20
++1 20
++2 20
++1 20
++2 20
++1 20
++2 20
++1 20
++1 20
++1 20
++1 20
++21 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++1 1
++1 1
++1 1
++18 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++1 9
++1 9
++1 9
+-16 145
++1 145
++2 145
++1 145
++2 145
++1 145
++2 145
++1 145
++2 145
++1 145
++1 145
++1 145
++1 145
+-10 491
++1 491
++2 491
++1 491
++2 491
++1 491
++1 491
++1 491
++1 491
+2577 3627
++1 3627
++1 3627
++16 5
++1 5
++2 5
++1 5
++2 5
++1 5
++2 5
++1 5
++1 5
++1 5
++1 5
++21 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++1 4
++1 4
++1 4
++78 1397930
++1 1397930
++1 1397930
++16 24
++1 24
++2 24
++1 24
++2 24
++1 24
++2 24
++1 24
++1 24
++1 24
++1 24
++21 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++1 4
++1 4
++1 4
+-13 29
++1 29
++2 29
++1 29
++2 29
++1 29
++2 29
++1 29
++1 29
++1 29
++1 29
+
+fn=(756)
+60 97
++6 97
++1 97
++7 97
++1 97
++7 90
++1 90
++1 360
++14 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++48 7
++1 7
++1 7
++4 7
++2 7
++1 14
++3 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 7
++1 28
+1684 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
++1 9
++2 9
+-18 13
++1 13
++2 13
++1 13
++2 13
++1 13
++2 13
++1 13
++2 13
++1 13
++2 13
++1 13
++2 13
+-12 13
++1 13
++2 13
++1 13
++2 13
++1 13
++2 13
++1 13
++2 13
+-6 15
++1 15
++2 15
++1 15
++2 55
+2127 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++2 1
++1 1
++1 1
++1 1
++1 1
+-10 2
++1 2
++2 2
++1 2
++2 2
++1 2
++1 2
++1 2
++1 2
+-4 4
++1 4
++1 4
++1 4
++1 4
+
+fl=(119)
+fn=(1970)
+26 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++12 4
++1 4
++1 4
++1 8
++3 4
++1 4
++1 4
++1 4
++25 4
++1 4
++1 4
++1 4
+
+fl=(125)
+fn=(2128)
+40 1
++1 1
++1 1
++1 1
++1 1
++1 1
++2 1
++1 1
++1 1
++1 1
++1 1
++1 1
++2 1
++1 1
++1 1
++1 1
++5 1
++1 1
++2 1
++1 1
++4 1
++4 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++3 1
++4 1
++1 1
++1 1
++3 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++4 1
++1 1
++3 1
++1 1
++1 1
++1 1
++1 1
++3 1
++3 1
++3 1
+
+fl=(122)
+fn=(2116)
+38 1
++1 1
++1 1
++1 1
++1 1
++1 1
++2 1
++1 1
++1 1
++1 1
++1 1
++1 1
++2 1
++1 1
++1 1
++1 1
++6 1
++1 1
++2 1
++1 1
++1 1
++4 1
++1 1
++2 1
++4 1
++1 1
++1 1
++1 1
++1 1
++3 1
++2 1
+
+fl=(45)
+fn=(484)
+30 19920
++1 79680
++2 39840
+
+fl=(91)
+fn=(1568)
+30 16164
+-1 16164
++1 16164
++5 24246
+
+fl=(96)
+fn=(1582)
+29 3726
++1 3726
++1 3726
++2 7452
++1 7452
++1 7452
++12 3726
++1 3726
++1 3726
++1 3726
++1 3726
++2 3726
++1 3726
++1 3726
++1 3726
+cob=(4)
+cfi=(87)
+cfn=(2112)
+calls=1 182 
+* 302
+cob=(4)
+cfi=(87)
+cfn=(1561)
+calls=3725 245 
+* 2688911113
+
+fn=(1583)
+29 4355
++1 4355
++1 4355
++2 8710
++1 8710
++1 8710
++12 4355
++1 4355
++1 4355
++1 4355
++1 4355
++2 4355
++1 4355
++1 4355
++1 4355
+cob=(4)
+cfi=(87)
+cfn=(1561)
+calls=315 245 
+* 1208062
+
+fl=(89)
+fn=(1564)
+34 8082
++2 8082
+cfi=(90)
+cfn=(1566)
+calls=8082 -10 
+* 218214
+
+fl=(44)
+fn=(472)
+44 42656
++1 42656
++1 42656
++4 42656
++1 42656
++1 42656
++1 42656
++2 42656
++1 42656
++2 22735
++5 22735
++1 22735
++1 22735
++1 22735
++1 22735
+327 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
++1 1
+-4 1708
++1 1708
++1 1708
++1 1708
++1 1708
++23 6
++1 6
++1 6
++1 6
++41 19919
++1 19919
++1 19919
++1 19919
++1 19919
++1 19919
++1 19919
++1 19919
++1 19919
++1 19919
++1 19919
+-1 1099
++1 1099
++48 2
++1 2
++1 2
++1 2
++1 2
++35 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++5 19921
++1 19921
++1 19921
++1 19921
++1 19921
+
+ob=(20)
+fl=(18)
+fn=(242)
+0 365265
+
+ob=(2)
+fl=(44)
+fn=(472)
+604 19921
++1 19921
++2 19921
++1 19921
++25 19921
+866 19921
++1 19921
++1 39842
++4 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++1 19921
++2 19921
++1 19921
+-12 59761
++1 59761
++1 59761
++1 59761
++1 59761
++1 59761
++1 59761
++1 59761
++1 59761
++1 59761
++2 59761
++1 59761
++1 19921
++5 19921
++1 19921
++1 19921
++1 19921
++1 19921
+
+fl=(124)
+fn=(2124)
+62 2
++1 1
+-9 3
++9 1
++14 1
+-4 1
+-2 1
++2 1
++1 1
++16 1
+-13 1
++1 2
++2 5
++10 1
++4 1
+-4 1
++4 1
+-3 2
++23 2
+-24 4
++1 10
++18 2
+-18 2
+-1 1
++4 7
++1 1
++2 7
++1 1
+-35 1
++2 4
+
+fl=(121)
+fn=(2058)
+56 7044
++4 1174
+-4 3522
++4 2348
++19 2348
++6 7044
+-20 1174
+cfi=(11)
+cfn=(170)
+calls=1174 -7 
+* 12914
++3 1174
+-3 1174
++3 9392
++2 3522
+cfi=(11)
+cfn=(176)
+calls=1174 +21 
+* 14088
+* 2348
+
+totals: 55238526398
