@@ -41,13 +41,126 @@ RTL8139 (KVM's default)
 Answer: why is Virtio faster than the fully emulated RTL8139
 
 \section{Following the Code Path}
-Valgrind/callgrind
+In order to determine where the bottlenecks are occurring using the RTL8139 driver which performs full emulation, we traced the code path of a packet from the guest's application layer through the guest and host network stacks. We provide an explanation of the traces and relevant functions for the code path for the transmit side below, and an outline of the path for the receive side in the Appendix, along with the code path followed by packets on the transmit side that are shared by both the NAT and bridged code. 
+
+\header{RealTek 8139 NAT: Guest Transmit}
+slirp_input:
+|          |
+|           -> m_get (allocates buffer space for packet to be copied into)
+|               |
+|                -> slirp_insque (manages doubly linked list of buffer space that is being used for the packets)
+|
+ ->ip_input (converts ip fields to host representation using ntohs, manipulating buffer space that was created in m_get)
+    |
+    |
+     -> tcp_input (converts tcp fields to host format. Rewrites all the fields to host representation)
+         |
+         |
+          -> tcp_output (standard tcp things happen here. e.g. calculating receive window. There is a lot going on here. Flips tcp fields back from host byte order to network byte order)
+              |
+              |
+               -> ip_output (flips ip fields back to network byte order from host byte order)
+                   |
+                   |
+                    -> if_output 
+                        |     + Figures out which queue to place the packet on
+                        |         + fastq: meant for packets associated with interactive activities. Determined through the IPTOS_NODELAY flag set in the ip header of the packet
+                        |         + batchq: queue for non-interactive actions. This is a more efficient queue.
+                        |     + Favorite comment:
+                        |           "These are arbitrary numbers, probably not optimal"
+                        |     + creates a new doubly linked list through m_get, not entirely clear why they need it, it looks like another packet queue
+                        |
+                         -> if_start
+                             |    + Drains the fastq before the batchq
+                             |    + cleans up the buffers and frees memory after if_encap returns
+                             |      (i.e., it calls slirp_remque and m_free, which cleans up the buffers)
+                             |
+                              -> if_encap
+                                  |    + Copies packet headers into appropriate header structs, essentially preparing the packet
+                                  |
+                                   -> slirp_output
+                                       |         + Add slirp state info and pass the packet off to qemu to get it out to the wire
+                                       |
+                                        -> qemu_send_packet
+                                                       + Passes packet through several wrapper functions which finally ends with qemu_net_queue_append which adds the packet to a queue which I assume puts it on the wire.
+                                                        + wrapper for qemu_send_packet_async with the last argument set to NULL
+
+\header{RealTek 8139 Bridged: Guest Transmit}
+We first come out the end of the shared code (see Appendix) and get to tap_receive. The flow continues as follows:
+
+tap_receive
+tap_receive_raw
+tap_write_packet
+writev 
+
 
 %\input{implementation}
 %\input{evaluation}
 %\input{future}
 %\input{related}
 %\input{conclusion}
+
+\section{Appendix}
+
+[TODO: provide a graph of the code that happens whether you're shared or bridged on a guest transmit]
+The code is implementing a deisgn pattern through the following functions: 
+
+GUEST NETWORK STACK finishes here
+--- start QEMU user space emulating physical NIC here ---
+rtl8139_transfer_frame 
+qemu_send_packet
+qemu_send_packet_async
+qemu_send_packet_async_with_flags
+qemu_net_queue_send
+qemu_net_queue_deliver
+qemu_deliver_packet
+net_hub_port_receive
+net_hub_receive
+qemu_send_packet' (now it's running through different interfaces: figured out that it needs to be moving toward the TAP device.)
+qemu_send_packet_async'
+qemu_send_packet_async_with_flags'
+qemu_net_queue_deliver'
+qemu_deliver_packet'
+tap_receive / net_slirp_receive depending on whether you're using bridged or NAT.
+
+This is shared by everyone. It's connecting the driver at the top to the actual networking at the bottom. 
+
+------
+
+RECEIVE SIDE:
+These functions bridge the gap between the top of the host network stack and pass the incoming packets to the bottom of the guest network stack--the RTL8139 emulated network driver. 
+
+\header{Bridged}
+Here tap_send, etc., don't mess with the packet headers at all--they just pass the packets straight up to the guest from the physical interface, possibly via queue using qemu_notify--so the packets have come directly from the physical NIC and don't need to have their headers retranslated.
+
+main_loop_wait
+qemu_io_handler_poll
+tap_send
+tap_read_packet
+if the size read > 0:
+	qemu_send_packet_async
+... continue to shared code. The interested reader can check out the KVM source, wazzup.
+
+\header{NAT}
+Everything is in host byte order, because it's passed through the full host network stack and is coming off the application layer of the host network stack. So at this stage everything gets ripped off and translated back to network byte order and passed to the RTL8139 network driver of the guest stack, which the once again decapsulates the packets for the guest application layer. So the flow is: decapsulate in host network stack; re-encapsulate here and pass to bottom of guest network stack; guest network stack re-decapsulates packet (essentially repeating the work of the host network stack, but with the headers that were modified by NATing). 
+
+main_loop_wait
+slirp_select_poll
+tcp_output -- strips the headers
+ip_output -- gets new headers based 
+if_output
+if_start
+if_encap
+slirp_output
+
+This could be why we're getting weird iperf data--because 
+
+
+
+
+
+
+
 
 {\footnotesize \bibliographystyle{acm}
 \bibliography{references}}
