@@ -29,12 +29,21 @@ If the client is NATed, then all packet header information in the first three la
 Talk about our system setup here. 
 
 \section{NFS}
-Looking at NFS
+We began our quest by searching for a way to differentiate NFS requests from physical and virtual clients, from the standpoint of an NFS server. If a server could distinguish the two clients--and moreover, if it could identify the single physical machine from which multiple VM-accesses originated--then there is the potential to coalesce NFS server responses to multiple VMs on the same physical machine. 
 
-\section{Bridged vs. NAT}
+We investigated this on three fronts. First, we searched through the NFS 4.0 RFC specification to try to find operations that could potentially differ in the VM or physical context, or otherwise somehow uniquely mark the origin of the client machine. Second, we performed a number of tcpdump traces on NFS 4.0 \texttt{mount} operations as well as file transfers using \texttt{cat}, with the goal of isolating differences in the action of the NFS protocol in the virtual and physical settings. The tcpdump traces were executed with the flags \texttt{tcpdump -vvnnXSs 1536} in order to examine the full contents of each NFS packet exchanged between the client and server. Finally, we timed NFS reads of varying sizes in the virtual and physical settings in order to determine if timing differences could differentiate physical from virtual clients. 
+
+We learned several things from these investigations. First, we were unable to differentiate any aspect of the NFS protocol in the virtual setting from its behavior in the physical setting at the application layer, either in our reading of the NFS 4.0 RFC or in our tcpdump traces. This is not surprising, as there is nothing that should inherently differ about the behavior of the application layer in a virtual machine. Looking lower in the network stack, however, we realized that the MAC addresses assigned to the virtual NICs of bridged connections took on default values under all the virtualization platforms we investigated, allowing us to distinguish the VM hypervisor in these cases. We discuss this in more detail in Section \ref{subsec:macaddrs} below. 
+
+\subsection{Identifying Bridged Hosts by MAC Address}
+\label{subsec:macaddrs}
+
+
+
+\section{Bridged vs. NAT Timing}
 Bridged vs. NAT
 
-graph with iperf results: show it's a big difference
+graph with iperf results: show it's a big difference.
 
 RTL8139 (KVM's default)
 
@@ -43,7 +52,11 @@ Answer: why is Virtio faster than the fully emulated RTL8139
 \section{Following the Code Path}
 In order to determine where the bottlenecks are occurring using the RTL8139 driver which performs full emulation, we traced the code path of a packet from the guest's application layer through the guest and host network stacks. We provide an explanation of the traces and relevant functions for the code path for the transmit side below, and an outline of the path for the receive side in the Appendix, along with the code path followed by packets on the transmit side that are shared by both the NAT and bridged code. 
 
-\header{RealTek 8139 NAT: Guest Transmit}
+
+\subsection{RealTek 8139 NAT: Guest Transmit}
+User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLIRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking 
+
+
 slirp_input:
 |          |
 |           -> m_get (allocates buffer space for packet to be copied into)
@@ -85,7 +98,7 @@ slirp_input:
                                                        + Passes packet through several wrapper functions which finally ends with qemu_net_queue_append which adds the packet to a queue which I assume puts it on the wire.
                                                         + wrapper for qemu_send_packet_async with the last argument set to NULL
 
-\header{RealTek 8139 Bridged: Guest Transmit}
+\subsection{RealTek 8139 Bridged: Guest Transmit}
 We first come out the end of the shared code (see Appendix) and get to tap_receive. The flow continues as follows:
 
 tap_receive
