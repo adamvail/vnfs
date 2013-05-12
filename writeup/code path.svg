@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg5378"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="code path.svg">
+  <defs
+     id="defs5380" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="311.84155"
+     inkscape:cy="507.96517"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5383">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5386"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion5388"><rect
+           id="rect5390"
+           width="120"
+           height="44.285713"
+           x="45.714287"
+           y="99.505043" /></flowRegion><flowPara
+         id="flowPara5392"
+         style="font-weight:bold">slirp_input()</flowPara></flowRoot>    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:1.07764244;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5394"
+       width="131.35092"
+       height="35.279503"
+       x="39.681679"
+       y="96.329575" />
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:1.66012704;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5394-6"
+       width="197.19702"
+       height="55.768444"
+       x="74.615784"
+       y="148.5851" />
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:2.30309296;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5394-5"
+       width="262.9826"
+       height="80.48262"
+       x="111.72298"
+       y="223.19232" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="123.92857"
+       y="243.79076"
+       id="text5441"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5443"
+         x="123.92857"
+         y="243.79076"><tspan
+   style="font-weight:bold"
+   id="tspan5459">slirp_ins_queue()</tspan>: manage</tspan><tspan
+         sodipodi:role="line"
+         x="123.92857"
+         y="268.79074"
+         id="tspan5451">doubly-linked list of buffer </tspan><tspan
+         sodipodi:role="line"
+         x="123.92857"
+         y="293.79074"
+         id="tspan5453">space that holds the pkts</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="85"
+       y="170.21933"
+       id="text5445"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5447"
+         x="85"
+         y="170.21933"><tspan
+   style="font-weight:bold"
+   id="tspan5461">m_get()</tspan>: allocate </tspan><tspan
+         sodipodi:role="line"
+         x="85"
+         y="195.21933"
+         id="tspan5449">buffer space for pkt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="47.745102"
+       y="346.63919"
+       id="text5463"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="47.745102"
+         y="346.63919"
+         id="tspan5467"><tspan
+   style="font-weight:bold"
+   id="tspan5475">ip_input()</tspan>: converts IP fields to host </tspan><tspan
+         sodipodi:role="line"
+         x="47.745102"
+         y="371.63919"
+         id="tspan5471">representation. Acts on pkts in mbufs.</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5477"
+       width="351.07144"
+       height="58.214287"
+       x="39.173676"
+       y="323.78204" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="45.456863"
+       y="421.52191"
+       id="text5479"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5481"
+         x="45.456863"
+         y="421.52191"><tspan
+   style="font-weight:bold"
+   id="tspan5485">tcp_input()</tspan>: converts TCP fields to </tspan><tspan
+         sodipodi:role="line"
+         x="45.456863"
+         y="446.52191"
+         id="tspan5483">host representation. </tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:0.95040613;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5487"
+       width="331.37964"
+       height="56.11306"
+       x="39.371155"
+       y="399.77884" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="49.497475"
+       y="489.70721"
+       id="text5493"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5495"
+         x="49.497475"
+         y="489.70721"><tspan
+   style="font-weight:bold"
+   id="tspan5501">tcp_output()</tspan>: huge function, emulates TCP.</tspan><tspan
+         sodipodi:role="line"
+         x="49.497475"
+         y="514.70721"
+         id="tspan5497">Converts TCP fields from host to network </tspan><tspan
+         sodipodi:role="line"
+         x="49.497475"
+         y="539.70721"
+         id="tspan5499">byte order</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5503"
+       width="418.70822"
+       height="79.296974"
+       x="36.870567"
+       y="469.50415" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="47.477169"
+       y="579.10571"
+       id="text5505"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5507"
+         x="47.477169"
+         y="579.10571"><tspan
+   style="font-weight:bold"
+   id="tspan5511">ip_output()</tspan>: converts IP fields from host to </tspan><tspan
+         sodipodi:role="line"
+         x="47.477169"
+         y="604.10571"
+         id="tspan5509">network byte order</tspan></text>
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5513"
+       width="406.5864"
+       height="60.104076"
+       x="36.36549"
+       y="560.41791" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="51.012703"
+       y="654.86719"
+       id="text5515"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5517"
+         x="51.012703"
+         y="654.86719">if_output(): </tspan></text>
+  </g>
+</svg>

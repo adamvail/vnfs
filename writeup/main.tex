@@ -49,7 +49,7 @@ This helps us distinguish virtual from native clients to some extent, but still 
 			Virtualization Platform & MAC \\
 		\hline
 		\hline
-			KVM+QEMU & TODO \\
+			KVM+QEMU & 52:54:00 \\
 			VMware ESX 3, Server, Workstation, Player	& 00-50-56, 00-0C-29, 00-05-69 \\
 			Microsoft Hyper-V, Virtual Server, Virtual PC	& 00-03-FF \\
 			Parallells Desktop, Workstation, Server, Virtuozzo & 00-1C-42 \\
@@ -68,6 +68,7 @@ This helps us distinguish virtual from native clients to some extent, but still 
 
 \section{Bridged vs. NAT Timing}
 \label{sec:NFSTiming}	
+
 
 \subsection{Virtual Networking: Bridging vs. NATing}
 \label{subsec:bridgeVsNAT}
@@ -166,7 +167,7 @@ qemu_send_packet_async'
 qemu_send_packet_async_with_flags'
 qemu_net_queue_deliver'
 qemu_deliver_packet'
-tap_receive / net_slirp_receive depending on whether you're using bridged or NAT.
+tap_receive / net_slirp_receive -> slirp_input depending on whether you're using bridged or NAT.
 
 This is shared by everyone. It's connecting the driver at the top to the actual networking at the bottom. 
 
