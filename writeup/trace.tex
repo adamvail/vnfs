@@ -17,14 +17,17 @@ The chunk of memory is then returned to \texttt{slirp_output} where the packet i
 It is this allocating, managing, and copying of memory done for every packet in these three functions that causes the majority of the slowdown in usermode networking.
 
 Once the packet has been copied into the buffer space, it is passed ``up the stack`` to \texttt{ip_input}. 
-The function uses the packet's IP headers to sanity check different aspects such as length.
+The function uses the packet's IP headers to sanity check different aspects such as the checksum and length.
+Then, IP options are processed and if the packet is fragmented, it attempts to reassemble it.
 If the packet is malformed then it is dropped and the memory used to store it is freed.
 
 If the packet passes the tests in \texttt{ip_input} it is passed along to \texttt{tcp_input}.
-Both the IP and TCP headers are stripped from the packet, leaving just the TCP payload, which is passed to \texttt{tcp_output}.
-It is at this point that the packets starts to move back ``down the stack`` to be put out onto the wire.
-\texttt{Tcp_ouput} is a direect implementation of the TCP RFC.
+\texttt{Tcp_input} is a direct implementation of the TCP specification from September, 1981.
 It does all the standard operations associated with TCP such as calculating the receive window and updating the TCP control block that Qemu maintains.
+It then strips both the IP and TCP headers from the packet, leaving just the TCP payload, which is passed to \texttt{tcp_output}.
+It is at this point that the packets starts to move back ``down the stack`` to be put out onto the wire.
+\texttt{Tcp_output} handles TCP timers which determine when a packet should actually be sent.
+Once a packet is cleared to be sent, the TTL and TOS fields are filled in and the packet is passed along.
 
 With the transport layer complete the packet moves to the \texttt{ip_output} where the packet's IP header fields filled in with the host's information.
 At this point the packet is fully formed and ready to put on the wire.
