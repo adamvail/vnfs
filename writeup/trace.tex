@@ -31,8 +31,9 @@ At this point the packet is fully formed and ready to put on the wire.
 It is handed off to \texttt{if_output} which manages two different packet queues, \texttt{fastq} and \texttt{batchq}.
 If a packet has the \texttt{IPTOS_LOWDELAY} flag set, then it is placed on the \texttt{fastq}, which is intended for packets from an interactive application.
 Otherwise, the packet is placed on the \texttt{batchq}.
-The function also makes calls to \texttt{m_get} and \texttt{slirp_insque} to create a separate linked list.
-It isn't readily clear as to why the function has created this extra buffer space.
+``Each output queue is a doubly linked list of doubly linked lists of mbufs, each list belonging to a separate socket.''
+If a socket is found that does not have a linked list yet, then another is created and the packet is added to this new linked list.
+To create the linked list, \texttt{if_output} calls \texttt{m_get} which in turn calls \texttt{slirp_insque}.
 
 The packet then moves on to \texttt{if_start} which services both the \textt{fastq} and the \texttt{batchq}.
 As the names would indicate, the \texttt{fastq} is serviced first.
