@@ -1,0 +1,47 @@
+\section{Tracing Traffic from the Guest to the Network}
+\label{sec:trace}
+
+In order to determine why usermode networking incurs so much more overhead than bridged networking, we traced the path of a packet through both networking stacks.
+Both types of networking flow through the same functions when the emulated Realtek driver is invoked to put a packet ``on the wire.``
+This code is detailed in appendix ? and we describe the differences between the two systems next.
+The differences in the flow of a packet change once the emulated rtl8139 driver attempts to put the packet ``on the wire.``
+
+\subsection{Usermode Networking}
+\label{subsec:usermode}
+
+Figure ? shows a flowchart of functions that a packet passes through when a guest VM sends a packet to the Internet while using usermode networking.
+The control flow starts with the RealTek driver passing the packet to the \texttt{slirp_input} function.
+\texttt{Slirp_input} calls two functions before the control flow continues, \texttt{m_get} which in turn calls \texttt{slirp_insque}.
+In \texttt{m_get}, memory is allocated and then passed on to \texttt{slirp_insque} to be added a doubly linked list which acts as a packet buffer.
+The chunk of memory is then returned to \texttt{slirp_output} where the packet is then copied into it. % reword
+It is this allocating, managing, and copying of memory done for every packet in these three functions that causes the majority of the slowdown in usermode networking.
+
+Once the packet has been copied into the buffer space, it is passed ``up the stack`` to \texttt{ip_input}. 
+The function uses the packet's IP headers to sanity check different aspects such as length.
+If the packet is malformed then it is dropped and the memory used to store it is freed.
+
+If the packet passes the tests in \texttt{ip_input} it is passed along to \texttt{tcp_input}.
+Both the IP and TCP headers are stripped from the packet, leaving just the TCP payload, which is passed to \texttt{tcp_output}.
+It is at this point that the packets starts to move back ``down the stack`` to be put out onto the wire.
+\texttt{Tcp_ouput} is a direect implementation of the TCP RFC.
+It does all the standard operations associated with TCP such as calculating the receive window and updating the TCP control block that Qemu maintains.
+
+With the transport layer complete the packet moves to the \texttt{ip_output} where the packet's IP header fields filled in with the host's information.
+At this point the packet is fully formed and ready to put on the wire.
+It is handed off to \texttt{if_output} which manages two different packet queues, \texttt{fastq} and \texttt{batchq}.
+If a packet has the \texttt{IPTOS_LOWDELAY} flag set, then it is placed on the \texttt{fastq}, which is intended for packets from an interactive application.
+Otherwise, the packet is placed on the \texttt{batchq}.
+The function also makes calls to \texttt{m_get} and \texttt{slirp_insque} to create a separate linked list.
+It isn't readily clear as to why the function has created this extra buffer space.
+
+The packet then moves on to \texttt{if_start} which services both the \textt{fastq} and the \texttt{batchq}.
+As the names would indicate, the \texttt{fastq} is serviced first.
+This function passes the packets from the queues on and then cleans up memory upon return through the \texttt{m_free} and \texttt{slirp_remque} functions.
+
+When a packet is serviced it is passed to \texttt{if_encap}.
+Here the packet is prepared for going out on the wire by copying the packet header information into the appropriate header structs.
+Finally the packet is passed along to \texttt{slirp_output}. 
+Essentially \texttt{slirp_output} just puts the packet on whatever queue is passed into it along with additional slirp state information.
+This is done by simply calling \texttt{qemu_send_packet}.
+At this point qemu takes over and the rest of the control path is no longer dictated by the fact that usermode networking is in use.
+
