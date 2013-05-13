@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="311.84155"
-     inkscape:cy="507.96517"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="118.04668"
+     inkscape:cy="624.9626"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -231,6 +231,14 @@
          sodipodi:role="line"
          id="tspan5517"
          x="51.012703"
-         y="654.86719">if_output(): </tspan></text>
+         y="654.86719">if_output(): </tspan><tspan
+         sodipodi:role="line"
+         x="51.012703"
+         y="679.86719"
+         id="tspan5519">   - Determine which queue to insert pkt into</tspan><tspan
+         sodipodi:role="line"
+         x="51.012703"
+         y="704.86719"
+         id="tspan5521">      - fastq:  </tspan></text>
   </g>
 </svg>

@@ -2,9 +2,9 @@
 \label{sec:trace}
 
 In order to determine why usermode networking incurs so much more overhead than bridged networking, we traced the path of a packet through both networking stacks.
-Both types of networking flow through the same functions when the emulated Realtek driver is invoked to put a packet ``on the wire.``
+Both types of networking flow through the same functions when the emulated Realtek driver is invoked to put a packet ``on the wire.''
 This code is detailed in appendix ? and we describe the differences between the two systems next.
-The differences in the flow of a packet change once the emulated rtl8139 driver attempts to put the packet ``on the wire.``
+The differences in the flow of a packet change once the emulated rtl8139 driver attempts to put the packet ``on the wire.''
 
 \subsection{Usermode Networking}
 \label{subsec:usermode}
@@ -16,7 +16,7 @@ In \texttt{m_get}, memory is allocated and then passed on to \texttt{slirp_insqu
 The chunk of memory is then returned to \texttt{slirp_output} where the packet is then copied into it. % reword
 It is this allocating, managing, and copying of memory done for every packet in these three functions that causes the majority of the slowdown in usermode networking.
 
-Once the packet has been copied into the buffer space, it is passed ``up the stack`` to \texttt{ip_input}. 
+Once the packet has been copied into the buffer space, it is passed ``up the stack'' to \texttt{ip_input}. 
 The function uses the packet's IP headers to sanity check different aspects such as the checksum and length.
 Then, IP options are processed and if the packet is fragmented, it attempts to reassemble it.
 If the packet is malformed then it is dropped and the memory used to store it is freed.
@@ -25,7 +25,7 @@ If the packet passes the tests in \texttt{ip_input} it is passed along to \textt
 \texttt{Tcp_input} is a direct implementation of the TCP specification from September, 1981.
 It does all the standard operations associated with TCP such as calculating the receive window and updating the TCP control block that Qemu maintains.
 It then strips both the IP and TCP headers from the packet, leaving just the TCP payload, which is passed to \texttt{tcp_output}.
-It is at this point that the packets starts to move back ``down the stack`` to be put out onto the wire.
+It is at this point that the packets starts to move back ``down the stack'' to be put out onto the wire.
 \texttt{Tcp_output} handles TCP timers which determine when a packet should actually be sent.
 Once a packet is cleared to be sent, the TTL and TOS fields are filled in and the packet is passed along.
 

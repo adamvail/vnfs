@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg5523"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="code path 2.svg">
+  <defs
+     id="defs5525" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="488.75441"
+     inkscape:cy="49.93742"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata5528">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="56.42857"
+       y="114.50504"
+       id="text5531"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan5533"
+         x="56.42857"
+         y="114.50504">5) NFS Client TX</tspan><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="139.50504"
+         id="tspan5535" /><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="164.50504"
+         id="tspan5537">4) TCP</tspan><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="189.50504"
+         id="tspan5539" /><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="214.50504"
+         id="tspan5541">3) IP</tspan><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="239.50504"
+         id="tspan5543" /><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="264.50504"
+         id="tspan5545">2) Ethernet</tspan><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="289.50504"
+         id="tspan5547" /><tspan
+         sodipodi:role="line"
+         x="56.42857"
+         y="314.50504"
+         id="tspan5549">1) IF</tspan></text>
+    <g
+       id="g5575"
+       transform="matrix(0.02008101,0.99979836,-0.99979836,0.02008101,468.32504,234.89)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551"
+         d="m 83.571429,375.93361 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,-9.375"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4"
+         d="m 83.571429,376.91892 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,9.375"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5575-3"
+       transform="matrix(0.02008101,0.99979836,-0.99979836,0.02008101,512.8671,240.58971)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <g
+         id="g5616"
+         transform="matrix(0.95543654,-1.1976556,1.1438181,0.99677515,-432.94958,121.02113)">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 83.571429,375.93361 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,-9.375"
+           id="path5551-1"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 83.571429,376.91892 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,9.375"
+           id="path5551-4-2"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-445.18689"
+         y="152.14285"
+         id="text5620"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979836,0.99979836,0.02008101,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan5622"
+           x="-445.18689"
+           y="152.14285">Virtio...</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-352.75793"
+         y="151.63779"
+         id="text5624"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979836,0.99979836,0.02008101,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan5626"
+           x="-352.75793"
+           y="151.63779">RTL8139</tspan></text>
+      <rect
+         style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect5628"
+         width="192.93913"
+         height="231.32494"
+         x="35.355339"
+         y="88.676651"
+         transform="matrix(0.02008101,-0.99979835,0.99979835,0.02008101,-250.84008,507.9324)" />
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-474.48129"
+         y="-163.02472"
+         id="text5630"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979836,0.99979836,0.02008101,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan5632"
+           x="-474.48129"
+           y="-163.02472">Guest network stack</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="302.85715"
+         y="88.076469"
+         id="text5660"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979835,0.99979835,0.02008101,-250.84008,507.9324)"><tspan
+           sodipodi:role="line"
+           id="tspan5662"
+           x="302.85715"
+           y="88.076469" /></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="347.14285"
+         y="82.362183"
+         id="text5664"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979835,0.99979835,0.02008101,-250.84008,507.9324)"><tspan
+           sodipodi:role="line"
+           id="tspan5666"
+           x="347.14285"
+           y="82.362183">RTL8139</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-202.8671"
+         y="-116.79895"
+         id="text5668"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979836,0.99979836,0.02008101,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan5670"
+           x="-202.8671"
+           y="-116.79895">rtl_transfer_frame</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="365.71429"
+         y="155.21933"
+         id="text5672"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979835,0.99979835,0.02008101,-250.84008,507.9324)"><tspan
+           sodipodi:role="line"
+           id="tspan5674"
+           x="365.71429"
+           y="155.21933">...</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-211.43854"
+         y="-52.513229"
+         id="text5676"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.02008101,-0.99979836,0.99979836,0.02008101,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan5678"
+           x="-211.43854"
+           y="-52.513229">qemu_send_packet</tspan></text>
+    </g>
+    <g
+       id="g5575-1"
+       transform="matrix(0.47064922,0.88232042,0.88232042,-0.47064922,47.765094,306.32704)"
+       inkscape:transform-center-x="13.674472"
+       inkscape:transform-center-y="-7.185255"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-13"
+         d="m 83.571429,375.93361 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,-9.375"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8"
+         d="m 83.571429,376.91892 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,9.375"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5575-1-7"
+       transform="matrix(-0.47064922,0.88232042,-0.88232042,-0.47064922,731.30511,306.16018)"
+       inkscape:transform-center-x="-13.674472"
+       inkscape:transform-center-y="-7.185255"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-13-4"
+         d="m 83.571429,375.93361 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,-9.375"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2"
+         d="m 83.571429,376.91892 c 43.571431,0 44.285711,0 44.285711,0 l -9.375,9.375"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="250.51781"
+       y="230.60309"
+       id="text5728"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan5730"
+         x="250.51781"
+         y="230.60309">Bridged?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="454.0636"
+       y="232.37086"
+       id="text5732"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan5734"
+         x="454.0636"
+         y="232.37086">NAT?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="275.26657"
+       y="264.44318"
+       id="text5736"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan5738"
+         x="275.26657"
+         y="264.44318"> tap_receive</tspan><tspan
+         sodipodi:role="line"
+         x="275.26657"
+         y="289.44318"
+         id="tspan5748" /><tspan
+         sodipodi:role="line"
+         x="275.26657"
+         y="314.44318"
+         id="tspan5750">         ...</tspan><tspan
+         sodipodi:role="line"
+         x="275.26657"
+         y="339.44318"
+         id="tspan5756" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="421.23361"
+       y="262.67545"
+       id="text5740"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan5742"
+         x="421.23361"
+         y="262.67545">net_slirp_receive</tspan><tspan
+         sodipodi:role="line"
+         x="421.23361"
+         y="287.67545"
+         id="tspan5878" /><tspan
+         sodipodi:role="line"
+         x="421.23361"
+         y="312.67545"
+         id="tspan5880">            ...</tspan><tspan
+         sodipodi:role="line"
+         x="421.23361"
+         y="337.67545"
+         id="tspan5746" /></text>
+    <g
+       id="g5831"
+       transform="translate(-1.767767,-1.2626907)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:0.69995588;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5862"
+       width="158.894"
+       height="76.566559"
+       x="252.38811"
+       y="244.5952"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:0.70449752;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5864"
+       width="166.46559"
+       height="77.572166"
+       x="417.55032"
+       y="244.09239"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <g
+       id="g5831-6"
+       transform="translate(161.73149,-1.5056834)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-0"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-2"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 343.45187,85.14112 87.88327,0"
+       id="path5906"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 39.901026,81.10051 181.322384,0"
+       id="path5908"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_1.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="190.92242"
+       y="456.37216"
+       id="text5910"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan5912"
+         x="190.92242"
+         y="456.37216">Bridged RTL8139</tspan><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="481.37216"
+         id="tspan5918">...</tspan><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="506.37216"
+         id="tspan5916" /><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="531.37219"
+         id="tspan5922">tap_receive</tspan><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="556.37219"
+         id="tspan5924" /><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="581.37219"
+         id="tspan5926">tap_receive_raw</tspan><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="606.37219"
+         id="tspan5928" /><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="631.37219"
+         id="tspan5930">tap_write_packet</tspan><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="656.37219"
+         id="tspan5932" /><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="681.37219"
+         id="tspan5934">writev (syscall)</tspan><tspan
+         sodipodi:role="line"
+         x="190.92242"
+         y="706.37219"
+         id="tspan5938" /></text>
+    <g
+       id="g5831-4"
+       transform="matrix(1,0,0,0.61883978,-143.08204,320.03353)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5"
+       transform="matrix(1,0,0,0.61883978,-143.33458,370.28863)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-0"
+       transform="matrix(1,0,0,0.61883978,-143.08204,422.56402)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-0"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-6"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-1"
+       transform="matrix(1,0,0,0.61883978,-143.08204,470.04119)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-3"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-8"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 110.71429,462.62831 162.14285,0"
+       id="path6049"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:0.91305226;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6051"
+       width="221.51552"
+       height="267.26315"
+       x="81.385101"
+       y="431.15625"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath_2.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="188.28726"
+       y="754.88959"
+       id="text6053"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan6055"
+         x="191.0607"
+         y="754.88959">User-Mode RTL8139 </tspan><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="779.88959"
+         id="tspan6057">...</tspan><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="804.88959"
+         id="tspan6059" /><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="829.88959"
+         id="tspan6061">net_slirp_receive</tspan><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="854.88959"
+         id="tspan6063" /><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="879.88959"
+         id="tspan6065">slirp_input</tspan><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="904.88959"
+         id="tspan6067" /><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="929.88959"
+         id="tspan6069">ip_input</tspan><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="954.88959"
+         id="tspan6071" /><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="979.88959"
+         id="tspan6073">tcp_input</tspan><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="1004.8896"
+         id="tspan6075" /><tspan
+         sodipodi:role="line"
+         x="188.28726"
+         y="1029.8896"
+         id="tspan6101">tcp_output</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="405.63776"
+       y="730.39117"
+       id="text6178"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001"><tspan
+         sodipodi:role="line"
+         id="tspan6180"
+         x="405.63776"
+         y="730.39117">...</tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="755.39117"
+         id="tspan6599"></tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="780.39117"
+         id="tspan6601">ip_output</tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="805.39117"
+         id="tspan6182" /><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="830.39117"
+         id="tspan6184">if_output</tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="855.39117"
+         id="tspan6186" /><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="880.39117"
+         id="tspan6188">if_start</tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="905.39117"
+         id="tspan6190" /><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="930.39117"
+         id="tspan6192">if_encap</tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="955.39117"
+         id="tspan6194" /><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="980.39117"
+         id="tspan6196">slirp_output</tspan><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="1005.3912"
+         id="tspan6198" /><tspan
+         sodipodi:role="line"
+         x="405.63776"
+         y="1030.3911"
+         id="tspan6200">qemu_send_packet</tspan></text>
+    <g
+       id="g5831-4-4"
+       transform="matrix(1,0,0,0.61883978,-146.35854,617.25137)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-6"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-0"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-6"
+       transform="matrix(1,0,0,0.61883978,-146.61108,667.50648)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-6"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-1"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-0-8"
+       transform="matrix(1,0,0,0.61883978,-146.35854,719.78187)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-0-4"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-6-9"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-1-6"
+       transform="matrix(1,0,0,0.61883978,-146.35854,767.25904)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-3-3"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-8-7"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-1-6-8"
+       transform="matrix(1,0,0,0.61883978,-146.48481,819.84081)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-3-3-8"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-8-7-2"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-4-9"
+       transform="matrix(1,0,0,0.61883978,72.426137,618.52176)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-6-1"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-0-3"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-6-5"
+       transform="matrix(1,0,0,0.61883978,72.173597,668.77687)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-6-9"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-1-8"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-0-8-4"
+       transform="matrix(1,0,0,0.61883978,72.426137,721.05225)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-0-4-0"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-6-9-7"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-1-6-6"
+       transform="matrix(1,0,0,0.61883978,72.426137,768.52942)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-3-3-3"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-8-7-6"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-5-1-6-8-1"
+       transform="matrix(1,0,0,0.61883978,72.299867,821.11119)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-0-3-3-8-5"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-9-8-7-2-4"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5831-4-4-9-2"
+       transform="matrix(1,0,0,0.61883978,71.922947,572.71144)"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-8-6-1-0"
+         d="m 333.84042,274.21196 c 0.025,30.45939 0.0254,30.95872 0.0254,30.95872 l -9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5551-4-8-2-9-5-6-0-3-9"
+         d="m 334.6664,274.20425 c -0.025,30.45939 -0.0254,30.95872 -0.0254,30.95872 l 9.37872,-6.67573"
+         style="fill:none;stroke:#000000;stroke-width:0.83602476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 92.958668,761.05616 192.857152,0"
+       id="path6597"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+    <rect
+       style="fill:#ff0000;fill-opacity:0;stroke:#000000;stroke-width:0.95475554;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6603"
+       width="446.53268"
+       height="328.34482"
+       x="80.789581"
+       y="716.96893"
+       inkscape:export-filename="C:\Users\rdj\Documents\GitHub\vnfs\writeup\codepath3.png"
+       inkscape:export-xdpi="153.74001"
+       inkscape:export-ydpi="153.74001" />
+  </g>
+</svg>
