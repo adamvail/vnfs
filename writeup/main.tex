@@ -5,14 +5,16 @@
 \usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
 \usepackage{url}
 
-\title{Server Side NFS Identification and Client-Side Packet Tracing in a Virtualized Environment}
+\title{NFS Trace Deconstruction: 
+Server Side NFS Identification and Client-Side Packet Tracing in a Virtualized Environment}
 \author{Rob Jellinek and Adam Vail}
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Need to do the abstract
+This paper investigates server-side methods for determining whether NFS client are virtualized or native. We perform client-side and server-side network traces that identify two key differences that can be used as heuristics in identifying virtualized clients. First, virtualized clients using bridged networking can often be detected by the first three octets of their MAC address at the link layer, which are set to unique defaults by most common virtualization platforms. Second, virtualized clients using user-mode networking experience substantial latency in their network stack. Clients can then be distinguished according to bandwidth profiles. Finally, we investigate the sources of user-mode networking latency, and identify memory management in network address translation as the primary contributor to slowdown.
 \end{abstract}
+
 \section{intro}
 We start with NFS: asking the question, how can an NFS server differentiate requests coming from physical machines vs. virtual machines--and in particular, from multiple virtual machines on the same physical machine. Knowing this could allow the server to coalesce packets it's sending if those packets are all going to the same physical machine. 
 
@@ -86,50 +88,50 @@ In order to determine where the bottlenecks are occurring using the RTL8139 driv
 \subsection{RealTek 8139 NAT: Guest Transmit}
 User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLIRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking 
 
-\begin{verbatim}
-slirp_input:
-|          |
-|           -> m_get (allocates buffer space for packet to be copied into)
-|               |
-|                -> slirp_insque (manages doubly linked list of buffer space that is being used for the packets)
-|
- ->ip_input (converts ip fields to host representation using ntohs, manipulating buffer space that was created in m_get)
-    |
-    |
-     -> tcp_input (converts tcp fields to host format. Rewrites all the fields to host representation)
-         |
-         |
-          -> tcp_output (standard tcp things happen here. e.g. calculating receive window. There is a lot going on here. Flips tcp fields back from host byte order to network byte order)
-              |
-              |
-               -> ip_output (flips ip fields back to network byte order from host byte order)
-                   |
-                   |
-                    -> if_output 
-                        |     + Figures out which queue to place the packet on
-                        |         + fastq: meant for packets associated with interactive activities. Determined through the IPTOS_NODELAY flag set in the ip header of the packet
-                        |         + batchq: queue for non-interactive actions. This is a more efficient queue.
-                        |     + Favorite comment:
-                        |           "These are arbitrary numbers, probably not optimal"
-                        |     + creates a new doubly linked list through m_get, not entirely clear why they need it, it looks like another packet queue
-                        |
-                         -> if_start
-                             |    + Drains the fastq before the batchq
-                             |    + cleans up the buffers and frees memory after if_encap returns
-                             |      (i.e., it calls slirp_remque and m_free, which cleans up the buffers)
-                             |
-                              -> if_encap
-                                  |    + Copies packet headers into appropriate header structs, essentially preparing the packet
-                                  |
-                                   -> slirp_output
-                                       |         + Add slirp state info and pass the packet off to qemu to get it out to the wire
-                                       |
-                                        -> qemu_send_packet
-                                                       + Passes packet through several wrapper functions which finally ends with qemu_net_queue_append which adds the packet to a queue which I assume puts it on the wire.
-                                                        + wrapper for qemu_send_packet_async with the last argument set to NULL
-
-
-\end{verbatim}
+%\begin{verbatim}
+%slirp_input:
+%|          |
+%|           -> m_get (allocates buffer space for packet to be copied into)
+%|               |
+%|                -> slirp_insque (manages doubly linked list of buffer space that is being used for the packets)
+%|
+% ->ip_input (converts ip fields to host representation using ntohs, manipulating buffer space that was created in m_get)
+%    |
+%    |
+%     -> tcp_input (converts tcp fields to host format. Rewrites all the fields to host representation)
+%         |
+%         |
+%          -> tcp_output (standard tcp things happen here. e.g. calculating receive window. There is a lot going on here. Flips tcp fields back from host byte order to network byte order)
+%              |
+%              |
+%               -> ip_output (flips ip fields back to network byte order from host byte order)
+%                   |
+%                   |
+%                    -> if_output 
+%                        |     + Figures out which queue to place the packet on
+%                        |         + fastq: meant for packets associated with interactive activities. Determined through the IPTOS_NODELAY flag set in the ip header of the packet
+%                        |         + batchq: queue for non-interactive actions. This is a more efficient queue.
+%                        |     + Favorite comment:
+%                        |           "These are arbitrary numbers, probably not optimal"
+%                        |     + creates a new doubly linked list through m_get, not entirely clear why they need it, it looks like another packet queue
+%                        |
+%                         -> if_start
+%                             |    + Drains the fastq before the batchq
+%                             |    + cleans up the buffers and frees memory after if_encap returns
+%                             |      (i.e., it calls slirp_remque and m_free, which cleans up the buffers)
+%                             |
+%                              -> if_encap
+%                                  |    + Copies packet headers into appropriate header structs, essentially preparing the packet
+%                                  |
+%                                   -> slirp_output
+%                                       |         + Add slirp state info and pass the packet off to qemu to get it out to the wire
+%                                       |
+%                                        -> qemu_send_packet
+%                                                       + Passes packet through several wrapper functions which finally ends with qemu_net_queue_append which adds the packet to a queue which I assume puts it on the wire.
+%                                                        + wrapper for qemu_send_packet_async with the last argument set to NULL
+%
+%
+%\end{verbatim}
 
 \subsection{RealTek 8139 Bridged: Guest Transmit}
 We first come out the end of the shared code (see Appendix) and get to tap_receive. The flow continues as follows:
