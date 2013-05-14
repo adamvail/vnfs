@@ -16,7 +16,7 @@ This paper investigates server-side methods for determining whether NFS client a
 \end{abstract}
 
 \section{intro}
-We start with NFS: asking the question, how can an NFS server differentiate requests coming from physical machines vs. virtual machines--and in particular, from multiple virtual machines on the same physical machine. Knowing this could allow the server to coalesce packets it's sending if those packets are all going to the same physical machine. 
+We are interested in how an NFS server can differentiate requests originating from physical machines from those originating from virtual machines. In particular, from multiple virtual machines on the same physical machine. Knowing this could allow the server to coalesce packets it's sending if those packets are all going to the same physical machine. 
 
 From what we were able to determine, the NFS protocol, being an application-layer protocol, is indistinguishable in the virtual and native settings. Without explicit signals built into the NFS protocol, nothing from the application layer NFS protocol signals the origin and platform of the client. 
 
