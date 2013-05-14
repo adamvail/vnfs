@@ -26,7 +26,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
      inkscape:cx="488.75441"
-     inkscape:cy="49.93742"
+     inkscape:cy="938.87166"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -239,7 +239,7 @@
            sodipodi:role="line"
            id="tspan5678"
            x="-211.43854"
-           y="-52.513229">qemu_send_packet</tspan></text>
+           y="-52.513229">qemu_deliver_packet</tspan></text>
     </g>
     <g
        id="g5575-1"
@@ -644,7 +644,7 @@
          sodipodi:role="line"
          x="405.63776"
          y="755.39117"
-         id="tspan6599"></tspan><tspan
+         id="tspan6599" /><tspan
          sodipodi:role="line"
          x="405.63776"
          y="780.39117"
