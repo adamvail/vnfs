@@ -6,7 +6,13 @@
 
 \title{NFS Trace Deconstruction: 
 Server Side NFS Identification and Client-Side Packet Tracing in a Virtualized Environment}
-\author{Rob Jellinek and Adam Vail}
+\author{
+{\rm Adam Vail}\\
+University of Wisconsin-Madison
+\and
+{\rm Robert Jellinek}\\
+University of Wisconsin-Madison}
+
 \begin{document}
 \maketitle
 
@@ -24,7 +30,7 @@ We learned several things from these investigations. First, we were unable to di
 
 However, we were able to establish two heuristics for identifying virtualized NFS clients. First, our network traces showed that although NFS application-layer semantics were indistinguishable, VM-based clients could be identified by a unique MAC address assigned by default to virtual NICs when the VM is using bridged networking. Second, our NFS read timings showed that virtualized clients using user-mode (NAT) networking experience a substantial drop in bandwidth compared to a native-client baseline. By profiling client accesses and establishing a baseline bandwidth, it is possible to use bandwidth profiles to identify a virtualized guest in a controlled environment.
 
-The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking. In particular, we traced and identified the key points in the code path of KVM+QEMU user-mode networking that cause this slowdown.
+The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking. In particular, we traced and identified the key points in the code path of KVM+QEMU \cite{kvm} user-mode networking that cause this slowdown.
 
 The rest of the paper is organized as follows. Section \ref{sec:NFS} describes our network trace collection and timing tests, and the corresponding heuristics for differentiating native and
 virtualized NFS clients. Subsection \ref{subsec:networkIntro} introduces and compares user-mode and bridged networking, which form the basis of our heuristics for differentiating clients by MAC address (Subsection \ref{subsec:macaddrs}) and bandwidth profiles (Subsection \ref{subsec:BWprofiles}). Finally, in Section \ref{sec:trace} we examine the source of slowdown in user-mode networking in KVM+QEMU.
@@ -135,7 +141,7 @@ In the next section, we shift gears to try to isolate the origin of the decrease
 %User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLiRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking to provide NAT functionality.
 
 \section{Future Work}
-Our initial cross-comparison of virtual network drivers and networking configurations could be expanded in future work to encompass the full range of drivers available under KVM+QEMU \cite{kvm}. This would contribute to a fuller understanding of the networking landscape under KVM+QEMU, and show which options and combinations are the most efficient under varying workloads. 
+Our initial cross-comparison of virtual network drivers and networking configurations could be expanded in future work to encompass the full range of drivers available under KVM+QEMU. This would contribute to a fuller understanding of the networking landscape under KVM+QEMU, and show which options and combinations are the most efficient under varying workloads. 
 
 While it is clear that KVM+QEMU users searching for optimal network performance should use virtio under bridged networking, that option may not be available to all users. Future work might also look at providing a better out-of-the-box default option for user-mode networking, perhaps by performing code-path and memory-management optimizations in the NAT code path between the guest and host network stacks.
 
