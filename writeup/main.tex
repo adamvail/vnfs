@@ -144,7 +144,12 @@ Our initial cross-comparison of virtual network drivers and networking configura
 
 While it is clear that KVM+QEMU users searching for optimal network performance should use virtio under bridged networking, that option may not be available to all users. Future work might also look at providing a better out-of-the-box default option for user-mode networking, perhaps by performing code-path and memory-management optimizations in the NAT process between the guest and host network stacks.
 
+{\footnotesize \bibliographystyle{acm}
+\bibliography{references}}
+
 \section*{Appendix}
+\label{sec:appendix}
+\subsection*{Shared Code Path: Transmit Side}
 Here we provide a brief outline of the code path shared by both bridged and user-mode networking on guest transmissions as a packet travels from the bottom of the guest network stack and moves toward either \texttt{tap\_receive} or \texttt{net\_slirp\_receive}. 
 
 \begin{verbatim}
@@ -192,48 +197,53 @@ rtl8139_transfer_frame (end guest
 
 Note that the second run of each function (indicated as \texttt{function'}) performs different tasks than the first run, as they are performing operations using different function pointers. At a high level, this shared code processes packets originating from the guest network stack and forwards them toward the correct intermediate code depending on whether the guest VM is using bridged or NATed networking.
 
-%This is shared by everyone. It's connecting the driver at the top to the actual networking at the bottom. 
-%
-%------
-%
-%RECEIVE SIDE:
-%These functions bridge the gap between the top of the host network stack and pass the incoming packets to the bottom of the guest network stack--the RTL8139 emulated network driver. 
-%
-%\header{Bridged}
-%Here tap_send, etc., don't mess with the packet headers at all--they just pass the packets straight up to the guest from the physical interface, possibly via queue using qemu_notify--so the packets have come directly from the physical NIC and don't need to have their headers retranslated.
-%
-%main_loop_wait
-%qemu_io_handler_poll
-%tap_send
-%tap_read_packet
-%if the size read > 0:
-%	qemu_send_packet_async
-%... continue to shared code. The interested reader can check out the KVM source, wazzup.
-%
-%\header{NAT}
-%Everything is in host byte order, because it's passed through the full host network stack and is coming off the application layer of the host network stack. So at this stage everything gets ripped off and translated back to network byte order and passed to the RTL8139 network driver of the guest stack, which the once again decapsulates the packets for the guest application layer. So the flow is: decapsulate in host network stack; re-encapsulate here and pass to bottom of guest network stack; guest network stack re-decapsulates packet (essentially repeating the work of the host network stack, but with the headers that were modified by NATing). 
-%
-%main_loop_wait
-%slirp_select_poll
-%tcp_output -- strips the headers
-%ip_output -- gets new headers based 
-%if_output
-%if_start
-%if_encap
-%slirp_output
-%
-%This could be why we're getting weird iperf data--because 
+\subsection*{Code Path: Receive Side}
+These functions bridge the gap between the top of the host network stack and pass the incoming packets to the bottom of the guest network stack--in our case, to the RTL8139 emulated network driver. The functions encountered at the start of the shared receive-side code below, \texttt{qemu\_send\_packet\_*}, forward the incoming packets to guest network stack based on their incoming queue.
 
+\subsubsection*{Bridged}
+The functions in the bridged receive-side code do not touch the packet headers at all---they just pass the packets straight up to the guest from the physical interface based on their incoming queue. Thus, the packets have come directly from the physical NIC and don't need to have their headers retranslated.
 
+\begin{verbatim}
+main_loop_wait
+ |
+ -> qemu_io_handler_poll
+ |
+ -> tap_send
+ |
+ -> tap_read_packet
+ |
+ -> qemu_send_packet
+ |
+ -> qemu_send_packet_async
+ |
+ -> ... continue to shared code. 
+\end{verbatim}
 
+\subsubsection*{NAT}
+In the NAT receive-side code, all the fields in the arriving packets' headers are in host byte order because they have passed through the full host network stack and are coming off the application layer of the host network stack. So at this stage everything gets ripped off and translated back to network byte order and passed to the RTL8139 network driver of the guest stack, which once again decapsulates the packets for the guest application layer. So the flow is: decapsulate the packet in host network stack; re-encapsulate it here and pass to bottom of guest network stack; guest network stack again decapsulates the packet (essentially repeating the work of the host network stack, but with the headers that were modified by NAT). 
 
-
-
-
-
-{\footnotesize \bibliographystyle{acm}
-\bibliography{references}}
-
-
+\begin{verbatim}
+main_loop_wait
+ |
+ -> slirp_select_poll
+ |
+ -> tcp_output -- strips the headers
+ |
+ -> ip_output -- gets new headers based 
+ |
+ -> if_output
+ |
+ -> if_start
+ |
+ -> if_encap
+ |
+ -> slirp_output
+ |
+ -> qemu_send_packet
+ |
+ -> qemu_send_packet_async
+  |
+ -> ... continue to shared code.
+\end{verbatim}
 
 \end{document}
