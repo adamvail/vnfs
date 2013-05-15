@@ -16,36 +16,53 @@ This paper investigates server-side methods for determining whether NFS client a
 \end{abstract}
 
 \section{Introduction}
-This paper investigates approaches by which an NFS server can differentiate requests originating from native, non-virtualized machines from those originating from virtual machines. Ultimately, it is desirable for an NFS server to be able to identify and group all virtual machines resident on the same physical machine. Such identification and grouping would allow the server to coalesce its outgoing network traffic to the virtual machines, in essence performing VM-based redundancy elimination.
+This paper investigates approaches by which an NFS server can differentiate requests originating from native, non-virtualized machines from those originating from virtual machines. 
+Ultimately, it is desirable for an NFS server to be able to identify and group all virtual machines resident on the same physical machine. Such identification and grouping would allow the server to coalesce its outgoing network traffic to the virtual machines, in essence performing VM-based redundancy elimination. This would lead to better NFS performance, and lower network utilization.
 
-We approached the problem in three ways. First, we investigated the NFS 4.0 protocol, in particular reading the NFS 4.0 RFC \cite{shepler2003network}. Second, we performed client and server-side network traces of NFS 4.0 with both VM-based and native clients. Finally, we timed NFS file read accesses of native clients, and VM-based clients under both user-mode and bridged networking configurations.
+Our approach consisted of three parts. First, we searched through the NFS 4.0 RFC specification to find operations that could potentially differ in the VM or physical context, or otherwise uniquely mark the origin of the client machine. Second, we performed a number of client and server-side tcpdump traces on NFS 4.0 \texttt{mount} operations as well as file transfers, with the goal of isolating differences in the action of the NFS protocol in the virtual and physical settings. Finally, we timed NFS reads of varying sizes in the virtual and physical settings in order to determine if timing differences could be used to distinguish physical from virtual clients. 
 
-The protocol description in the RFC did not reveal any ways in which virtualized clients would behave differently from native clients at the application layer. From what we were able to determine, the NFS protocol, operating solely at the application layer, is indistinguishable in the virtual and native settings. Thus, unless explicit signals are incorporated into the NFS protocol for the purpose of identifying a client as virtualized, nothing from the vanilla NFS protocol implementation seems to identify the platform of the client. 
+We learned several things from these investigations. First, we were unable to differentiate any aspect of the NFS protocol in the virtual setting from its behavior in the physical setting at the application layer, either in our reading of the NFS 4.0 RFC or in our tcpdump traces. This is not surprising, as there is nothing that should inherently differ about the behavior of the application layer in a virtual machine. Thus, unless explicit signals are incorporated into the NFS protocol for the purpose of identifying a client as virtualized, nothing from the vanilla NFS protocol implementation seems to identify the platform of the client. 
 
-We were able to establish two heuristics for identifying virtualized NFS clients. First, our network traces showed that although NFS application-layer semantics were indistinguishable, VM-based clients could be identified by a unique MAC address assigned by default to virtual NICs when the VM is using bridged networking. Second, our NFS read timings showed that virtualized clients using user-mode (NAT) networking experience a substantial drop in bandwidth compared to a physical baseline. By profiling client accesses and establishing a baseline bandwidth, it is possible to use bandwidth profiles to identify a virtualized guest in a controlled environment.
+However, we were able to establish two heuristics for identifying virtualized NFS clients. First, our network traces showed that although NFS application-layer semantics were indistinguishable, VM-based clients could be identified by a unique MAC address assigned by default to virtual NICs when the VM is using bridged networking. Second, our NFS read timings showed that virtualized clients using user-mode (NAT) networking experience a substantial drop in bandwidth compared to a native baseline. By profiling client accesses and establishing a baseline bandwidth, it is possible to use bandwidth profiles to identify a virtualized guest in a controlled environment.
 
 The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking. In particular, we trace and identify the key points in the code path of QEMU+KVM user-mode networking that cause this slowdown.
 
-\section{Experiments}
+The rest of the paper is organized as follows. We introduce and compare user-mode and bridged networking (SubSection \ref{subsec:networkIntro}), which form the basis of our heuristics for differentiating clients by MAC address (SubSection \ref{subsec:macaddrs}) and bandwidth profiles (SubSection \ref{subsec:BWprofiles}). Finally, we end by examining the source of slowdown in user-mode networking in KVM+QEMU (Section \ref{sec:codepath}).
+
+
+%******************************
+[TODO: incorporate below]
+
+Looking lower in the network stack, however, we found that the MAC addresses assigned to the virtual NICs of bridged connections took on default values under all the virtualization platforms we investigated, which would allow a server to distinguish the virtualization platform of VM-based client applications in these cases. We discuss our findings and the implications in more detail in Section \ref{sec:macaddrs} below. Finally, we found that NFS reads from a KVM+QEMU VM using NAT networking and virtio PCI paravirtualized network driver took an average of 72\% longer than reads from a native-hardware client, while NFS reads from a KVM+QEMU VM using bridged networking with the virtio driver took an average of 26\% longer than the client running on the same underlying native-hardware setup. Our experiment and tests are discussed below in Section \ref{sec:NFSTiming}. 
+%******************************
+
+\section{NFS}
 
 \subsection{Experimental Setup}
-Experiments were run on a simple two-node topology connected by a Cisco E-2000 gigabit router. The client was a Thinkpad T60 with a dual-core 1.83GHz Intel T2400 CPU, 2GB RAM, and an Intel 82573L gigabit Ethernet card. The server was an AMD Opteron 148 operating at 1GHz, with 1GB of RAM and a gigabit on-motherboard NIC. 
+\label{subsec:expSetup}
+The traces and timing experiments discussed below were run on a simple two-node topology connected by a Cisco E-2000 gigabit router. The client was a Thinkpad T60 with a dual-core 1.83GHz Intel T2400 CPU, 2GB RAM, and an Intel 82573L gigabit NIC. The server was an AMD Opteron 148 operating at 1GHz, with 1GB of RAM and a gigabit on-motherboard NIC. The client and server both used ext4 as their primary filesystem, and the client KVM+QEMU guest VM used ext4 on an 8GB QCOW2 virtual disk. The client was running Ubuntu 12.04LTS natively and in its guest VMs, and the server was running CentOS 5.2.
 
-\subsection{NFS}
-We began our quest by searching for a way to differentiate NFS requests from physical and virtual clients, from the standpoint of an NFS server. If a server could distinguish the two clients--and moreover, if it could identify the single physical machine from which multiple VM-accesses originated--then there is the potential to coalesce NFS server responses to multiple VMs on the same physical machine. 
+The tcpdump traces we collected were executed with the flags \texttt{tcpdump -vvnnXSs 1536} in order to examine the full contents of each NFS packet exchanged between the client and server.
 
-We investigated this on three fronts. First, we searched through the NFS 4.0 RFC specification to try to find operations that could potentially differ in the VM or physical context, or otherwise somehow uniquely mark the origin of the client machine. Second, we performed a number of tcpdump traces on NFS 4.0 \texttt{mount} operations as well as file transfers using \texttt{cat}, with the goal of isolating differences in the action of the NFS protocol in the virtual and physical settings. The tcpdump traces were executed with the flags \texttt{tcpdump -vvnnXSs 1536} in order to examine the full contents of each NFS packet exchanged between the client and server. Finally, we timed NFS reads of varying sizes in the virtual and physical settings in order to determine if timing differences could differentiate physical from virtual clients. 
+\subsection{User-mode/Bridged Networking}
+\label{subsec:networkIntro}
+Both of the heuristics we discuss below rely on key differences in network behavior and timing caused by the two main virtual networking configurations used by guest VMs. Guest VMs can be configured to run either user-mode, or bridged networking.
 
-We learned several things from these investigations. First, we were unable to differentiate any aspect of the NFS protocol in the virtual setting from its behavior in the physical setting at the application layer, either in our reading of the NFS 4.0 RFC or in our tcpdump traces. This is not surprising, as there is nothing that should inherently differ about the behavior of the application layer in a virtual machine. Looking lower in the network stack, however, we realized that the MAC addresses assigned to the virtual NICs of bridged connections took on default values under all the virtualization platforms we investigated, which would allow a server to distinguish the virtualization platform of VM-based client applications in these cases. We discuss our findings and the implications in more detail in Section \ref{sec:macaddrs} below. Finally, we found that NFS reads from a KVM+QEMU VM using NAT networking and virtio PCI paravirtualized network driver took an average of 72\% longer than reads from a native-hardware client, whiel NFS reads from a KVM+QEMU VM using bridged networking with the virtio driver took an average of 26\% longer than the client running on the same underlying native-hardware setup. Our experiment and tests are discussed below in Section \ref{sec:NFSTiming}. 
+User-mode networking performs network address translation (NAT) behind the host, which isolates guest VMs from the outside network. That is, no entities outside the physical host's network can see the guest VMs, and so without incorporating port-forwarding, those guests cannot be contacted from the outside. Importantly, this also has the effect that all guest VMs share a common IP and MAC address with the host; when the guest has an established TCP session open and the host receives packets destined for that guest, the host demultiplexes those packets and forwards them to the correct guest. 
+
+KVM+QEMU uses the SLiRP protocol to perform network address translation. SLiRP was originally used to emulate TCP/IP and provide transport-layer functionality for users with dialup connections. The emulation code has been incorporated into the main branch of KVM+QEMU, and uses this emulation support to provide support for user-mode networking.
+
+Bridged networking, on the other hand, uses a TAP device that is configured on the host. Both the physical NIC and the TAP device must be connected to a virtual network bridge on the host, which requires root access. Guest VMs then attach to the TAP device through their virtual interfaces and participate as full fledged members of the network. This means that their virtual NICs are assigned unique IP addresses that are visible to the outside network, as well as MAC addresses that must be unique within the network.
+
 
 \subsection{Identifying Bridged Hosts by MAC Address}
-\label{sec:macaddrs}
+\label{subsec:macaddrs}
 While we did not discover characteristics of NFS application-layer requests or responses that indicate whether an NFS client is running on a VM or native hardware, we did find a distinguishing characteristic at layer 2 of virtualized clients' bridged networking stack. In virtual bridged networking, the guest network stack gets its own IP address and MAC address and appears as a separate host on the network, though it uses its host's physical NIC by passing packets through a tap device on the host (see SubSection \ref{subsec:bridgeVsNAT} below for details on bridging). The key thing to note is that the main virtualization platforms assign a default MAC address to the virtual NIC, which is then visible to the server in the MAC address fields of the Ethernet headers exchanged with the client. See Table \ref{tab:macaddrs} for a list of default MAC addresses assigned to virtual NICs in common virtualization platforms. 
 
-This helps us distinguish virtual from native clients to some extent, but still leaves a lot to be desired if we wish to identify and group VM-based NFS clients. First, in the bridged context, it is possible for a client VM to specify their MAC address to be anything they desire. These defaults are merely that: default settings allocated by the virtualization manager or hypervisor if the VM administrator does not specify an alternative address. So there is certainly a chance for false negatives, where virtual machines using bridging on a certain platform cannot be identified by their MAC address because the default MAC address is not used. Second, the identification is overly broad: the NFS server can detect that it is talking with a KVM+QEMU or VMWare guest VM, but it is not possible to identify those guest VMs as belonging to any given physical machine based on this information alone. Finally, the MAC address distinction does not help us in the case of VM-based clients that are using NAT networking instead of bridging, as those guests are invisible to the rest of the network and send their traffic through their host NIC; all VM-guest traffic is rewritten inside the host to contain the MAC and IP addresses of the host NIC
+This helps us distinguish virtual from native clients to some extent, but still leaves a lot to be desired if we wish to identify and group VM-based NFS clients. First, in the bridged context, it is possible for a client VM user to specify their MAC address to be anything they desire. These defaults are merely that: default settings allocated by the virtualization manager or hypervisor if the VM administrator does not specify an alternative address. So there is certainly a chance for false negatives, where virtual machines using bridging on a certain platform cannot be identified by their MAC address because the default MAC address is not used. Second, the identification is overly broad: the NFS server can detect that it is talking with a KVM+QEMU or VMWare guest VM, but it is not possible to identify those guest VMs as belonging to any given physical machine based on this information alone. 
 
 \begin{center}
-\begin{table*}[ht]
+\begin{table*}[!ht]
 		\center
 		\begin{tabular}{|l|l|}
 		\hline
@@ -69,25 +86,56 @@ This helps us distinguish virtual from native clients to some extent, but still 
 \end{table*}
 \end{center}
 
-\section{Bridged vs. NAT Timing}
-\label{sec:NFSTiming}	
+\subsection{Identifying NATed Host by Bandwidth Profiles}
+\label{subsec:BWprofiles}	
 
+\begin{figure}
+	\center
+		\includegraphics[scale=0.34]{timing_small.png}
+	\caption{When reading small files, bandwidth profiles are not yet clearly ordered.}
+	\label{fig:timing_small}
+\end{figure}
 
-\subsection{Virtual Networking: Bridging vs. NATing}
-\label{subsec:bridgeVsNAT}
-[TODO: Introduce the differences between bridged and NAT networking.]
-graph with iperf results: show it's a big difference.
+\begin{figure}
+	\center
+		\includegraphics[scale=0.3]{timing_large.png}
+	\caption{When reading larger files, the bandwidth profiles are clearly differentiated.}
+	\label{fig:timing_large}
+\end{figure}
 
-RTL8139 (KVM's default)
+The MAC address distinction does not help us in the case of VM-based clients that are using user-mode (NAT-based) networking instead of bridging, as NATed guests are not visible to the rest of the network and do not have an externally identifiable IP and MAC address. As discussed above, all guest VM traffic is rewritten inside the host to contain the MAC and IP addresses of the host NIC. However, user-mode networking suffers from a substantial slowdown compared to physical or bridged hosts. In a controlled environment, this dramtically decreased bandwidth relative to a native-client baseline can enable a server to conclude that the client is virtualized. 
 
-Possible TODO: Answer: why is Virtio faster than the fully emulated RTL8139
+%TODO: insert timing_small with additional file-size data points, and discuss them here. When does the relative BW ordering become stable?
+Figures \ref{fig:timing_small} and \ref{fig:timing_large} show the results of timing tests in which the client VMs under various networking configurations read 500KB, 1MB, 500MB, 1GB, and 2GB files from an NFS server according to the configuration describe in Subsection \ref{subsec:expSetup}. Files were read in 4KB blocks, and file buffer caches were cleared between tests by running \texttt{echo 3 > /proc/sys/vm/drop\_caches}. Figure \ref{fig:timing_small} shows that when reading smaller files, the bandwidths of the various client-VM networking configurations have not yet achieved a stable relative ordering. However, when reading larger files, as shown in Figure \ref{fig:timing_large}, a clear relative bandwidth ordering emerges.
+
+Not surprisingly, reads on the server itself (directly from the local ext4 file system) were fastest and were mirrored almost exactly by reads from the NFS client running on native hardware. Note that the reads performed locally on the server and from the native client differed by only 43 milliseconds across all tests, so their lines are coincident in Figure \ref{fig:timing_large}. Of the virtualized clients, using the paravirtualized virtio driver under bridged networking imposed only a slight overhead relative to the native-client baseline. However, switching to either the fully emulated RealTek RTL8139 virtual network driver or using NATed instead of bridged networking imposed a substantial bandwidth penalty. Doing both (using the RTL8139 under user-mode networking) results in 10.7x slowdown relative to our baseline. 
+
+We can use this to our advantage in determining whether a client is physical or virtualized. In particular, we can break the configurations into bandwidth classes as shown in Table \ref{tab:NFSBandwidthProfiles}. The bandwidth profiles are sufficiently differentiated to allow the NFS server to use them to ``fingerprint'' incoming client connections after performing a sustained read to get an accurate bandwidth measure. While we emphasize that this is a heuristic and is not a foolproof means of identifying virtualized clients, when used in a controlled environment and in conjunction with the MAC-address profiling described in Subsection \ref{subsec:macaddrs}, an NFS server should be able to differentiate native clients from virtualized ones in many environments. 
+
+\begin{table*}[htbp]
+	\centering
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Client Network Stack} & \textbf{Bandwidth} (MB/sec) \\
+			\hline
+			Native & 48.3 \\
+			Virtio Bridged & 28.3 \\
+			Virtio NAT & 11.9 \\
+			RealTek Bridged & 10.2 \\
+			RealTek NAT & 4.6 \\
+			\hline
+		\end{tabular}
+	\caption{NFS Bandwidth Profiles}
+	\label{tab:NFSBandwidthProfiles}
+\end{table*}
 
 \section{Following the Code Path}
+\label{sec:codepath}
 In order to determine where the bottlenecks are occurring using the RTL8139 driver which performs full emulation, we traced the code path of a packet from the guest's application layer through the guest and host network stacks. We provide an explanation of the traces and relevant functions for the code path for the transmit side below, and an outline of the path for the receive side in the Appendix, along with the code path followed by packets on the transmit side that are shared by both the NAT and bridged code. 
 
 
 \subsection{RealTek 8139 NAT: Guest Transmit}
-User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLIRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking 
+User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLiRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking 
 
 %\begin{verbatim}
 %slirp_input:
