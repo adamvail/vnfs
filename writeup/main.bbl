@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{kvm}
+Kvm.
+\newblock \url{http://www.linux-kvm.org}.
+\newblock Accessed: 2013-05-10.
+
+\bibitem{slirp}
+{\sc Kelly~Price, D.~G.}
+\newblock Slirp, the ppp/slip-on-terminal emulator.
+\newblock \url{http://slirp.sourceforge.net/}.
+\newblock Accessed: 2013-05-10.
+
+\bibitem{shepler2003network}
+{\sc Shepler, S., Callaghan, B., Robinson, D., Thurlow, R., Beame, C., Eisler,
+  M., and Noveck, D.}
+\newblock Network file system (nfs) version 4 protocol, 2003.
+
+\end{thebibliography}

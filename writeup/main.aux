@@ -1,0 +1,47 @@
+\relax 
+\citation{shepler2003network}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{slirp}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Differentiating Native and Virtualized NFS Clients}{2}}
+\newlabel{sec:NFS}{{2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Experimental Setup}{2}}
+\newlabel{subsec:expSetup}{{2.1}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}User-mode/Bridged Networking}{2}}
+\newlabel{subsec:networkIntro}{{2.2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Identifying Bridged Hosts by MAC Address}{2}}
+\newlabel{subsec:macaddrs}{{2.3}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Identifying NATed Host by Bandwidth Profiles}{3}}
+\newlabel{subsec:BWprofiles}{{2.4}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces When reading small files, bandwidth profiles are not yet clearly ordered.}}{3}}
+\newlabel{fig:timing_small}{{1}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces When reading larger files, the bandwidth profiles are clearly differentiated.}}{3}}
+\newlabel{fig:timing_large}{{2}{3}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces First three octets of default MAC addresses by virtualization platform \emph  {(Source:http://www.techrepublic.com/blog/networking/mac-address-scorecard-for-common-virtual-machine-platforms/538)}}}{4}}
+\newlabel{tab:macaddrs}{{1}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces NFS Bandwidth Profiles}}{4}}
+\newlabel{tab:NFSBandwidthProfiles}{{2}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}NFS Client Identification Conclusions}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Investigating User-mode Networking}{5}}
+\newlabel{sec:trace}{{3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Transmission from a Guest to the Network}{5}}
+\newlabel{subsec:usermode}{{3.1}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Shared Control Path}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Bridged Packet Flow}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}User-mode Packet Flow}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Virtualized client TX code path under bridged and user-mode (NAT) networking using the RTL8139 fully emulated driver. Both start at the top of the guest network stack, but diverge after \texttt  {qemu\_deliver\_packet}.}}{6}}
+\newlabel{fig:codepath1}{{3}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Important functions in the divergent branches of bridged and user-mode networking.}}{6}}
+\newlabel{fig:codepath2}{{4}{6}}
+\citation{kvm}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Code Path Timing}{7}}
+\newlabel{codePathTiming}{{3.2}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Almost half of the time spent in user-mode networking is spent in memory management.}}{7}}
+\newlabel{fig:usermodeTXtime}{{5}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Future Work}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions}{7}}
+\bibstyle{acm}
+\bibdata{references}
+\bibcite{kvm}{1}
+\bibcite{slirp}{2}
+\bibcite{shepler2003network}{3}
+\newlabel{sec:appendix}{{5}{8}}
