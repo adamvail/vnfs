@@ -72,7 +72,7 @@ As we can see, the bridged networking code is much simpler and performs only min
 \label{codePathTiming}
 We timed the diverging sections of user-mode and bridged networking transmission paths. We began timing both paths at the function \texttt{rtl8139\_transfer\_frame}, ending the user-mode timing at \texttt{slirp\_output} and the bridged timing at function \texttt{tap\_write\_packet}. The user-mode path took an average of 1.1 milliseconds, while the bridged path took an average of 44 microseconds, demonstrating a factor of 25 slowdown for user-mode networking relative to bridged.
 
-\begin{figure}[!htbp]
+\begin{figure}[htbp]
 	\centering
 		\includegraphics[scale=0.5]{usermodeTXtime}
 	\caption{Almost half of the time spent in user-mode networking is spent in memory management.}
