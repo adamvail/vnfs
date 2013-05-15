@@ -4,8 +4,8 @@
 The results in figure \ref{fig:timing_large} led us to investigate why user-mode networking incurs such a large delay over bridged networking.
 We traced the control path for packets going from a guest VM out to the network as well as from the network to a guest VM under both networking modes.
 We focus on packets going from the guest to the networking since this path incurs the largest overhead in the system.
-The path from the network to the guest is detailed in appendix ?. %TODO add reference to appendix
-We chose the RealTek 8139 driver because it is fully emulated by the system (unlike paravirtualized virtio) and thus incurs the largest amount of delay.
+The path from the network to the guest is detailed in the appendix. %TODO add reference to appendix
+We chose the RealTek 8139 driver because it is fully emulated by the system (unlike the paravirtualized virtio driver) and thus incurs the largest amount of delay.
 The RTL8139 driver is also one of the most widely supported drivers and is the default for user-mode networking when the user does not specify an explicit configuration.
 While figure \ref{fig:timing_large} clearly shows a difference in performance between the drivers, the distinction between the different modes of networking was through the use of SLiRP and not specific to the driver.
 %
@@ -36,9 +36,9 @@ Figure \ref{fig:codepath} presents the code path originating at a guest VM's app
 The packet moves down the guest's networking stack to what it believes to be the physical network interface card.
 At this point the packet is passed to whatever driver has been selected by the user.
 In KVM the options are \texttt{rtl8139}, \texttt{virtio}, or \texttt{e1000}.
-Once the packet is processed by the driver, it encounters a sizeable amount of shared code which is designed to determine which mode of networking is in use and pass the packet off to the
+Once the packet is processed by the driver, it encounters a sizeable amount of shared code which is designed to determine which mode of networking is being used and passes the packet off to the
 correct function.
-If bridged networking is in use then the packet is given to \texttt{tap\_receive}, otherwise \texttt{net\_slirp\_receive} is invoked.
+If the guest is bridged then the packet is given to \texttt{tap\_receive}, otherwise \texttt{net\_slirp\_receive} is invoked.
 
 \begin{figure*}[!ht]
 	\centering
@@ -56,36 +56,36 @@ Finally, \texttt{writev} writes the iovectors to the tap.
 
 \subsubsection{User-mode Packet Flow}
 
-Figure \ref{fig:codepath2}b shows a flowchart of functions that a packet passes through when a packet is sent with user-mode networking.
+Figure \ref{fig:codepath2}b shows a flowchart of the user-mode networking path.
 QEMU's SLiRP implementation, as you can see, requires considerably more code to process a packet compared to bridged networking.
-The control flow starts with the RealTek driver passing the packet to the \texttt{net\_slirp\_receive} function.
+The control flow starts with the RealTek driver passes the packet to the \texttt{net\_slirp\_receive} function.
 \texttt{Net\_slirp\_receive} simply passing the packets along to \texttt{slirp\_input} along with the SLiRP connection state.
 \texttt{Slirp\_input} calls two functions before the control flow continues, \texttt{m\_get} which in turn calls \texttt{slirp\_insque}.
-In \texttt{m\_get}, memory is allocated and then passed on to \texttt{slirp\_insque} which manages a free and used list of memory.
-i%The code attempts to reuse memory efficiently, but even with this optimization, we'll see that it still spends the majority of its time managing memory.
+In \texttt{m\_get}, memory is allocated and then passed on to \texttt{slirp\_insque} which manages a free list of memory.
+%The code attempts to reuse memory efficiently, but even with this optimization, we'll see that it still spends the majority of its time managing memory.
 The chunk of memory is then returned to \texttt{slirp\_input} where the packet is then copied into the buffer.
 
-Once the packet has been copied into the buffer space, it is passed ``up the stack'' to \texttt{ip\_input}. 
+Once the packet has been copied, it is passed ``up the stack'' to \texttt{ip\_input}. 
 \texttt{Ip\_input} uses the IP headers to sanity check different aspects of the packet such as the checksum and length.
 If for some reason the packet has been fragmented, it also attempts to reassemble it.
 If the packet is found to be malformed then it is dropped and its memory is freed.
 
-If the packet passes the tests in \texttt{ip\_input} it is passed along to \texttt{tcp\_input}.
+If the packet passes the tests in \texttt{ip\_input} it moves to \texttt{tcp\_input}.
 \texttt{Tcp\_input} is a direct implementation of the TCP specification from September, 1981.
 It does all the standard operations associated with TCP such as calculating the receive window and updating the TCP control block that QEMU maintains.
-It then strips both the IP and TCP headers from the packet, leaving just the TCP payload, which is passed to \texttt{tcp\_output}.
+It then strips the guest's IP and TCP headers from the packet, leaving just the TCP payload, which is passed to \texttt{tcp\_output}.
 It is at this point that the packet starts to move back ``down the stack'' to be put out onto the wire.
 \texttt{Tcp\_output} handles TCP timers to determine when a packet should actually be sent.
-Once a packet is cleared to move on, the TTL and TOS fields are filled in and the packet is passed along.
-With the transport layer complete the packet moves to \texttt{ip\_output} where its IP header fields filled in with the host's information.
-At this point the packet is fully formed and ready to put on the wire.
+Once a packet is cleared to send, the TTL and TOS fields are filled in and the packet is passed along.
+With the transport layer complete the packet moves to \texttt{ip\_output} where its IP header fields are filled in with the host's information.
+At this point the packet is fully formed and ready to be put on the wire.
 
 It is handed off to \texttt{if\_output} which manages two different packet queues, \texttt{fastq} and \texttt{batchq}.
 If a packet has the \texttt{IPTOS\_LOWDELAY} flag set, then it is placed on the \texttt{fastq}, which is intended for packets from an interactive application.
 Otherwise, latency insensitive packets are placed on the \texttt{batchq}.
 Each output queue is a doubly linked list of doubly linked lists of mbufs, each list belonging to a separate socket.
 This is intended to ensure that packets are fairly chosen for transmission across all the sockets of a system.
-If a socket is found that does not have a linked list yet, then another is created and the packet is added to this new linked list.
+If a socket is found that does not have a linked list yet, then another is created.
 To create the linked list, \texttt{if\_output} calls \texttt{m\_get} which, again, calls \texttt{slirp\_insque}.
 The packet then moves on to \texttt{if\_start} which services both the \texttt{fastq} and the \texttt{batchq}.
 As the names would indicate, the \texttt{fastq} is serviced first.
@@ -93,7 +93,7 @@ As the names would indicate, the \texttt{fastq} is serviced first.
 
 Once a packet is chosen by \texttt{if\_start} it is passed to \texttt{if\_encap}.
 Here the packet is prepared for going out on the wire by copying the packet header information into the appropriate header structs.
-Finally, \texttt{slirp\_output} receives the packet which just gives the packet to QEMU to be put on the wire through \texttt{qemu\_send\_packet}. 
+Finally, \texttt{slirp\_output} receives the packet which simply gives the packet to QEMU to be put on the wire through \texttt{qemu\_send\_packet}. 
 %At this point qemu takes over and the rest of the control path is no longer dictated by the fact that usermode networking is in use.
 
 \subsection{Code Path Timing}
@@ -111,11 +111,12 @@ The user-mode path took an average of 1.1 milliseconds, while the bridged path t
 
 We then instrumented the SLiRP functions and found that almost 50\% of the overhead in user-mode networking is due to the memory management that takes place in \texttt{slirp\_input},
 \texttt{m\_get}, \texttt{slirp\_insque}, \texttt{if\_output}, and \texttt{if\_start}, \texttt{m\_free}, and \texttt{slirp\_remque}.
-The most expensive of these functions was the management of the doubly linked lists of doubly linked lists of mbufs done in \texttt{if\_output} and \texttt{if\_start} which accounts for 22.9\%.
+The most expensive of these functions was the management of the doubly linked lists of doubly linked lists of mbufs done in \texttt{if\_output} and \texttt{if\_start} which accounts for 22.9\%
+of the transmit time.
 Therefore, the management of memory was seen to be a major contributor to the slow down in user-mode networking.
 Bridged networking does not have this problem since there is no need to manipulate the packet, which allows it to use the tap to place the packet directly on the wire.
 
-We also note that when user-mode networking is essentially duplicating much of the work already done by the guest's network stack in order to rewrite the correct header fields to make the packet
+We also note that user-mode networking is essentially duplicating much of the work already done by the guest's network stack in order to rewrite the correct header fields to make the packet
 look as though it originated from the host machine.
 A packet must travel down the guest's networking stack, back up to the transport layer, and then finally back down before finally getting sent.
 
