@@ -135,7 +135,7 @@ In the next section, we shift gears to try to isolate the origin of the decrease
 %User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLiRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking to provide NAT functionality.
 
 \section{Future Work}
-Our initial cross-comparison of virtual network drivers and networking configurations could be expanded in future work to encompass the full range of drivers available under KVM+QEMU. This would contribute to a fuller understanding of the networking landscape under KVM+QEMU, and show which options and combinations are the most efficient under varying workloads. 
+Our initial cross-comparison of virtual network drivers and networking configurations could be expanded in future work to encompass the full range of drivers available under KVM+QEMU \cite{kvm}. This would contribute to a fuller understanding of the networking landscape under KVM+QEMU, and show which options and combinations are the most efficient under varying workloads. 
 
 While it is clear that KVM+QEMU users searching for optimal network performance should use virtio under bridged networking, that option may not be available to all users. Future work might also look at providing a better out-of-the-box default option for user-mode networking, perhaps by performing code-path and memory-management optimizations in the NAT code path between the guest and host network stacks.
 
