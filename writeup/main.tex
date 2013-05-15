@@ -12,14 +12,14 @@ Server Side NFS Identification and Client-Side Packet Tracing in a Virtualized E
 \maketitle
 
 \begin{abstract}
-This paper investigates server-side methods for determining whether an NFS client is virtualized or native. We perform client-side and server-side network traces that identify two key differences that can be used as heuristics in identifying virtualized clients. First, virtualized clients using bridged networking can often be detected by the first three octets of their MAC address at the link layer, which are set to unique defaults by most common virtualization platforms. Second, virtualized clients using user-mode networking experience substantially reduced bandwidth due to processing overhead in their network stack. Clients can then be distinguished according to bandwidth profiles. Finally, we investigate the sources of the reduced user-mode networking bandwidth, and identify the memory management overhead inherent in network address translation as the primary contributor to slowdown.
+This paper investigates server-side methods for determining whether an NFS client is virtualized or native. We perform client-side and server-side network traces that identify two key differences that can be used as heuristics in identifying virtualized clients. First, virtualized clients using bridged networking can often be detected by the first three octets of their MAC address at the link layer, which are set to unique defaults by most common virtualization platforms. Second, virtualized clients using user-mode networking experience substantially reduced bandwidth due to processing overhead in their network stack. Clients can then be distinguished according to bandwidth profiles. Finally, we investigate the sources of the reduced user-mode networking bandwidth and identify the memory management overhead inherent in network address translation as the primary contributor to slowdown.
 \end{abstract}
 
 \section{Introduction}
 This paper investigates how an NFS server can differentiate native, non-virtualized NFS clients from clients running on virtual machines. 
 Ultimately, it is desirable for an NFS server to be able to identify and group all virtual machines resident on the same physical machine. Such identification and grouping would allow the server to coalesce its outgoing network traffic to the virtual machines, in essence performing VM-based redundancy elimination. This would lead to better NFS performance, and lower network utilization.
 
-Our approach consisted of three parts. First, we searched through the NFS 4.0 RFC specification \cite{shepler2003network} to find operations that could potentially differ between the virtualized and native context, or otherwise uniquely mark the origin of the client machine. Second, we performed a number of client and server-side network traces on NFS 4.0 \texttt{mount} operations as well as file transfers, with the goal of isolating differences in the action of the NFS protocol in the virtual and native settings. Finally, we timed NFS reads of varying sizes in the virtual and native settings in order to determine if timing differences could be used to distinguish native from virtual clients. 
+Our approach consisted of three parts. First, we searched through the NFS 4.0 RFC specification \cite{shepler2003network} to find operations that could potentially differ between the virtualized and native context, or otherwise uniquely mark the origin of the client machine. Second, we performed a number of client and server-side network traces on NFS 4.0 \texttt{mount} operations as well as file transfers with the goal of isolating differences in the action of the NFS protocol in the virtual and native settings. Finally, we timed NFS reads of varying sizes in the virtual and native settings in order to determine if timing differences could be used to distinguish native from virtual clients. 
 
 We learned several things from these investigations. First, we were unable to differentiate any aspect of the NFS protocol in the virtual setting from its behavior in the native setting at the application layer, either in our reading of the NFS 4.0 RFC or in our network traces. This is not surprising, as there is nothing that should inherently differ about the behavior of the application layer in a virtual machine. Thus, unless explicit signals are incorporated into the NFS protocol for the purpose of identifying a client as virtualized, nothing from the vanilla NFS protocol implementation seems to identify the platform of the client. 
 
@@ -27,7 +27,7 @@ However, we were able to establish two heuristics for identifying virtualized NF
 
 The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking. In particular, we trace and identify the key points in the code path of KVM+QEMU user-mode networking that cause this slowdown.
 
-The rest of the paper is organized as follows. We introduce and compare user-mode and bridged networking (Subsection \ref{subsec:networkIntro}), which form the basis of our heuristics for differentiating clients by MAC address (Subsection \ref{subsec:macaddrs}) and bandwidth profiles (Subsection \ref{subsec:BWprofiles}). Finally, we end by examining the source of slowdown in user-mode networking in KVM+QEMU (Section \ref{sec:trace}).
+The rest of the paper is organized as follows. Section \ref{sec:NFS} describes our network trace collection and timing tests, and the corresponding heuristics for differentiating native and virtualized NFS clients.  We introduce and compare user-mode and bridged networking (Subsection \ref{subsec:networkIntro}), which form the basis of our heuristics for differentiating clients by MAC address (Subsection \ref{subsec:macaddrs}) and bandwidth profiles (Subsection \ref{subsec:BWprofiles}). Finally, we end by examining the source of slowdown in user-mode networking in KVM+QEMU (Section \ref{sec:trace}).
 
 
 %******************************
@@ -37,7 +37,8 @@ The rest of the paper is organized as follows. We introduce and compare user-mod
 %******************************
 
 %TODO: change section title
-\section{NFS}
+\section{Differentiating Native and Virtualized NFS Clients}
+\label{sec:NFS}
 
 \subsection{Experimental Setup}
 \label{subsec:expSetup}
