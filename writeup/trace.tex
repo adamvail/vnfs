@@ -1,13 +1,13 @@
 \section{Investigating User-mode Networking}
 \label{sec:trace}
 
-The results in figure \ref{fig:timing_large} led us to investigate why user-mode networking incurs such a large delay over bridged networking.
+The results in Figure \ref{fig:timing_large} led us to investigate why user-mode networking incurs such a large delay over bridged networking.
 We traced the control path for packets going from a guest VM out to the network as well as from the network to a guest VM under both networking modes.
-We focus on packets going from the guest to the networking since this path incurs the largest overhead in the system.
-The path from the network to the guest is detailed in the appendix. %TODO add reference to appendix
+We focus on packets going from the guest to the network since this path incurs the largest overhead in the system.
+The path from the network to the guest is detailed in the Appendix. 
 We chose the RealTek 8139 driver because it is fully emulated by the system (unlike the paravirtualized virtio driver) and thus incurs the largest amount of delay.
 The RTL8139 driver is also one of the most widely supported drivers and is the default for user-mode networking when the user does not specify an explicit configuration.
-While figure \ref{fig:timing_large} clearly shows a difference in performance between the drivers, the distinction between the different modes of networking was through the use of SLiRP and not specific to the driver.
+While Figure \ref{fig:timing_large} clearly shows a difference in performance between the drivers, the distinction between the different modes of networking was through the use of SLiRP and not specific to the driver.
 %
 %We were particularly interested because this is the default network configuration in KVM+QEMU if a user does not specify a configuration explicitly. 
 %It is likely the default because the RTL8139 is widely supported, and because users will not be able to use bridged networking if they cannot set up a TAP device on their machine, a process that requires root access. 
@@ -21,8 +21,8 @@ While figure \ref{fig:timing_large} clearly shows a difference in performance be
 \label{subsec:usermode}
 
 The control flow of a packet is split into two parts.
-The first originates in the guest VM where the packet moves through code that is shared by both user-mode and bridged networking.
-Once QEMU determines which mode of networking is being used, the code paths diverge and the sources of the massive slowdown become evident.
+The packet first travels through the networking stack of the guest VM, and then moves through code in QEMU that is shared by both user-mode and bridged networking.
+Once QEMU determines which mode of networking is being used, the code paths diverge and the sources of the slowdown become evident.
 
 \subsubsection{Shared Control Path}
 \begin{figure*}[!ht]
@@ -32,13 +32,13 @@ Once QEMU determines which mode of networking is being used, the code paths dive
 	\label{fig:codepath1}
 \end{figure*}
 
-Figure \ref{fig:codepath} presents the code path originating at a guest VM's application.
+Figure \ref{fig:codepath1} presents the code path originating at a guest VM's application layer.
 The packet moves down the guest's networking stack to what it believes to be the physical network interface card.
 At this point the packet is passed to whatever driver has been selected by the user.
-In KVM the options are \texttt{rtl8139}, \texttt{virtio}, or \texttt{e1000}.
+In KVM+QEMU the options are \texttt{rtl8139}, \texttt{virtio}, or \texttt{e1000}.
 Once the packet is processed by the driver, it encounters a sizeable amount of shared code which is designed to determine which mode of networking is being used and passes the packet off to the
 correct function.
-If the guest is bridged then the packet is given to \texttt{tap\_receive}, otherwise \texttt{net\_slirp\_receive} is invoked.
+If the guest is bridged then the packet is passed to \texttt{tap\_receive}, otherwise \texttt{net\_slirp\_receive} is invoked.
 
 \begin{figure*}[!ht]
 	\centering
@@ -49,18 +49,18 @@ If the guest is bridged then the packet is given to \texttt{tap\_receive}, other
 \subsubsection{Bridged Packet Flow}
 Figure \ref{fig:codepath2}a depicts the code path for bridged networking.
 The code is relatively straight forward and concise.
-\texttt{Tap\_receive} simply verifies the tap state and then calls \texttt{tap\_receive\_raw}.
+\texttt{Tap\_receive} simply verifies the TAP state and then calls \texttt{tap\_receive\_raw}.
 \texttt{Tap\_receive\_raw} translates the packet into iovectors.
 \texttt{Tap\_write\_packet} is just a wrapper around the \texttt{writev} system call.
-Finally, \texttt{writev} writes the iovectors to the tap.
+Finally, \texttt{writev} writes the iovectors to the TAP.
 
 \subsubsection{User-mode Packet Flow}
 
 Figure \ref{fig:codepath2}b shows a flowchart of the user-mode networking path.
 QEMU's SLiRP implementation, as you can see, requires considerably more code to process a packet compared to bridged networking.
-The control flow starts with the RealTek driver passes the packet to the \texttt{net\_slirp\_receive} function.
-\texttt{Net\_slirp\_receive} simply passing the packets along to \texttt{slirp\_input} along with the SLiRP connection state.
-\texttt{Slirp\_input} calls two functions before the control flow continues, \texttt{m\_get} which in turn calls \texttt{slirp\_insque}.
+The control flow starts when the RealTek driver passes the packet to the \texttt{net\_slirp\_receive} function.
+\texttt{Net\_slirp\_receive} simply passes the packets along to \texttt{slirp\_input} along with the SLiRP connection state.
+\texttt{Slirp\_input} calls two functions before the control flow continues: first to \texttt{m\_get}, which in turn calls \texttt{slirp\_insque}.
 In \texttt{m\_get}, memory is allocated and then passed on to \texttt{slirp\_insque} which manages a free list of memory.
 %The code attempts to reuse memory efficiently, but even with this optimization, we'll see that it still spends the majority of its time managing memory.
 The chunk of memory is then returned to \texttt{slirp\_input} where the packet is then copied into the buffer.
@@ -114,7 +114,7 @@ We then instrumented the SLiRP functions and found that almost 50\% of the overh
 The most expensive of these functions was the management of the doubly linked lists of doubly linked lists of mbufs done in \texttt{if\_output} and \texttt{if\_start} which accounts for 22.9\%
 of the transmit time.
 Therefore, the management of memory was seen to be a major contributor to the slow down in user-mode networking.
-Bridged networking does not have this problem since there is no need to manipulate the packet, which allows it to use the tap to place the packet directly on the wire.
+Bridged networking does not have this problem since there is no need to manipulate the packet, which allows it to use the TAP to place the packet directly on the wire.
 
 We also note that user-mode networking is essentially duplicating much of the work already done by the guest's network stack in order to rewrite the correct header fields to make the packet
 look as though it originated from the host machine.
