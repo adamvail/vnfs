@@ -24,9 +24,10 @@ We learned several things from these investigations. First, we were unable to di
 
 However, we were able to establish two heuristics for identifying virtualized NFS clients. First, our network traces showed that although NFS application-layer semantics were indistinguishable, VM-based clients could be identified by a unique MAC address assigned by default to virtual NICs when the VM is using bridged networking. Second, our NFS read timings showed that virtualized clients using user-mode (NAT) networking experience a substantial drop in bandwidth compared to a native-client baseline. By profiling client accesses and establishing a baseline bandwidth, it is possible to use bandwidth profiles to identify a virtualized guest in a controlled environment.
 
-The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking. In particular, we trace and identify the key points in the code path of KVM+QEMU user-mode networking that cause this slowdown.
+The remainder of our work focused on determining why and how user-mode networking suffers such a dramatic slowdown compared to bridged networking. In particular, we traced and identified the key points in the code path of KVM+QEMU user-mode networking that cause this slowdown.
 
-The rest of the paper is organized as follows. Section \ref{sec:NFS} describes our network trace collection and timing tests, and the corresponding heuristics for differentiating native and virtualized NFS clients. Subsection \ref{subsec:networkIntro} introduces and compare user-mode and bridged networking, which form the basis of our heuristics for differentiating clients by MAC address (Subsection \ref{subsec:macaddrs}) and bandwidth profiles (Subsection \ref{subsec:BWprofiles}). Finally, in Section \ref{sec:trace} we examine the source of slowdown in user-mode networking in KVM+QEMU.
+The rest of the paper is organized as follows. Section \ref{sec:NFS} describes our network trace collection and timing tests, and the corresponding heuristics for differentiating native and
+virtualized NFS clients. Subsection \ref{subsec:networkIntro} introduces and compares user-mode and bridged networking, which form the basis of our heuristics for differentiating clients by MAC address (Subsection \ref{subsec:macaddrs}) and bandwidth profiles (Subsection \ref{subsec:BWprofiles}). Finally, in Section \ref{sec:trace} we examine the source of slowdown in user-mode networking in KVM+QEMU.
 
 
 %******************************

@@ -51,7 +51,7 @@ Figure \ref{fig:codepath2}a depicts the code path for bridged networking.
 The code is relatively straight forward and concise.
 \texttt{Tap\_receive} simply verifies the TAP state and then calls \texttt{tap\_receive\_raw}.
 \texttt{Tap\_receive\_raw} translates the packet into iovectors.
-\texttt{Tap\_write\_packet} is just a wrapper around the \texttt{writev} system call.
+\texttt{Tap\_write\_packet} is just a wrapper around the \texttt{writev} system call, checking the return value and error code.
 Finally, \texttt{writev} writes the iovectors to the TAP.
 
 \subsubsection{User-mode Packet Flow}
@@ -78,12 +78,12 @@ It is at this point that the packet starts to move back ``down the stack'' to be
 \texttt{Tcp\_output} handles TCP timers to determine when a packet should actually be sent.
 Once a packet is cleared to send, the TTL and TOS fields are filled in and the packet is passed along.
 With the transport layer complete the packet moves to \texttt{ip\_output} where its IP header fields are filled in with the host's information.
-At this point the packet is fully formed and ready to be put on the wire.
+At this point the packet is fully formed.
 
 It is handed off to \texttt{if\_output} which manages two different packet queues, \texttt{fastq} and \texttt{batchq}.
 If a packet has the \texttt{IPTOS\_LOWDELAY} flag set, then it is placed on the \texttt{fastq}, which is intended for packets from an interactive application.
 Otherwise, latency insensitive packets are placed on the \texttt{batchq}.
-Each output queue is a doubly linked list of doubly linked lists of mbufs, each list belonging to a separate socket.
+Each output queue is a doubly linked list of doubly linked lists of mbufs, each belonging to a separate socket.
 This is intended to ensure that packets are fairly chosen for transmission across all the sockets of a system.
 If a socket is found that does not have a linked list yet, then another is created.
 To create the linked list, \texttt{if\_output} calls \texttt{m\_get} which, again, calls \texttt{slirp\_insque}.
@@ -93,7 +93,7 @@ As the names would indicate, the \texttt{fastq} is serviced first.
 
 Once a packet is chosen by \texttt{if\_start} it is passed to \texttt{if\_encap}.
 Here the packet is prepared for going out on the wire by copying the packet header information into the appropriate header structs.
-Finally, \texttt{slirp\_output} receives the packet which simply gives the packet to QEMU to be put on the wire through \texttt{qemu\_send\_packet}. 
+Finally, \texttt{slirp\_output} receives the packet which simply gives it to QEMU to be put on the wire through \texttt{qemu\_send\_packet}. 
 %At this point qemu takes over and the rest of the control path is no longer dictated by the fact that usermode networking is in use.
 
 \subsection{Code Path Timing}
@@ -110,7 +110,7 @@ The user-mode path took an average of 1.1 milliseconds, while the bridged path t
 \end{figure}
 
 We then instrumented the SLiRP functions and found that almost 50\% of the overhead in user-mode networking is due to the memory management that takes place in \texttt{slirp\_input},
-\texttt{m\_get}, \texttt{slirp\_insque}, \texttt{if\_output}, and \texttt{if\_start}, \texttt{m\_free}, and \texttt{slirp\_remque}.
+\texttt{m\_get}, \texttt{slirp\_insque}, \texttt{if\_output}, \texttt{if\_start}, \texttt{m\_free}, and \texttt{slirp\_remque}.
 The most expensive of these functions was the management of the doubly linked lists of doubly linked lists of mbufs done in \texttt{if\_output} and \texttt{if\_start} which accounts for 22.9\%
 of the transmit time.
 Therefore, the management of memory was seen to be a major contributor to the slowdown in user-mode networking.
@@ -118,6 +118,6 @@ Bridged networking does not have this problem since there is no need to manipula
 
 We also note that user-mode networking is essentially duplicating much of the work already done by the guest's network stack in order to rewrite the correct header fields to make the packet
 look as though it originated from the host machine.
-A packet must travel down the guest's networking stack, back up to the transport layer, and then finally back down before finally getting sent.
+A packet must travel down the guest's networking stack, back up to the transport layer, and then back down before finally getting sent.
 
 
