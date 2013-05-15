@@ -36,7 +36,7 @@ Figure \ref{fig:codepath1} presents the code path originating at a guest VM's ap
 The packet moves down the guest's networking stack to what it believes to be the physical network interface card.
 At this point the packet is passed to whatever driver has been selected by the user.
 In KVM+QEMU the options are \texttt{rtl8139}, \texttt{virtio}, or \texttt{e1000}.
-Once the packet is processed by the driver, it encounters a sizeable amount of shared code which is designed to determine which mode of networking is being used and passes the packet off to the
+Once the packet is processed by the driver, it encounters a sizeable amount of shared code (detailed in the Appendix) which is designed to determine which mode of networking is being used and passes the packet off to the
 correct function.
 If the guest is bridged then the packet is passed to \texttt{tap\_receive}, otherwise \texttt{net\_slirp\_receive} is invoked.
 
