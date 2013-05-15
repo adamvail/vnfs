@@ -134,15 +134,15 @@ In the next section, we shift gears to try to isolate the origin of the decrease
 %User-mode networking under QEMU uses network address translation (NAT) in order to allow a guest VM to establish connections with outside networks. QEMU performs address translation using a protocol from the 1990s known as SLiRP, which was originally used to provide TCP/IP access to dial-up shell account users by emulating the TCP/IP stack. Though that usage is largely obsolete, the same address translation techniques are applied in QEMU user-mode networking to provide NAT functionality.
 
 \section{Conclusions}
-We began searching for methods by which an NFS server could differentiate native from virtualized clients, and arrived at two conclusions. First, bridged clients can be detected by matching the first three octets of their MAC address against a list of default MAC address prefixes used by virtualization platforms for their bridged guest VMs. If a match is found, this indicates the client is virtualized and is using the corresponding platform. However, false negatives are possible if the client or administrator proactively sets a different MAC address. 
+We began by searching for methods by which an NFS server could differentiate native from virtualized clients, and developed two heuristics for this purpose. First, bridged clients can be detected by matching the first three octets of their MAC address against a list of default MAC address prefixes used by virtualization platforms for their bridged guest VMs. If a match is found, this indicates the client is virtualized and is using the corresponding platform. However, false negatives are possible if the client or administrator proactively sets a different MAC address. 
 
 Our second method assumes a controlled or predictable network environment and uses bandwidth profiles to distinguish virtual clients against a baseline set by accesses from a native NFS client. It takes advantage of our observation that virtualized clients, especially when using user-mode networking and the fully emulated RTL8139 driver, experience as much as 10.7x drop in bandwidth relative to the native-client baseline. 
 
 This led us to investigate the source of the poor performance under user-mode networking, which we determined was primarily the result of the extensive memory management and packet manipulation inherent in the NAT process as the packet travels between guest and host network stacks.
 
-Our initial cross-comparison of virtual network drivers and networking configurations could be expanded in future work to encompass the full range of drivers available under KVM+QEMU. This would contribute to a fuller understanding of the networking landscape under KVM+QEMU, and which options and combinations are the most efficient under varying workloads. 
+Our initial cross-comparison of virtual network drivers and networking configurations could be expanded in future work to encompass the full range of drivers available under KVM+QEMU. This would contribute to a fuller understanding of the networking landscape under KVM+QEMU, and show which options and combinations are the most efficient under varying workloads. 
 
-While it is clear that KVM+QEMU users searching for optimal network performance should use virtio under bridged networking, that option may not be available to all users. Future work might also look at providing a better out-of-the-box default option for user-mode networking, perhaps by performing code-path and memory-management optimizations in the NAT process between the guest and host network stacks.
+While it is clear that KVM+QEMU users searching for optimal network performance should use virtio under bridged networking, that option may not be available to all users. Future work might also look at providing a better out-of-the-box default option for user-mode networking, perhaps by performing code-path and memory-management optimizations in the NAT code path between the guest and host network stacks.
 
 {\footnotesize \bibliographystyle{acm}
 \bibliography{references}}
@@ -198,7 +198,7 @@ rtl8139_transfer_frame (end guest
 Note that the second run of each function (indicated as \texttt{function'}) performs different tasks than the first run, as they are performing operations using different function pointers. At a high level, this shared code processes packets originating from the guest network stack and forwards them toward the correct intermediate code depending on whether the guest VM is using bridged or NATed networking.
 
 \subsection*{Code Path: Receive Side}
-These functions bridge the gap between the top of the host network stack and pass the incoming packets to the bottom of the guest network stack--in our case, to the RTL8139 emulated network driver. The functions encountered at the start of the shared receive-side code below, \texttt{qemu\_send\_packet\_*}, forward the incoming packets to guest network stack based on their incoming queue.
+These functions bridge the gap between the top of the host network stack and pass the incoming packets to the bottom of the guest network stack---in our case, this is to the RTL8139 emulated network driver. The functions encountered at the start of the shared receive-side code below, \texttt{qemu\_send\_packet\_*}, forward the incoming packets to guest network stack based on their incoming queue.
 
 \subsubsection*{Bridged}
 The functions in the bridged receive-side code do not touch the packet headers at all---they just pass the packets straight up to the guest from the physical interface based on their incoming queue. Thus, the packets have come directly from the physical NIC and don't need to have their headers retranslated.
@@ -220,7 +220,7 @@ main_loop_wait
 \end{verbatim}
 
 \subsubsection*{NAT}
-In the NAT receive-side code, all the fields in the arriving packets' headers are in host byte order because they have passed through the full host network stack and are coming off the application layer of the host network stack. So at this stage everything gets ripped off and translated back to network byte order and passed to the RTL8139 network driver of the guest stack, which once again decapsulates the packets for the guest application layer. So the flow is: decapsulate the packet in host network stack; re-encapsulate it here and pass to bottom of guest network stack; guest network stack again decapsulates the packet (essentially repeating the work of the host network stack, but with the headers that were modified by NAT). 
+In the NAT receive-side code, all the fields in the arriving packets' headers are in host byte order because they have passed through the full host network stack and are coming off the application layer of the host network stack. So at this stage everything gets ripped off and translated back to network byte order and passed to the RTL8139 network driver of the guest stack, which once again decapsulates the packets for the guest application layer. So the flow is: decapsulate the packet in host network stack; re-encapsulate it here and pass it to bottom of the guest network stack; the guest network stack again decapsulates the packet (essentially repeating the work of the host network stack, but with the headers that were modified by NAT). 
 
 \begin{verbatim}
 main_loop_wait

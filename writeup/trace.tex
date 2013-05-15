@@ -113,7 +113,7 @@ We then instrumented the SLiRP functions and found that almost 50\% of the overh
 \texttt{m\_get}, \texttt{slirp\_insque}, \texttt{if\_output}, and \texttt{if\_start}, \texttt{m\_free}, and \texttt{slirp\_remque}.
 The most expensive of these functions was the management of the doubly linked lists of doubly linked lists of mbufs done in \texttt{if\_output} and \texttt{if\_start} which accounts for 22.9\%
 of the transmit time.
-Therefore, the management of memory was seen to be a major contributor to the slow down in user-mode networking.
+Therefore, the management of memory was seen to be a major contributor to the slowdown in user-mode networking.
 Bridged networking does not have this problem since there is no need to manipulate the packet, which allows it to use the TAP to place the packet directly on the wire.
 
 We also note that user-mode networking is essentially duplicating much of the work already done by the guest's network stack in order to rewrite the correct header fields to make the packet
