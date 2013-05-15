@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.9.5)  13 MAY 2013 19:48
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.9.5)  15 MAY 2013 10:22
 entering extended mode
 **C:/Users/rdj/Documents/GitHub/vnfs/writeup/main.tex
 (C:/Users/rdj/Documents/GitHub/vnfs/writeup/main.tex
@@ -84,21 +84,21 @@ Package ifvtex Info: VTeX not detected.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-) (C:\Users\rdj\Documents\GitHub\vnfs\writeup\main.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-
-("C:\Program Files (x86)\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
+) (C:\Users\rdj\Documents\GitHub\vnfs\writeup\main.aux
+(C:\Users\rdj\Documents\GitHub\vnfs\writeup\trace.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+ ("C:\Program Files (x86)\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count91
 \scratchdimen=\dimen113
@@ -145,22 +145,36 @@ LaTeX Font Info:    ... okay on input line 10.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 11.
+(Font)              <12> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 11.
+(Font)              <8> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 11.
-[1{C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}
+(Font)              <6> on input line 12.
+
+Underfull \vbox (badness 6063) has occurred while \output is active []
+
+ [1{C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}
 
 
 ]
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 58--58
+[]\OT1/cmr/bx/n/12 Identifying Bridged Hosts by
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 47.
+(Font)              <10.95> on input line 67.
 
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.64 ...r-common-virtual-machine-platforms/538)}}}
+l.84 ...r-common-virtual-machine-platforms/538)}}}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -174,273 +188,149 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.64 ...r-common-virtual-machine-platforms/538)}}}
+l.84 ...r-common-virtual-machine-platforms/538)}}}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 64.
+(Font)              <9> on input line 84.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 64.
+(Font)              <5> on input line 84.
 
-Overfull \hbox (27.4909pt too wide) in paragraph at lines 64--64
+Overfull \hbox (27.4909pt too wide) in paragraph at lines 84--84
 [][]\OT1/cmr/m/it/9 (Source:http://www.techrepublic.com/blog/networking/mac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
 \OT1/cmr/m/it/9 address-scorecard-for-common-virtual-machine-
  []
 
-
-Underfull \hbox (badness 4726) in paragraph at lines 75--77
-\OT1/cmr/m/n/10.95 [TODO: In-tro-duce the dif-fer-ences be-tween
+<timing_small.png, id=13, 761.84625pt x 417.56pt>
+File: timing_small.png Graphic file (type png)
+ <use timing_small.png>
+Overfull \hbox (29.14679pt too wide) in paragraph at lines 94--95
+ [] 
  []
 
-[2]
-Underfull \hbox (badness 1817) in paragraph at lines 134--134
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<timing_large.png, id=14, 833.1125pt x 450.68375pt>
+File: timing_large.png Graphic file (type png)
+ <use timing_large.png>
+Overfull \hbox (20.05818pt too wide) in paragraph at lines 101--102
+ [] 
+ []
+
+[3 <C:/Users/rdj/Documents/GitHub/vnfs/writeup/timing_small.png (PNG copy)> <C:/Users/rdj/Documents/GitHub/vnfs/writeup/
+timing_large.png (PNG copy)>] [4
+
+] [5] (C:\Users\rdj\Documents\GitHub\vnfs\writeup\trace.tex
+Underfull \hbox (badness 8189) in paragraph at lines 1--1
+[]\OT1/cmr/bx/n/14.4 Tracing Traf-fic from the
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 5--6
+\OT1/cmr/m/n/10.95 ap-pli-ca-tion layer through the guest net-work
+ []
+
+<codepath1.png, id=26, 441.3288pt x 264.99pt>
+File: codepath1.png Graphic file (type png)
+ <use codepath1.png> <codepath2_alt.png, id=28, 578.8827pt x 285.4665pt>
+File: codepath2_alt.png Graphic file (type png)
+
+<use codepath2_alt.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6
+
+]
+Underfull \hbox (badness 1048) in paragraph at lines 57--63
+\OT1/cmr/m/n/10.95 for-ma-tion. This is done by sim-ply call-ing
+ []
+
+
+Underfull \vbox (badness 5893) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 64--64
 []\OT1/cmr/bx/n/12 RealTek 8139 Bridged: Guest
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.135 ...hared code (see Appendix) and get to tap_
-                                                  receive. The flow continue...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.136 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-\OT1/cmr/m/n/10.95 We first come out the end of the
+[7 <C:/Users/rdj/Documents/GitHub/vnfs/writeup/codepath1.png> <C:/Users/rdj/Documents/GitHub/vnfs/writeup/codepath2_alt.
+png>]
+Underfull \hbox (badness 2913) in paragraph at lines 67--68
+[]\OT1/cmr/m/n/10.95 The packet first comes out the end of
  []
 
 
-Underfull \hbox (badness 6559) in paragraph at lines 135--136
-\OT1/cmr/m/n/10.95 shared code (see Ap-pendix) and get to
+Underfull \hbox (badness 7379) in paragraph at lines 67--68
+\OT1/cmr/m/n/10.95 the shared code (see Ap-pendix) and is
  []
 
 
-Underfull \vbox (badness 1275) has occurred while \output is active []
-
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.137 tap_
-          receive
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.141 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (1.23665pt too wide) in paragraph at lines 137--141
-[]\OT1/cmr/m/n/10.95 tap$[]\OML/cmm/m/it/10.95 eceivetap[]eceive[]awtap[]rite[]acketwritev$ 
+Underfull \hbox (badness 2042) in paragraph at lines 73--74
+\OT1/cmr/m/n/10.95 and bridged net-work-ing trans-mis-sion paths.
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.156 rtl8139_
-              transfer_frame
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+<usermodeTXtime.png, id=38, 586.19pt x 362.35374pt>
+File: usermodeTXtime.png Graphic file (type png)
+ <use usermodeTXtime.png>
+Overfull \hbox (63.21678pt too wide) in paragraph at lines 77--78
+ [][] 
+ []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.171 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--171
-[]\OT1/cmr/m/n/10.95 GUEST NET-WORK STACK fin-
+) [8 <C:/Users/rdj/Documents/GitHub/vnfs/writeup/usermodeTXtime.png (PNG copy)>]
+Underfull \hbox (badness 1546) in paragraph at lines 136--137
+[]\OT1/cmr/m/n/10.95 Our sec-ond method as-sumes a con-trolled
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--171
-\OT1/cmr/m/n/10.95 ishes here --- start QEMU user
+Underfull \hbox (badness 2913) in paragraph at lines 140--141
+\OT1/cmr/m/n/10.95 work drivers and net-work-ing con-fig-u-ra-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--171
-\OT1/cmr/m/n/10.95 space em-u-lat-ing phys-i-cal NIC here ---
- []
-
-
-Overfull \hbox (953.97186pt too wide) in paragraph at lines 154--171
-\OT1/cmr/m/n/10.95 rtl8139$[]\OML/cmm/m/it/10.95 ransfer[]rameqemu[]end[]acketqemu[]end[]acket[]syncqemu[]end[]acket[]sy
-nc[]ith[]lagsqemu[]et[]ueue[]endqemu[]et[]ueue[]eliverqemu[]eliver[]acketnet[]ub[]ort[]eceivenet[]ub[]eceiveqemu[]end[]a
-cket[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 nowit[]srunningthroughdifferentinterfaces \OT1/cmr/m/n/10.95 :
- []
-
-
-Overfull \hbox (653.59772pt too wide) in paragraph at lines 154--171
-\OML/cmm/m/it/10.95 figuredoutthatitneedstobemovingtowardtheTAPdevice:\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 qemu[]end[
-]acket[]sync[]qemu[]end[]acket[]sync[]ith[]lags[]qemu[]et[]ueue[]eliver[]qemu[]eliver[]acket[]tap[]eceive=net[]lirp[]ece
-ive\OMS/cmsy/m/n/10.95   \OML/cmm/m/it/10.95 >
- []
-
-
-Overfull \hbox (53.41492pt too wide) in paragraph at lines 154--171
-\OML/cmm/m/it/10.95 slirp[]nputdependingonwhetheryou[]reusingbridgedorNAT:$ 
- []
-
-! Undefined control sequence.
-l.179 \header
-             {Bridged}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.180 Here tap_
-               send, etc., don't mess with the packet headers at all--they j...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.181 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (97.31917pt too wide) in paragraph at lines 179--181
-[]\OT1/cmr/m/n/10.95 Bridged Here tap$[]\OML/cmm/m/it/10.95 end; etc:; don[]tmesswiththepacketheadersatall \OMS/cmsy/m/n
-/10.95  
- []
-
-
-Overfull \hbox (305.1306pt too wide) in paragraph at lines 179--181
-\OMS/cmsy/m/n/10.95  \OML/cmm/m/it/10.95 theyjustpassthepacketsstraightuptotheguestfromthephysicalinterface; possiblyvia
-queueusingqemu[]otify \OMS/cmsy/m/n/10.95  
- []
-
-
-Overfull \hbox (256.82631pt too wide) in paragraph at lines 179--181
-\OMS/cmsy/m/n/10.95  \OML/cmm/m/it/10.95 sothepacketshavecomedirectlyfromthephysicalNICanddon[]tneedtohavetheirheadersre
-translated:$ 
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.182 main_
-           loop_wait
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.189 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (115.88475pt too wide) in paragraph at lines 182--189
-[]\OT1/cmr/m/n/10.95 main$[]\OML/cmm/m/it/10.95 oop[]aitqemu[]o[]andler[]olltap[]endtap[]ead[]acketifthesizeread >
- []
-
-
-Overfull \hbox (291.55461pt too wide) in paragraph at lines 182--189
-\OT1/cmr/m/n/10.95 0 : \OML/cmm/m/it/10.95 qemu[]end[]acket[]sync:::continuetosharedcode:Theinterestedreadercancheckoutt
-heKVMsource; wazzup:$ 
- []
-
-! Undefined control sequence.
-l.190 \header
-             {NAT}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[3]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.193 main_
-           loop_wait
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.201 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--201
-[]\OT1/cmr/m/n/10.95 main$[]\OML/cmm/m/it/10.95 oop[]aitslirp[]elect[]olltcp[]utput \OMS/cmsy/m/n/10.95  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--201
-\OMS/cmsy/m/n/10.95  \OML/cmm/m/it/10.95 stripstheheadersip[]utput \OMS/cmsy/m/n/10.95  
- []
-
-
-Overfull \hbox (45.12456pt too wide) in paragraph at lines 193--201
-\OMS/cmsy/m/n/10.95  \OML/cmm/m/it/10.95 getsnewheadersbasedif[]utputif[]tartif[]ncapslirp[]utput$ 
+Underfull \hbox (badness 3701) in paragraph at lines 142--143
+\OT1/cmr/m/n/10.95 search-ing for op-ti-mal net-work per-for-mance
  []
 
 (C:\Users\rdj\Documents\GitHub\vnfs\writeup\main.bbl
+Underfull \hbox (badness 1590) in paragraph at lines 4--7
+[]\OT1/cmr/m/sc/9 Shepler, S., Callaghan, B., Robin-son, D.,
+ []
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [4
+Underfull \hbox (badness 1558) in paragraph at lines 4--7
+\OT1/cmr/m/sc/9 Thur-low, R., Beame, C., Eisler, M., and
+ []
 
-] (C:\Users\rdj\Documents\GitHub\vnfs\writeup\main.aux) ) 
+) [9
+
+] (C:\Users\rdj\Documents\GitHub\vnfs\writeup\main.aux (C:\Users\rdj\Documents\GitHub\vnfs\writeup\trace.aux)) ) 
 Here is how much of TeX's memory you used:
- 1527 strings out of 495269
- 20854 string characters out of 3179604
- 86229 words of memory out of 3000000
- 4762 multiletter control sequences out of 15000+200000
- 9928 words of font info for 35 fonts, out of 3000000 for 9000
+ 1578 strings out of 495269
+ 21948 string characters out of 3179604
+ 86583 words of memory out of 3000000
+ 4798 multiletter control sequences out of 15000+200000
+ 10537 words of font info for 37 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 26i,9n,32p,1369b,356s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTe
-X 2.8/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/
-type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (4 pages, 141989 bytes).
+ 26i,9n,32p,1151b,356s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Prog
+ram Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program File
+s (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKT
+eX 2.8/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr9.pf
+b><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (9 pages, 351156 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

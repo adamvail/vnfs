@@ -107,7 +107,9 @@ The MAC address distinction does not help us in the case of VM-based clients tha
 
 Figures \ref{fig:timing_small} and \ref{fig:timing_large} show the results of timing tests in which the client VMs under various networking configurations read 500KB, 1MB, 500MB, 1GB, and 2GB files from an NFS server according to the configuration describe in Subsection \ref{subsec:expSetup}. Files were read in 4KB blocks, and file buffer caches were cleared between tests by running \texttt{echo 3 > /proc/sys/vm/drop\_caches}. Figure \ref{fig:timing_small} shows that when reading smaller files, the bandwidths of the various client-VM networking configurations have not yet achieved a stable relative ordering. However, when reading larger files, as shown in Figure \ref{fig:timing_large}, a clear relative bandwidth ordering emerges.
 
-\begin{table*}[!ht]
+Not surprisingly, reads on the server itself (directly from the local ext4 file system) were fastest and were mirrored almost exactly by reads from the NFS client running on native hardware. Note that the reads performed locally on the server and from the native client differed by only 43 milliseconds across all tests, so their lines are coincident in Figure \ref{fig:timing_large}. Of the virtualized clients, using the paravirtualized virtio driver under bridged networking imposed only a slight overhead relative to the native-client baseline. However, switching to either the fully emulated RealTek RTL8139 virtual network driver or using NATed instead of bridged networking imposed a substantial bandwidth penalty. Doing both (using the RTL8139 under user-mode networking) results in 10.5x slowdown relative to our baseline. 
+
+\begin{table*}[htb]
 	\centering
 		\begin{tabular}{|l|l|}
 			\hline
@@ -123,8 +125,6 @@ Figures \ref{fig:timing_small} and \ref{fig:timing_large} show the results of ti
 	\caption{NFS Bandwidth Profiles}
 	\label{tab:NFSBandwidthProfiles}
 \end{table*}
-
-Not surprisingly, reads on the server itself (directly from the local ext4 file system) were fastest and were mirrored almost exactly by reads from the NFS client running on native hardware. Note that the reads performed locally on the server and from the native client differed by only 43 milliseconds across all tests, so their lines are coincident in Figure \ref{fig:timing_large}. Of the virtualized clients, using the paravirtualized virtio driver under bridged networking imposed only a slight overhead relative to the native-client baseline. However, switching to either the fully emulated RealTek RTL8139 virtual network driver or using NATed instead of bridged networking imposed a substantial bandwidth penalty. Doing both (using the RTL8139 under user-mode networking) results in 10.5x slowdown relative to our baseline. 
 
 \include{trace}
 %\subsection{RealTek 8139 NAT: Guest Transmit}
